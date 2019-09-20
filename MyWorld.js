@@ -1,0 +1,16 @@
+module.exports = [
+  'China',
+  'Germany',
+  'Italy',
+  'Austria',
+  'Czech',
+  'Poland',
+  'France',
+  'Sweden',
+  'Norway',
+  'Finland',
+  'Croatia',
+  'Bosnia and Herzegovina',
+  'Slovakia',
+  'Hungary',
+]

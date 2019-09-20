@@ -1,26 +1,61 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { PureComponent } from 'react'
+import VectorMap from '@south-paw/react-vector-maps'
+import world from './spotify_world.json'
+import './map.scss'
+class App extends PureComponent {
+  constructor(props) {
+    super(props)
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    this.state = {
+      hovered: null,
+      focused: null,
+      clicked: null,
+    }
+  }
+
+  /** When the mouse enters a layer. */
+  onMouseEnter = e => this.setState({ hovered: e.target.attributes.name.value })
+
+  /** When the mouse leaves a layer. */
+  onMouseLeave = () => this.setState({ hovered: null })
+
+  /** When a layer gains focus. */
+  onFocus = e => this.setState({ focused: e.target.attributes.name.value })
+
+  /** When a layer looses focus. */
+  onBlur = () => this.setState({ focused: null })
+
+  /** When a layer is clicked. */
+  onClick = e => {
+    this.setState({ clicked: e.target.attributes.name.value })
+  }
+
+  render() {
+    const { hovered, focused, clicked } = this.state
+
+    const layerProps = {
+      onMouseEnter: this.onMouseEnter,
+      onMouseLeave: this.onMouseLeave,
+      onFocus: this.onFocus,
+      onBlur: this.onBlur,
+      onClick: this.onClick,
+    }
+
+    return (
+      <>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          <strong>Hovered layer:</strong> {hovered}
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+        <p>
+          <strong>Focused layer:</strong> {focused}
+        </p>
+        <p>
+          <strong>Clicked layer:</strong> {clicked}
+        </p>
+        <VectorMap {...world} layerProps={layerProps} />
+      </>
+    )
+  }
 }
 
-export default App;
+export default App
