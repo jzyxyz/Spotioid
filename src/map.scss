@@ -26,10 +26,15 @@ svg {
       fill: #1db954;
     }
 
+    &[has_top_chart='false'] {
+      fill: lightsalmon;
+      cursor: not-allowed;
+    }
     &[available='false'] {
       fill: grey;
       cursor: not-allowed;
     }
+
     // When a layer is 'selected' (via 'aria-current').
     &[aria-current='true'] {
       fill: #a275e3;
