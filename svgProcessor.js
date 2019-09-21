@@ -5,7 +5,7 @@ world = JSON.parse(world.toString())
 
 const markSpotify = () => {
   const available = require('./SpotifyAvailability')
-  const top = require('./country_top_50')
+  const top = require('./country_list.js')
   let set = new Set(available)
   world.layers.forEach(element => {
     if (set.has(element.name)) {
