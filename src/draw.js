@@ -3,11 +3,12 @@
 // set default no fill beneath the line
 import { Chart } from 'chart.js'
 Chart.defaults.global.elements.line.fill = false
+var ch
 
 const drawFeatureChart = data => {
   const ctx = document.getElementById('chart')
   // allocate and initialize a chart
-  const ch = new Chart(ctx, {
+  ch = new Chart(ctx, {
     type: 'bar',
     data,
     options: {
@@ -18,7 +19,7 @@ const drawFeatureChart = data => {
         display: false,
       },
       tooltips: {
-        mode: 'label',
+        // mode: 'label',
         enabled: false,
         custom: function(tooltipModel) {
           // Tooltip Element

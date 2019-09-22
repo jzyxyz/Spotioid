@@ -1,9 +1,8 @@
 import React from 'react'
-import Map from './Map'
-import dataIndex from './dataIndex'
+import Main from './Main'
 
 const App = () => {
-  return <Map dataIndex={dataIndex} />
+  return <Main />
 }
 
 export default App

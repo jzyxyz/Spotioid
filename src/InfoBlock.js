@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './info-block.scss'
 import _ from 'lodash'
-// import Chart from './FeatureChart'
-import { drawFeatureChart } from './draw'
+import Chart from './FeatureChart'
 
 const InfoBlock = ({ data }) => {
   const [current, average] = data
@@ -31,7 +30,6 @@ const InfoBlock = ({ data }) => {
         id: 'y-axis-0',
         backgroundColor: 'rgba(217,83,79,0.75)',
         data: percent.map(i => (i > 0 ? i : 0)),
-        // data: featuresArray,
       },
       {
         type: 'bar',
@@ -39,14 +37,13 @@ const InfoBlock = ({ data }) => {
         id: 'y-axis-0',
         backgroundColor: 'rgba(92,184,92,0.75)',
         data: percent.map(i => (i < 0 ? i : 0)),
-        // data: avgFeaturesArray,
       },
     ],
   }
 
-  useEffect(() => {
-    drawFeatureChart(barChartData)
-  }, [current])
+  // useEffect(() => {
+  // drawFeatureChart(barChartData)
+  // }, [current])
 
   const GenreBlock = () => (
     <div className='genre-block'>
@@ -66,7 +63,7 @@ const InfoBlock = ({ data }) => {
 
   return (
     <div className='info-block'>
-      <canvas id='chart'></canvas>
+      <Chart data={barChartData} />
       <GenreBlock />
       <ArtistBlock />
     </div>
