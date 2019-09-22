@@ -35,26 +35,34 @@ const Map = ({ dataIndex }) => {
     const keyup$ = fromEvent(searchBox, 'keyup')
     keyup$.pipe(debounceTime(200)).subscribe(event => {
       console.log(event)
-      const searchInput = event.target.value.replace(/\s+/, '')
+      const searchInput = event.target.value.replace(/^\s+|\s+$/, '')
       console.log(searchInput)
       const nodes = document.querySelectorAll('.map-svg > svg > path')
       if (searchInput.length === 0) {
         nodes.forEach(n => {
           n.setAttribute('candidate', 'false')
         })
+        setAutoComp([])
         return
       }
       const choices = []
       nodes.forEach(n => {
         const country = n.getAttribute('name')
         const inRegex = new RegExp(`^${searchInput.toLowerCase()}`)
-        if (
-          inRegex.test(country.toLowerCase()) &&
-          n.getAttribute('available') === 'true'
-        ) {
-          n.setAttribute('candidate', 'true')
+        if (inRegex.test(country.toLowerCase())) {
+          if (n.getAttribute('available') === 'true') {
+            n.setAttribute('candidate', 'true')
+            choices.push({
+              name: country,
+              available: true,
+            })
+          } else {
+            choices.push({
+              name: country,
+              available: false,
+            })
+          }
           console.log(444444, country)
-          choices.push(country)
         } else {
           n.setAttribute('candidate', 'false')
         }
@@ -62,16 +70,20 @@ const Map = ({ dataIndex }) => {
       setAutoComp(choices)
       if (event.keyCode === 13) {
         // hit enter
-        setClicked(choices[0])
+        setClicked(choices[0].name)
+        event.target.value = choices[0].name
         return
       }
     })
   }, [])
 
   const AutoCompl = () => {
-    return autoCompl.map(el => <div>{el}</div>)
+    return autoCompl.map(({ name, available }) => (
+      <div key={name}>{`${name} ${available}`}</div>
+    ))
   }
 
+  const NoData = () => <div>No info for this country available</div>
   return (
     <>
       <input type='text' name='search' className='search-input' />
@@ -89,7 +101,11 @@ const Map = ({ dataIndex }) => {
       <div className='map-svg'>
         <VectorMap {...world} layerProps={layerProps} />
       </div>
-      {clicked && <InfoBlock data={[dataIndex[clicked], dataIndex.average]} />}
+      {clicked && dataIndex[clicked] ? (
+        <InfoBlock data={[dataIndex[clicked], dataIndex.average]} />
+      ) : (
+        <NoData />
+      )}
     </>
   )
 }

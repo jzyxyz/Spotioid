@@ -27,10 +27,10 @@
         fill: #1db954;
       }
 
-      &[has_top_chart='false'] {
-        fill: lightsalmon;
-        cursor: not-allowed;
-      }
+      // &[has_top_chart='false'] {
+      //   fill: lightsalmon;
+      //   cursor: not-allowed;
+      // }
       &[available='false'] {
         fill: grey;
         cursor: not-allowed;

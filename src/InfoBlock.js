@@ -6,6 +6,7 @@ import { drawFeatureChart } from './draw'
 
 const InfoBlock = ({ data }) => {
   const [current, average] = data
+
   const { genres, features, artists, name } = current
   const { features: avgFeatures } = average
   const toArray = obj =>
@@ -42,6 +43,7 @@ const InfoBlock = ({ data }) => {
       },
     ],
   }
+
   useEffect(() => {
     drawFeatureChart(barChartData)
   }, [current])
