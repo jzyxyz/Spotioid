@@ -12,7 +12,8 @@
     "react": "^16.9.0",
     "react-chartjs-2": "^2.8.0",
     "react-dom": "^16.9.0",
-    "react-scripts": "3.1.2"
+    "react-scripts": "3.1.2",
+    "rxjs": "^6.5.3"
   },
   "scripts": {
     "start": "react-scripts start",

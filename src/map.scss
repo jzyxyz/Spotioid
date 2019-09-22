@@ -40,6 +40,17 @@
       &[aria-current='true'] {
         fill: #a275e3;
       }
+
+      &[candidate='true'] {
+        fill: orange;
+      }
     }
   }
+}
+
+.search-input {
+  border-bottom: 2px salmon solid;
+  height: 30px;
+  font-size: 25px;
+  padding: 10px;
 }

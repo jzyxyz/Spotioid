@@ -4,16 +4,18 @@
 import { Chart } from 'chart.js'
 Chart.defaults.global.elements.line.fill = false
 
-const fn = data => {
+const drawFeatureChart = data => {
   const ctx = document.getElementById('chart')
   // allocate and initialize a chart
   const ch = new Chart(ctx, {
     type: 'bar',
     data,
     options: {
+      legend: {
+        display: false,
+      },
       title: {
-        display: true,
-        text: 'Chart.js Bar Chart - Stacked',
+        display: false,
       },
       tooltips: {
         mode: 'label',
@@ -64,8 +66,7 @@ const fn = data => {
             const newBody = bodyLines
               .map(el => {
                 let [country, value] = el[0].split(':')
-
-                if (parseFloat(value) == 0) return null
+                if (parseFloat(value) === 0) return null
                 else if (parseFloat(value) > 0) {
                   return [
                     'higher than average by',
@@ -137,4 +138,4 @@ const fn = data => {
   })
 }
 
-export default fn
+export { drawFeatureChart }
