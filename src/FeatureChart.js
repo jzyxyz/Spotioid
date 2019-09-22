@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import Chart from 'chart.js'
 
-class BChart extends React.Component {
+class FeatureChart extends React.Component {
   constructor(props) {
     super(props)
     this.chart = null
@@ -179,4 +179,4 @@ class BChart extends React.Component {
   }
 }
 
-export default BChart
+export default FeatureChart

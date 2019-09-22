@@ -37,7 +37,6 @@ const Main = () => {
     keyup$.pipe(debounceTime(200)).subscribe(event => {
       console.log(event)
       const searchInput = event.target.value.replace(/^\s+|\s+$/, '')
-      console.log(searchInput)
       const nodes = document.querySelectorAll('.map-svg > svg > path')
       if (searchInput.length === 0) {
         nodes.forEach(n => {
@@ -74,7 +73,16 @@ const Main = () => {
         setClicked(choices[0].name)
         event.target.value = choices[0].name
         setAutoComp([])
-        return
+        document
+          .querySelectorAll(`.map-svg > svg > path[candidate='true']`)
+          .forEach(n => {
+            if (n.getAttribute('name') === choices[0].name) {
+              console.log(666)
+            } else {
+              console.log(9999, n.getAttribute('name'))
+              n.setAttribute('candidate', 'false')
+            }
+          })
       }
     })
   }, [])

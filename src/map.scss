@@ -10,42 +10,31 @@ $spotify-black: #191414; // The root svg element of the vector map.
     path {
       fill: #364e68;
       cursor: pointer;
-
-      // When a layer is hovered.
-      &:hover {
-        fill: #98ccd3;
-      }
-
-      // When a layer is focused.
-      &:focus {
-        fill: #ebf0f6;
-      }
-
-      // When a layer is 'checked' (via 'aria-checked').
-      &[aria-checked='true'] {
-        fill: #8f1537;
-      }
       &[available='true'] {
         fill: $spotify-green;
       }
-
-      // &[has_top_chart='false'] {
-      //   fill: lightsalmon;
-      //   cursor: not-allowed;
-      // }
       &[available='false'] {
         fill: $disabled-gray;
         cursor: not-allowed;
       }
-
-      // When a layer is 'selected' (via 'aria-current').
-      &[aria-current='true'] {
-        fill: #a275e3;
-      }
-
       &[candidate='true'] {
         fill: orange;
       }
+      // &:focus {
+      //   fill: #ebf0f6;
+      // }
+      // When a layer is hovered.
+      &:hover {
+        fill: #98ccd3;
+      }
+      // When a layer is 'selected' (via 'aria-current').
+      // &[aria-current='true'] {
+      //   fill: #a275e3 !important;
+      // }
+      // // When a layer is 'checked' (via 'aria-checked').
+      // &[aria-checked='true'] {
+      //   fill: #8f1537 !important;
+      // }
     }
   }
 }
@@ -79,4 +68,11 @@ $spotify-black: #191414; // The root svg element of the vector map.
 .auto-compl-unavailable {
   @include auto-compl-item();
   background-color: $disabled-gray;
+}
+
+.tooltip {
+  position: absolute;
+  padding: 0.25rem;
+  background: white;
+  border: 0.2rem solid #ccc;
 }

@@ -20,7 +20,6 @@ const InfoBlock = ({ data }) => {
     i => featuresArray[i] / avgFeaturesArray[i] - 1,
   )
 
-  // stacked bar with 2 unstacked lines - nope
   const barChartData = {
     labels: Object.keys(features),
     datasets: [
@@ -40,10 +39,6 @@ const InfoBlock = ({ data }) => {
       },
     ],
   }
-
-  // useEffect(() => {
-  // drawFeatureChart(barChartData)
-  // }, [current])
 
   const GenreBlock = () => (
     <div className='genre-block'>
