@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import VectorMap from '@south-paw/react-vector-maps'
 import world from './spotify_world.json'
 import './map.scss'
@@ -12,6 +12,7 @@ const Map = ({ dataIndex }) => {
   const [hovered, setHovered] = useState(null)
   const [focused, setFocused] = useState(null)
   const [autoCompl, setAutoComp] = useState([])
+  const inputRef = useRef(null)
 
   const onMouseEnter = e => setHovered(e.target.attributes.name.value)
   const onMouseLeave = () => setHovered(null)
@@ -20,8 +21,10 @@ const Map = ({ dataIndex }) => {
   const onBlur = () => setFocused(null)
 
   const onClick = e => {
+    inputRef.current.value = e.target.attributes.name.value
     setClicked(e.target.attributes.name.value)
   }
+
   const layerProps = {
     onMouseEnter,
     onMouseLeave,
@@ -67,27 +70,45 @@ const Map = ({ dataIndex }) => {
           n.setAttribute('candidate', 'false')
         }
       })
-      setAutoComp(choices)
+      setAutoComp(choices.slice(0, 3))
       if (event.keyCode === 13) {
         // hit enter
         setClicked(choices[0].name)
         event.target.value = choices[0].name
+        setAutoComp([])
         return
       }
     })
   }, [])
 
   const AutoCompl = () => {
-    return autoCompl.map(({ name, available }) => (
-      <div key={name}>{`${name} ${available}`}</div>
-    ))
+    return (
+      <div className='auto-compl'>
+        <h5>Are you looking for...</h5>
+        {autoCompl.map(({ name, available }) => (
+          <div
+            key={name}
+            className={
+              available
+                ? 'auto-compl-item auto-compl-available'
+                : 'auto-compl-item auto-compl-unavailable'
+            }
+          >{`${name}`}</div>
+        ))}
+      </div>
+    )
   }
 
   const NoData = () => <div>No info for this country available</div>
   return (
     <>
-      <input type='text' name='search' className='search-input' />
-      <AutoCompl />
+      <input
+        type='text'
+        name='search'
+        className='search-input'
+        ref={inputRef}
+      />
+      {autoCompl.length > 0 && <AutoCompl />}
       <div></div>
       <p>
         <strong>Hovered layer:</strong> {hovered}
