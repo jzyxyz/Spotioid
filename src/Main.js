@@ -5,108 +5,68 @@ import { debounceTime } from 'rxjs/operators'
 import InfoBlock from './InfoBlock'
 import dataIndex from './dataIndex'
 import Map from './Map'
+import InputSuggest from './InputSugguest'
+import { trim } from 'lodash'
+
+import COUNTRY_NAMES from './COUNTRY_LIST'
 
 const Main = () => {
   const inputRef = useRef(null)
 
-  const [clicked, setClicked] = useState(null)
-  const [autoCompl, setAutoComp] = useState([])
-  const AutoCompl = () => {
-    return (
-      <div className='auto-compl'>
-        <h5>Are you looking for...</h5>
-        {autoCompl.map(({ name, available }) => (
-          <div
-            key={name}
-            className={
-              available
-                ? 'auto-compl-item auto-compl-available'
-                : 'auto-compl-item auto-compl-unavailable'
-            }
-          >{`${name}`}</div>
-        ))}
-      </div>
-    )
-  }
+  const [selected, setSelected] = useState([])
+  const [suggestions, setSuggestions] = useState([])
 
   const NoData = () => <div>No info for this country available</div>
+
+  const [input, setInput] = useState('')
 
   useEffect(() => {
     const searchBox = document.querySelector('.search-input')
     const keyup$ = fromEvent(searchBox, 'keyup')
+    keyup$.pipe().subscribe(e => {
+      setInput(e.target.value)
+    })
     keyup$.pipe(debounceTime(200)).subscribe(event => {
-      console.log(event)
-      const searchInput = event.target.value.replace(/^\s+|\s+$/, '')
-      const nodes = document.querySelectorAll('.map-svg > svg > path')
-      if (searchInput.length === 0) {
-        nodes.forEach(n => {
-          n.setAttribute('candidate', 'false')
-        })
-        setAutoComp([])
-        return
-      }
-      const choices = []
-      nodes.forEach(n => {
-        const country = n.getAttribute('name')
-        const inRegex = new RegExp(`^${searchInput.toLowerCase()}`)
-        if (inRegex.test(country.toLowerCase())) {
-          if (n.getAttribute('available') === 'true') {
-            n.setAttribute('candidate', 'true')
-            choices.push({
-              name: country,
-              available: true,
-            })
-          } else {
-            choices.push({
-              name: country,
-              available: false,
-            })
-          }
-          console.log(444444, country)
-        } else {
-          n.setAttribute('candidate', 'false')
-        }
-      })
-      setAutoComp(choices.slice(0, 3))
+      const searchInput = trim(event.target.value)
+      if (searchInput.length === 0) return
+      const inRegex = new RegExp(`^${searchInput.toLowerCase()}`)
+      const choices = COUNTRY_NAMES.filter(c => inRegex.test(c.toLowerCase()))
+      setSuggestions(choices.slice(0, 3))
       if (event.keyCode === 13) {
-        // hit enter
-        setClicked(choices[0].name)
-        event.target.value = choices[0].name
-        setAutoComp([])
-        document
-          .querySelectorAll(`.map-svg > svg > path[candidate='true']`)
-          .forEach(n => {
-            if (n.getAttribute('name') === choices[0].name) {
-              console.log(666)
-            } else {
-              console.log(9999, n.getAttribute('name'))
-              n.setAttribute('candidate', 'false')
-            }
-          })
+        setSelected(choices[0])
+        setInput(choices[0])
+        event.target.value = choices[0]
       }
     })
+    return function cleanup() {
+      searchBox.removeEventListener('keyup')
+    }
   }, [])
 
   return (
     <>
-      <p>
-        <strong>Clicked layer:</strong> {clicked}
-      </p>
       <input
         type='text'
         name='search'
         className='search-input'
         ref={inputRef}
       />
-      {autoCompl.length > 0 && <AutoCompl />}{' '}
+      {suggestions.length > 0 &&
+        suggestions[0].toLowerCase().indexOf(input.toLowerCase()) > -1 && (
+          <InputSuggest suggestions={suggestions} />
+        )}
       <Map
-        clickHandler={e => {
-          inputRef.current.value = e.target.attributes.name.value
-          setClicked(e.target.attributes.name.value)
+        mapProps={{
+          checkedLayers: selected,
+        }}
+        layerClickHandler={e => {
+          inputRef.current.value = e.target.getAttribute('name')
+          setInput(e.target.getAttribute('name'))
+          setSelected([e.target.getAttribute('name')])
         }}
       />
-      {clicked && dataIndex[clicked] ? (
-        <InfoBlock data={[dataIndex[clicked], dataIndex.average]} />
+      {selected && dataIndex[selected] ? (
+        <InfoBlock data={[dataIndex[selected], dataIndex.average]} />
       ) : (
         <NoData />
       )}

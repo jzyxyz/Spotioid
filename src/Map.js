@@ -1,77 +1,68 @@
-import React, { useState, useEffect, useRef, PureComponent } from 'react'
-import VectorMap from '@south-paw/react-vector-maps'
+import React, { PureComponent } from 'react'
+
+import VectorMap from './VectorMap'
 import world from './spotify_world.json'
 import './map.scss'
-import { merge } from 'lodash'
+
 const Tooltip = ({ style, text }) => (
   <div className='tooltip' style={style}>
     {text}
   </div>
 )
 
-const Map = ({ clickHandler }) => {
-  const [hovered, setHovered] = useState(null)
-  const [focused, setFocused] = useState(null)
-  const [tooltip, setToolTip] = useState({
-    current: null,
-    isTooltipVisible: true,
-    tooltipY: 0,
-    tooltipX: 0,
-  })
+class Map extends PureComponent {
+  constructor(props) {
+    super(props)
 
-  const onMouseOver = e =>
-    setToolTip(merge(tooltip, { current: e.target.attributes.name.value }))
-
-  const onMouseMove = e => {
-    setToolTip(
-      merge(tooltip, {
-        isTooltipVisible: true,
-        tooltipY: e.clientY + 10,
-        tooltipX: e.clientX + 10,
-      }),
-    )
-    console.log(tooltip.isTooltipVisible)
+    this.state = {
+      current: null,
+      isTooltipVisible: false,
+      tooltipY: 0,
+      tooltipX: 0,
+    }
   }
 
-  const onMouseOut = () =>
-    setToolTip(merge(tooltip, { current: null, isTooltipVisible: false }))
-
-  const onMouseEnter = e => setHovered(e.target.attributes.name.value)
-  const onMouseLeave = () => setHovered(null)
-  const onFocus = e => setFocused(e.target.attributes.name.value)
-  const onBlur = () => setFocused(null)
-  const layerProps = {
-    onMouseEnter,
-    onMouseLeave,
-    onFocus,
-    onBlur,
-    onClick: clickHandler,
-    onMouseMove,
-    onMouseOver,
-    onMouseOut,
+  onMouseOver = e => {
+    this.setState({ current: e.target.attributes.name.value })
   }
 
-  const { current, isTooltipVisible, tooltipX, tooltipY } = tooltip
-  const tooltipStyle = {
-    display: isTooltipVisible ? 'block' : 'none',
-    top: tooltipY,
-    left: tooltipX,
-  }
+  onMouseMove = e =>
+    this.setState({
+      isTooltipVisible: true,
+      tooltipY: e.clientY + 10,
+      tooltipX: e.clientX + 10,
+    })
 
-  return (
-    <>
-      <p>
-        <strong>Hovered layer:</strong> {hovered}
-      </p>
-      <p>
-        <strong>Focused layer:</strong> {focused}
-      </p>
-      <div className='map-svg'>
-        <VectorMap {...world} layerProps={layerProps} />
+  onMouseOut = () => this.setState({ current: null, isTooltipVisible: false })
+
+  render() {
+    const { current, isTooltipVisible, tooltipX, tooltipY } = this.state
+    const { mapProps, layerClickHandler } = this.props
+    const layerProps = {
+      onMouseOver: this.onMouseOver,
+      onMouseMove: this.onMouseMove,
+      onMouseOut: this.onMouseOut,
+      onClick: layerClickHandler,
+    }
+
+    const tooltipStyle = {
+      display: isTooltipVisible ? 'block' : 'none',
+      top: tooltipY,
+      left: tooltipX,
+    }
+
+    return (
+      <>
+        <VectorMap
+          {...world}
+          layerProps={layerProps}
+          {...mapProps}
+          className='map-svg'
+        />
         <Tooltip style={tooltipStyle} text={current} />
-      </div>
-    </>
-  )
+      </>
+    )
+  }
 }
 
 export default Map
