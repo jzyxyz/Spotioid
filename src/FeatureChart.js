@@ -15,7 +15,7 @@ class FeatureChart extends React.Component {
 
   componentDidUpdate(prevProps, prevState) {
     // only update chart if the data has changed
-    console.log(prevProps.data.datasets[0])
+    // console.log(prevProps.data.datasets[0].label)
     if (
       prevProps.data.datasets[0].label !== this.props.data.datasets[0].label
     ) {

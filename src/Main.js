@@ -7,7 +7,6 @@ import dataIndex from './dataIndex'
 import Map from './Map'
 import InputSuggest from './InputSugguest'
 import { trim } from 'lodash'
-
 import COUNTRY_NAMES from './COUNTRY_LIST'
 
 const Main = () => {
@@ -39,7 +38,8 @@ const Main = () => {
       setSuggestions(choices)
       // setAllSuggestions(choices)
       if (event.keyCode === 13) {
-        setSelected(choices[0])
+        console.log(555, choices)
+        setSelected(choices)
         setInput(choices[0])
         event.target.value = choices[0]
         setSuggestions([])
@@ -52,35 +52,39 @@ const Main = () => {
 
   return (
     <>
-      <input
-        type='text'
-        name='search'
-        className='search-input'
-        ref={inputRef}
-      />
-      {suggestions.length > 0 &&
-        input.length > 0 &&
-        suggestions[0].toLowerCase().indexOf(input.toLowerCase()) > -1 &&
-        suggestions[0].toLowerCase() !== input.toLowerCase() && (
-          <InputSuggest suggestions={suggestions} />
+      <div className='interactive-map'>
+        <input
+          type='text'
+          name='search'
+          className='search-input'
+          ref={inputRef}
+        />
+        {suggestions.length > 0 &&
+          input.length > 0 &&
+          suggestions[0].toLowerCase().indexOf(input.toLowerCase()) > -1 &&
+          suggestions[0].toLowerCase() !== input.toLowerCase() && (
+            <InputSuggest suggestions={suggestions.slice(0, 5)} />
+          )}
+        <Map
+          mapProps={{
+            checkedLayers: selected,
+            candidateLayers: suggestions,
+          }}
+          layerClickHandler={e => {
+            inputRef.current.value = e.target.getAttribute('name')
+            setInput(e.target.getAttribute('name'))
+            setSelected([e.target.getAttribute('name')])
+            setSuggestions([])
+          }}
+        />
+      </div>
+      <div className='info-page'>
+        {selected && dataIndex[selected] ? (
+          <InfoBlock data={[dataIndex[selected], dataIndex.average]} />
+        ) : (
+          <NoData />
         )}
-      <Map
-        mapProps={{
-          checkedLayers: selected,
-          candidateLayers: suggestions,
-        }}
-        layerClickHandler={e => {
-          inputRef.current.value = e.target.getAttribute('name')
-          setInput(e.target.getAttribute('name'))
-          setSelected([e.target.getAttribute('name')])
-          setSuggestions([])
-        }}
-      />
-      {selected && dataIndex[selected] ? (
-        <InfoBlock data={[dataIndex[selected], dataIndex.average]} />
-      ) : (
-        <NoData />
-      )}
+      </div>
     </>
   )
 }

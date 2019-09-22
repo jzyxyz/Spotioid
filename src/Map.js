@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react'
 
 import VectorMap from './VectorMap'
 import world from './spotify_world.json'
-import './map.scss'
 
 const Tooltip = ({ style, text }) => (
   <div className='tooltip' style={style}>

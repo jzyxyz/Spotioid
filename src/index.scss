@@ -14,5 +14,15 @@ code {
 
 #root {
   display: flex;
-  flex-direction: column;
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
 }
+// delete above stuff  later
+
+// variables --------------------
+@import 'variables.scss';
+
+// pages ------------------
+@import './map.scss';
+@import './info-block.scss';
+@import './main.scss';

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import './info-block.scss'
 import _ from 'lodash'
 import Chart from './FeatureChart'
 
