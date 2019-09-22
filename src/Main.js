@@ -15,6 +15,7 @@ const Main = () => {
 
   const [selected, setSelected] = useState([])
   const [suggestions, setSuggestions] = useState([])
+  // const [allSuggestions, setAllSuggestions] = useState([])
 
   const NoData = () => <div>No info for this country available</div>
 
@@ -28,14 +29,20 @@ const Main = () => {
     })
     keyup$.pipe(debounceTime(200)).subscribe(event => {
       const searchInput = trim(event.target.value)
-      if (searchInput.length === 0) return
+      if (searchInput.length === 0) {
+        setInput('')
+        setSuggestions([])
+        return
+      }
       const inRegex = new RegExp(`^${searchInput.toLowerCase()}`)
       const choices = COUNTRY_NAMES.filter(c => inRegex.test(c.toLowerCase()))
-      setSuggestions(choices.slice(0, 3))
+      setSuggestions(choices)
+      // setAllSuggestions(choices)
       if (event.keyCode === 13) {
         setSelected(choices[0])
         setInput(choices[0])
         event.target.value = choices[0]
+        setSuggestions([])
       }
     })
     return function cleanup() {
@@ -52,17 +59,21 @@ const Main = () => {
         ref={inputRef}
       />
       {suggestions.length > 0 &&
-        suggestions[0].toLowerCase().indexOf(input.toLowerCase()) > -1 && (
+        input.length > 0 &&
+        suggestions[0].toLowerCase().indexOf(input.toLowerCase()) > -1 &&
+        suggestions[0].toLowerCase() !== input.toLowerCase() && (
           <InputSuggest suggestions={suggestions} />
         )}
       <Map
         mapProps={{
           checkedLayers: selected,
+          candidateLayers: suggestions,
         }}
         layerClickHandler={e => {
           inputRef.current.value = e.target.getAttribute('name')
           setInput(e.target.getAttribute('name'))
           setSelected([e.target.getAttribute('name')])
+          setSuggestions([])
         }}
       />
       {selected && dataIndex[selected] ? (

@@ -16,9 +16,9 @@ $spotify-black: #191414; // The root svg element of the vector map.
       fill: $disabled-gray;
       cursor: not-allowed;
     }
-    // &[candidate='true'] {
-    //   fill: orange;
-    // }
+    &[candidate='true'] {
+      fill: orange;
+    }
 
     &:hover {
       fill: #98ccd3;

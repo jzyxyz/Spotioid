@@ -7,6 +7,7 @@ const VectorMap = ({
   layerProps,
   checkedLayers,
   currentLayers,
+  candidateLayers,
   ...rest
 }) => (
   <svg xmlns='http://www.w3.org/2000/svg' key={rest.id} {...rest}>
@@ -17,6 +18,9 @@ const VectorMap = ({
         aria-label={layer.name}
         aria-checked={checkedLayers && checkedLayers.includes(layer.name)}
         aria-current={currentLayers && currentLayers.includes(layer.name)}
+        candidate={(
+          candidateLayers && candidateLayers.includes(layer.name)
+        ).toString()}
         {...layer}
         {...layerProps}
       />
