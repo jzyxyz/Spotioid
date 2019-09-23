@@ -1,12 +1,12 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import './map.scss'
-import { fromEvent } from 'rxjs'
-import { debounceTime } from 'rxjs/operators'
+import {fromEvent} from 'rxjs'
+import {debounceTime} from 'rxjs/operators'
 import InfoBlock from './InfoBlock'
 import dataIndex from './dataIndex'
 import Map from './Map'
 import InputSuggest from './InputSugguest'
-import { trim } from 'lodash'
+import {trim} from 'lodash'
 import COUNTRY_NAMES from './COUNTRY_LIST'
 
 const Main = () => {
@@ -53,12 +53,6 @@ const Main = () => {
   return (
     <>
       <div className='interactive-map'>
-        <input
-          type='text'
-          name='search'
-          className='search-input'
-          ref={inputRef}
-        />
         {suggestions.length > 0 &&
           input.length > 0 &&
           suggestions[0].toLowerCase().indexOf(input.toLowerCase()) > -1 &&
@@ -76,6 +70,12 @@ const Main = () => {
             setSelected([e.target.getAttribute('name')])
             setSuggestions([])
           }}
+        />
+        <input
+          type='text'
+          name='search'
+          className='search-input'
+          ref={inputRef}
         />
       </div>
       <div className='info-page'>

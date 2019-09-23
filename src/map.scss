@@ -6,32 +6,32 @@ $spotify-black: #191414; // The root svg element of the vector map.
   height: 500px;
   width: 100%;
   // All layers are just path elements.
-  path {
-    fill: #364e68;
-    cursor: pointer;
-    &[available='true'] {
-      fill: $spotify-green;
-    }
-    &[available='false'] {
-      fill: $disabled-gray;
-      cursor: not-allowed;
-    }
-    &[candidate='true'] {
-      fill: orange;
-    }
+  // path {
+  //   fill: #364e68;
+  //   cursor: pointer;
+  //   &[available='true'] {
+  //     fill: $spotify-green;
+  //   }
+  //   &[available='false'] {
+  //     fill: $disabled-gray;
+  //     cursor: not-allowed;
+  //   }
+  //   &[candidate='true'] {
+  //     fill: orange;
+  //   }
 
-    &:hover {
-      fill: #98ccd3;
-    }
-    // When a layer is 'selected' (via 'aria-current').
-    &[aria-current='true'] {
-      fill: #a275e3 !important;
-    }
-    // // When a layer is 'checked' (via 'aria-checked').
-    &[aria-checked='true'] {
-      fill: #8f1537 !important;
-    }
-  }
+  //   // &:hover {
+  //   //   fill: #98ccd3;
+  //   // }
+  //   // When a layer is 'selected' (via 'aria-current').
+  //   &[aria-current='true'] {
+  //     fill: #a275e3;
+  //   }
+  //   // // When a layer is 'checked' (via 'aria-checked').
+  //   &[aria-checked='true'] {
+  //     fill: #8f1537;
+  //   }
+  // }
 }
 
 .search-input {
@@ -65,9 +65,9 @@ $spotify-black: #191414; // The root svg element of the vector map.
   background-color: $disabled-gray;
 }
 
-.tooltip {
-  position: absolute;
-  padding: 0.25rem;
-  background: white;
-  border: 0.2rem solid #ccc;
-}
+// .tooltip {
+//   position: absolute;
+//   padding: 0.25rem;
+//   background: white;
+//   border: 0.2rem solid #ccc;
+// }

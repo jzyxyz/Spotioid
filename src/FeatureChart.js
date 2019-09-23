@@ -28,7 +28,7 @@ class FeatureChart extends React.Component {
   configureChart = () => {
     const chartCanvas = ReactDOM.findDOMNode(this.chart)
 
-    const { data } = this.props
+    const {data} = this.props
 
     this.chartInstance = new Chart(chartCanvas, {
       type: 'bar',
