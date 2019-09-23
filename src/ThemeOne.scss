@@ -65,17 +65,17 @@
       }
     }
     &[available='false'] {
-      fill: rgba(36, 36, 36, 0.1) !important;
+      fill: rgba(36, 36, 36, 0.1);
       cursor: default !important;
     }
+
     &[candidate='true'] {
       fill: orange;
     }
-
-    // When a layer is 'selected' (via 'aria-current').
-    &[aria-current='true'] {
-      fill: #a275e3;
-    }
+    // // When a layer is 'selected' (via 'aria-current').
+    // &[aria-current='true'] {
+    //   fill: #a275e3;
+    // }
     // // When a layer is 'checked' (via 'aria-checked').
     &[aria-checked='true'] {
       fill: #4dff8b !important;

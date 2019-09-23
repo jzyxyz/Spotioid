@@ -1,12 +1,12 @@
-import React, {useState, useEffect, useRef} from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import './map.scss'
-import {fromEvent} from 'rxjs'
-import {debounceTime} from 'rxjs/operators'
+import { fromEvent } from 'rxjs'
+import { debounceTime } from 'rxjs/operators'
 import InfoBlock from './InfoBlock'
 import dataIndex from './dataIndex'
 import Map from './Map'
 import InputSuggest from './InputSugguest'
-import {trim} from 'lodash'
+import { trim } from 'lodash'
 import COUNTRY_NAMES from './COUNTRY_LIST'
 
 const Main = () => {
@@ -14,7 +14,6 @@ const Main = () => {
 
   const [selected, setSelected] = useState([])
   const [suggestions, setSuggestions] = useState([])
-  // const [allSuggestions, setAllSuggestions] = useState([])
 
   const NoData = () => <div>No info for this country available</div>
 
@@ -39,7 +38,7 @@ const Main = () => {
       // setAllSuggestions(choices)
       if (event.keyCode === 13) {
         console.log(555, choices)
-        setSelected(choices)
+        setSelected(choices[0])
         setInput(choices[0])
         event.target.value = choices[0]
         setSuggestions([])
