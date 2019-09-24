@@ -61,12 +61,6 @@ const InfoBlock = ({data}) => {
       <div className='txt-block'>
         <GenreBlock />
         <ArtistBlock />
-        <div
-          className='click-scroll'
-          onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
-          {/* 找个宽箭头放这 */}
-          Go Top
-        </div>
       </div>
     </div>
   )
