@@ -177,6 +177,7 @@ body {
   text-align: end;
 }
 .genre-block {
+  backdrop-filter: blur(4px);
   z-index: 100;
   min-width: 140px;
   text-transform: uppercase;
