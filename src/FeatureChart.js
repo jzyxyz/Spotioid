@@ -106,7 +106,7 @@ class FeatureChart extends React.Component {
                     : tooltipModel.labelColors[1]
                 var style = 'background:' + colors.backgroundColor
                 style += '; border-color:' + colors.borderColor
-                style += '; border-width: 2px'
+                style += '; border-width: 1px'
                 var span = '<span style="' + style + '"></span>'
                 innerHtml += '<tr><td>' + span + body.join(' ') + '</td></tr>'
               })

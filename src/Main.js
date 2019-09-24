@@ -16,7 +16,9 @@ const Main = () => {
   const [suggestions, setSuggestions] = useState([])
   // const [allSuggestions, setAllSuggestions] = useState([])
 
-  const NoData = () => <div>No info for this country available</div>
+  const NoData = () => (
+    <div className='no-data-tip'>No info for this country available</div>
+  )
 
   const [input, setInput] = useState('')
 

@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React, {useState, useEffect} from 'react'
 import _ from 'lodash'
 import Chart from './FeatureChart'
 
-const InfoBlock = ({ data }) => {
+const InfoBlock = ({data}) => {
   const [current, average] = data
 
-  const { genres, features, artists, name } = current
-  const { features: avgFeatures } = average
+  const {genres, features, artists, name} = current
+  const {features: avgFeatures} = average
   const toArray = obj =>
     Object.keys(obj).map(k => ({
       name: k,
@@ -58,8 +58,16 @@ const InfoBlock = ({ data }) => {
   return (
     <div className='info-block'>
       <Chart data={barChartData} />
-      <GenreBlock />
-      <ArtistBlock />
+      <div className='txt-block'>
+        <GenreBlock />
+        <ArtistBlock />
+        <div
+          className='click-scroll'
+          onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
+          {/* 找个宽箭头放这 */}
+          Go Top
+        </div>
+      </div>
     </div>
   )
 }
