@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 const InputSuggest = ({ suggestions }) => {
   return suggestions.length > 0 ? (

@@ -1,9 +1,8 @@
-import React, {PureComponent} from 'react'
-
+import React, { PureComponent } from 'react'
 import VectorMap from './VectorMap'
-import world from './spotify_world.json'
+import world from '../metadata/spotify_world.json'
 
-const Tooltip = ({style, text, cName}) => (
+const Tooltip = ({ style, text, cName }) => (
   <div className={'tooltip ' + cName || ''} style={style}>
     {text}
   </div>
@@ -22,7 +21,7 @@ class Map extends PureComponent {
   }
 
   onMouseOver = e => {
-    this.setState({current: e.target.attributes.name.value})
+    this.setState({ current: e.target.attributes.name.value })
   }
   onMouseMove = e =>
     this.setState({
@@ -31,11 +30,11 @@ class Map extends PureComponent {
       tooltipX: e.clientX + 10,
     })
 
-  onMouseOut = () => this.setState({current: null, isTooltipVisible: false})
+  onMouseOut = () => this.setState({ current: null, isTooltipVisible: false })
 
   render() {
-    const {current, isTooltipVisible, tooltipX, tooltipY} = this.state
-    const {mapProps, layerClickHandler} = this.props
+    const { current, isTooltipVisible, tooltipX, tooltipY } = this.state
+    const { mapProps, layerClickHandler } = this.props
     const layerProps = {
       onMouseOver: this.onMouseOver,
       onMouseMove: this.onMouseMove,

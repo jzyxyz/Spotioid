@@ -1,20 +1,18 @@
-import React, {useState, useEffect, useRef} from 'react'
-import './map.scss'
-import {fromEvent} from 'rxjs'
-import {debounceTime} from 'rxjs/operators'
+import React, { useState, useEffect, useRef } from 'react'
+import { fromEvent } from 'rxjs'
+import { debounceTime } from 'rxjs/operators'
 import InfoBlock from './InfoBlock'
-import dataIndex from './dataIndex'
+import dataIndex from '../dataIndex'
 import Map from './Map'
 import InputSuggest from './InputSugguest'
-import {trim} from 'lodash'
-import COUNTRY_NAMES from './COUNTRY_LIST'
+import { trim } from 'lodash'
+import COUNTRY_NAMES from '../metadata/CountryList'
 
 const Main = () => {
   const inputRef = useRef(null)
 
   const [selected, setSelected] = useState([])
   const [suggestions, setSuggestions] = useState([])
-  // const [allSuggestions, setAllSuggestions] = useState([])
 
   const NoData = () => (
     <div className='no-data-tip'>No info for this country available</div>
@@ -100,7 +98,8 @@ const Main = () => {
         )}
         <div
           className='click-scroll'
-          onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        >
           {/* 找个宽箭头放这 */}
           Go Top
         </div>

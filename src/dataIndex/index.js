@@ -1,17 +1,17 @@
-module.exports = {
+export default {
   Argentina: {
     idx: 0,
     name: 'Argentina',
     id: '37i9dQZEVXbMMy2roB9myp',
     genres: [
-      {name: 'reggaeton', count: 27},
-      {name: 'reggaeton flow', count: 16},
-      {name: 'latin', count: 13},
-      {name: 'trap latino', count: 12},
-      {name: 'tropical', count: 11},
-      {name: 'pop', count: 9},
-      {name: 'trap argentino', count: 8},
-      {name: 'argentine hip hop', count: 7},
+      { name: 'reggaeton', count: 27 },
+      { name: 'reggaeton flow', count: 16 },
+      { name: 'latin', count: 13 },
+      { name: 'trap latino', count: 12 },
+      { name: 'tropical', count: 11 },
+      { name: 'pop', count: 9 },
+      { name: 'trap argentino', count: 8 },
+      { name: 'argentine hip hop', count: 7 },
     ],
     artists: [
       {
@@ -342,12 +342,12 @@ module.exports = {
     name: 'Australia',
     id: '37i9dQZEVXbJPcfkRz0wJ0',
     genres: [
-      {name: 'pop', count: 34},
-      {name: 'dance pop', count: 17},
-      {name: 'post-teen pop', count: 12},
-      {name: 'rap', count: 10},
-      {name: 'pop rap', count: 7},
-      {name: 'trap music', count: 7},
+      { name: 'pop', count: 34 },
+      { name: 'dance pop', count: 17 },
+      { name: 'post-teen pop', count: 12 },
+      { name: 'rap', count: 10 },
+      { name: 'pop rap', count: 7 },
+      { name: 'trap music', count: 7 },
     ],
     artists: [
       {
@@ -513,9 +513,9 @@ module.exports = {
     name: 'Austria',
     id: '37i9dQZEVXbKNHh6NIXu36',
     genres: [
-      {name: 'pop', count: 24},
-      {name: 'german hip hop', count: 22},
-      {name: 'dance pop', count: 10},
+      { name: 'pop', count: 24 },
+      { name: 'german hip hop', count: 22 },
+      { name: 'dance pop', count: 10 },
     ],
     artists: [
       {
@@ -626,12 +626,12 @@ module.exports = {
     name: 'Belgium',
     id: '37i9dQZEVXbJNSeeHswcKB',
     genres: [
-      {name: 'pop', count: 36},
-      {name: 'dance pop', count: 18},
-      {name: 'edm', count: 12},
-      {name: 'tropical house', count: 11},
-      {name: 'post-teen pop', count: 10},
-      {name: 'pop rap', count: 7},
+      { name: 'pop', count: 36 },
+      { name: 'dance pop', count: 18 },
+      { name: 'edm', count: 12 },
+      { name: 'tropical house', count: 11 },
+      { name: 'post-teen pop', count: 10 },
+      { name: 'pop rap', count: 7 },
     ],
     artists: [
       {
@@ -753,13 +753,13 @@ module.exports = {
     name: 'Bolivia',
     id: '37i9dQZEVXbJqfMFK4d691',
     genres: [
-      {name: 'reggaeton', count: 28},
-      {name: 'latin', count: 19},
-      {name: 'reggaeton flow', count: 16},
-      {name: 'tropical', count: 14},
-      {name: 'trap latino', count: 12},
-      {name: 'pop', count: 10},
-      {name: 'latin hip hop', count: 7},
+      { name: 'reggaeton', count: 28 },
+      { name: 'latin', count: 19 },
+      { name: 'reggaeton flow', count: 16 },
+      { name: 'tropical', count: 14 },
+      { name: 'trap latino', count: 12 },
+      { name: 'pop', count: 10 },
+      { name: 'latin hip hop', count: 7 },
     ],
     artists: [
       {
@@ -1101,9 +1101,9 @@ module.exports = {
     name: 'Brazil',
     id: '37i9dQZEVXbMXbN3EUUhlg',
     genres: [
-      {name: 'funk carioca', count: 20},
-      {name: 'sertanejo universitario', count: 18},
-      {name: 'sertanejo pop', count: 12},
+      { name: 'funk carioca', count: 20 },
+      { name: 'sertanejo universitario', count: 18 },
+      { name: 'sertanejo pop', count: 12 },
     ],
     artists: [
       {
@@ -1280,13 +1280,13 @@ module.exports = {
     name: 'Bulgaria',
     id: '37i9dQZEVXbNfM2w2mq1B8',
     genres: [
-      {name: 'pop', count: 20},
-      {name: 'rap', count: 11},
-      {name: 'pop rap', count: 9},
-      {name: 'trap music', count: 8},
-      {name: 'bulgarian pop', count: 7},
-      {name: 'dance pop', count: 7},
-      {name: 'post-teen pop', count: 7},
+      { name: 'pop', count: 20 },
+      { name: 'rap', count: 11 },
+      { name: 'pop rap', count: 9 },
+      { name: 'trap music', count: 8 },
+      { name: 'bulgarian pop', count: 7 },
+      { name: 'dance pop', count: 7 },
+      { name: 'post-teen pop', count: 7 },
     ],
     artists: [
       {
@@ -1452,12 +1452,12 @@ module.exports = {
     name: 'Canada',
     id: '37i9dQZEVXbKj23U1GF4IR',
     genres: [
-      {name: 'pop', count: 31},
-      {name: 'rap', count: 16},
-      {name: 'trap music', count: 14},
-      {name: 'pop rap', count: 12},
-      {name: 'dance pop', count: 10},
-      {name: 'hip hop', count: 8},
+      { name: 'pop', count: 31 },
+      { name: 'rap', count: 16 },
+      { name: 'trap music', count: 14 },
+      { name: 'pop rap', count: 12 },
+      { name: 'dance pop', count: 10 },
+      { name: 'hip hop', count: 8 },
     ],
     artists: [
       {
@@ -1656,13 +1656,13 @@ module.exports = {
     name: 'Chile',
     id: '37i9dQZEVXbL0GavIqMTeb',
     genres: [
-      {name: 'reggaeton', count: 31},
-      {name: 'reggaeton flow', count: 23},
-      {name: 'latin', count: 18},
-      {name: 'trap latino', count: 15},
-      {name: 'tropical', count: 15},
-      {name: 'latin hip hop', count: 10},
-      {name: 'pop', count: 7},
+      { name: 'reggaeton', count: 31 },
+      { name: 'reggaeton flow', count: 23 },
+      { name: 'latin', count: 18 },
+      { name: 'trap latino', count: 15 },
+      { name: 'tropical', count: 15 },
+      { name: 'latin hip hop', count: 10 },
+      { name: 'pop', count: 7 },
     ],
     artists: [
       {
@@ -1971,15 +1971,15 @@ module.exports = {
     name: 'Colombia',
     id: '37i9dQZEVXbOa2lmxNORXQ',
     genres: [
-      {name: 'reggaeton', count: 31},
-      {name: 'latin', count: 21},
-      {name: 'tropical', count: 16},
-      {name: 'pop', count: 14},
-      {name: 'reggaeton flow', count: 14},
-      {name: 'trap latino', count: 12},
-      {name: 'colombian pop', count: 9},
-      {name: 'latin pop', count: 9},
-      {name: 'latin hip hop', count: 7},
+      { name: 'reggaeton', count: 31 },
+      { name: 'latin', count: 21 },
+      { name: 'tropical', count: 16 },
+      { name: 'pop', count: 14 },
+      { name: 'reggaeton flow', count: 14 },
+      { name: 'trap latino', count: 12 },
+      { name: 'colombian pop', count: 9 },
+      { name: 'latin pop', count: 9 },
+      { name: 'latin hip hop', count: 7 },
     ],
     artists: [
       {
@@ -2332,13 +2332,13 @@ module.exports = {
     name: 'Costa Rica',
     id: '37i9dQZEVXbMZAjGMynsQX',
     genres: [
-      {name: 'reggaeton', count: 29},
-      {name: 'reggaeton flow', count: 18},
-      {name: 'latin', count: 17},
-      {name: 'trap latino', count: 14},
-      {name: 'tropical', count: 13},
-      {name: 'pop', count: 11},
-      {name: 'latin hip hop', count: 8},
+      { name: 'reggaeton', count: 29 },
+      { name: 'reggaeton flow', count: 18 },
+      { name: 'latin', count: 17 },
+      { name: 'trap latino', count: 14 },
+      { name: 'tropical', count: 13 },
+      { name: 'pop', count: 11 },
+      { name: 'latin hip hop', count: 8 },
     ],
     artists: [
       {
@@ -2636,10 +2636,10 @@ module.exports = {
     name: 'Czech Republic',
     id: '37i9dQZEVXbIP3c3fqVrJY',
     genres: [
-      {name: 'pop', count: 27},
-      {name: 'dance pop', count: 12},
-      {name: 'czsk hip hop', count: 11},
-      {name: 'post-teen pop', count: 8},
+      { name: 'pop', count: 27 },
+      { name: 'dance pop', count: 12 },
+      { name: 'czsk hip hop', count: 11 },
+      { name: 'post-teen pop', count: 8 },
     ],
     artists: [
       {
@@ -2783,9 +2783,9 @@ module.exports = {
     name: 'Denmark',
     id: '37i9dQZEVXbL3J0k32lWnN',
     genres: [
-      {name: 'danish pop', count: 17},
-      {name: 'pop', count: 16},
-      {name: 'danish hip hop', count: 13},
+      { name: 'danish pop', count: 17 },
+      { name: 'pop', count: 16 },
+      { name: 'danish hip hop', count: 13 },
     ],
     artists: [
       {
@@ -2896,13 +2896,13 @@ module.exports = {
     name: 'Dominican Republic',
     id: '37i9dQZEVXbKAbrMR8uuf7',
     genres: [
-      {name: 'reggaeton', count: 35},
-      {name: 'reggaeton flow', count: 27},
-      {name: 'latin', count: 24},
-      {name: 'tropical', count: 23},
-      {name: 'trap latino', count: 16},
-      {name: 'latin hip hop', count: 14},
-      {name: 'pop', count: 12},
+      { name: 'reggaeton', count: 35 },
+      { name: 'reggaeton flow', count: 27 },
+      { name: 'latin', count: 24 },
+      { name: 'tropical', count: 23 },
+      { name: 'trap latino', count: 16 },
+      { name: 'latin hip hop', count: 14 },
+      { name: 'pop', count: 12 },
     ],
     artists: [
       {
@@ -3178,15 +3178,15 @@ module.exports = {
     name: 'Ecuador',
     id: '37i9dQZEVXbJlM6nvL1nD1',
     genres: [
-      {name: 'reggaeton', count: 32},
-      {name: 'latin', count: 20},
-      {name: 'reggaeton flow', count: 18},
-      {name: 'tropical', count: 16},
-      {name: 'trap latino', count: 14},
-      {name: 'latin pop', count: 9},
-      {name: 'pop', count: 8},
-      {name: 'colombian pop', count: 7},
-      {name: 'latin hip hop', count: 7},
+      { name: 'reggaeton', count: 32 },
+      { name: 'latin', count: 20 },
+      { name: 'reggaeton flow', count: 18 },
+      { name: 'tropical', count: 16 },
+      { name: 'trap latino', count: 14 },
+      { name: 'latin pop', count: 9 },
+      { name: 'pop', count: 8 },
+      { name: 'colombian pop', count: 7 },
+      { name: 'latin hip hop', count: 7 },
     ],
     artists: [
       {
@@ -3517,12 +3517,12 @@ module.exports = {
     name: 'El Salvador',
     id: '37i9dQZEVXbLxoIml4MYkT',
     genres: [
-      {name: 'reggaeton', count: 27},
-      {name: 'latin', count: 18},
-      {name: 'reggaeton flow', count: 15},
-      {name: 'trap latino', count: 12},
-      {name: 'tropical', count: 12},
-      {name: 'pop', count: 10},
+      { name: 'reggaeton', count: 27 },
+      { name: 'latin', count: 18 },
+      { name: 'reggaeton flow', count: 15 },
+      { name: 'trap latino', count: 12 },
+      { name: 'tropical', count: 12 },
+      { name: 'pop', count: 10 },
     ],
     artists: [
       {
@@ -3864,10 +3864,10 @@ module.exports = {
     name: 'Estonia',
     id: '37i9dQZEVXbLesry2Qw2xS',
     genres: [
-      {name: 'pop', count: 27},
-      {name: 'dance pop', count: 12},
-      {name: 'post-teen pop', count: 9},
-      {name: 'rap', count: 7},
+      { name: 'pop', count: 27 },
+      { name: 'dance pop', count: 12 },
+      { name: 'post-teen pop', count: 9 },
+      { name: 'rap', count: 7 },
     ],
     artists: [
       {
@@ -4000,12 +4000,12 @@ module.exports = {
     name: 'Finland',
     id: '37i9dQZEVXbMxcczTSoGwZ',
     genres: [
-      {name: 'finnish dance pop', count: 29},
-      {name: 'finnish hip hop', count: 19},
-      {name: 'finnish pop', count: 19},
-      {name: 'pop', count: 15},
-      {name: 'iskelma', count: 10},
-      {name: 'suomi rock', count: 8},
+      { name: 'finnish dance pop', count: 29 },
+      { name: 'finnish hip hop', count: 19 },
+      { name: 'finnish pop', count: 19 },
+      { name: 'pop', count: 15 },
+      { name: 'iskelma', count: 10 },
+      { name: 'suomi rock', count: 8 },
     ],
     artists: [
       {
@@ -4116,10 +4116,10 @@ module.exports = {
     name: 'France',
     id: '37i9dQZEVXbIPWwFssbupI',
     genres: [
-      {name: 'french hip hop', count: 22},
-      {name: 'trap francais', count: 22},
-      {name: 'rap conscient', count: 8},
-      {name: 'pop', count: 7},
+      { name: 'french hip hop', count: 22 },
+      { name: 'trap francais', count: 22 },
+      { name: 'rap conscient', count: 8 },
+      { name: 'pop', count: 7 },
     ],
     artists: [
       {
@@ -4230,9 +4230,9 @@ module.exports = {
     name: 'Germany',
     id: '37i9dQZEVXbJiZcmkrIHGU',
     genres: [
-      {name: 'german hip hop', count: 25},
-      {name: 'pop', count: 18},
-      {name: 'german pop', count: 7},
+      { name: 'german hip hop', count: 25 },
+      { name: 'pop', count: 18 },
+      { name: 'german pop', count: 7 },
     ],
     artists: [
       {
@@ -4376,10 +4376,10 @@ module.exports = {
     name: 'Greece',
     id: '37i9dQZEVXbJqdarpmTJDL',
     genres: [
-      {name: 'greek trap', count: 15},
-      {name: 'pop', count: 15},
-      {name: 'greek hip hop', count: 12},
-      {name: 'greek pop', count: 7},
+      { name: 'greek trap', count: 15 },
+      { name: 'pop', count: 15 },
+      { name: 'greek hip hop', count: 12 },
+      { name: 'greek pop', count: 7 },
     ],
     artists: [
       {
@@ -4567,13 +4567,13 @@ module.exports = {
     name: 'Guatemala',
     id: '37i9dQZEVXbLy5tBFyQvd4',
     genres: [
-      {name: 'reggaeton', count: 29},
-      {name: 'latin', count: 19},
-      {name: 'reggaeton flow', count: 17},
-      {name: 'tropical', count: 14},
-      {name: 'trap latino', count: 12},
-      {name: 'pop', count: 9},
-      {name: 'latin hip hop', count: 8},
+      { name: 'reggaeton', count: 29 },
+      { name: 'latin', count: 19 },
+      { name: 'reggaeton flow', count: 17 },
+      { name: 'tropical', count: 14 },
+      { name: 'trap latino', count: 12 },
+      { name: 'pop', count: 9 },
+      { name: 'latin hip hop', count: 8 },
     ],
     artists: [
       {
@@ -4904,13 +4904,13 @@ module.exports = {
     name: 'Honduras',
     id: '37i9dQZEVXbJp9wcIM9Eo5',
     genres: [
-      {name: 'reggaeton', count: 31},
-      {name: 'reggaeton flow', count: 20},
-      {name: 'latin', count: 19},
-      {name: 'tropical', count: 15},
-      {name: 'trap latino', count: 14},
-      {name: 'latin hip hop', count: 9},
-      {name: 'pop', count: 9},
+      { name: 'reggaeton', count: 31 },
+      { name: 'reggaeton flow', count: 20 },
+      { name: 'latin', count: 19 },
+      { name: 'tropical', count: 15 },
+      { name: 'trap latino', count: 14 },
+      { name: 'latin hip hop', count: 9 },
+      { name: 'pop', count: 9 },
     ],
     artists: [
       {
@@ -5197,10 +5197,10 @@ module.exports = {
     name: 'Hongkong',
     id: '37i9dQZEVXbLwpL8TjsxOG',
     genres: [
-      {name: 'pop', count: 28},
-      {name: 'dance pop', count: 14},
-      {name: 'post-teen pop', count: 12},
-      {name: 'c-pop', count: 8},
+      { name: 'pop', count: 28 },
+      { name: 'dance pop', count: 14 },
+      { name: 'post-teen pop', count: 12 },
+      { name: 'c-pop', count: 8 },
     ],
     artists: [
       {
@@ -5322,12 +5322,12 @@ module.exports = {
     name: 'Hungary',
     id: '37i9dQZEVXbNHwMxAkvmF8',
     genres: [
-      {name: 'pop', count: 32},
-      {name: 'dance pop', count: 15},
-      {name: 'post-teen pop', count: 11},
-      {name: 'hungarian pop', count: 7},
-      {name: 'pop rap', count: 7},
-      {name: 'rap', count: 7},
+      { name: 'pop', count: 32 },
+      { name: 'dance pop', count: 15 },
+      { name: 'post-teen pop', count: 11 },
+      { name: 'hungarian pop', count: 7 },
+      { name: 'pop rap', count: 7 },
+      { name: 'rap', count: 7 },
     ],
     artists: [
       {
@@ -5449,10 +5449,10 @@ module.exports = {
     name: 'Iceland',
     id: '37i9dQZEVXbKMzVsSGQ49S',
     genres: [
-      {name: 'pop', count: 18},
-      {name: 'icelandic pop', count: 16},
-      {name: 'icelandic hip hop', count: 9},
-      {name: 'rap', count: 7},
+      { name: 'pop', count: 18 },
+      { name: 'icelandic pop', count: 16 },
+      { name: 'icelandic hip hop', count: 9 },
+      { name: 'rap', count: 7 },
     ],
     artists: [
       {
@@ -5618,11 +5618,11 @@ module.exports = {
     name: 'Indonesia',
     id: '37i9dQZEVXbObFQZ3JLcXt',
     genres: [
-      {name: 'pop', count: 28},
-      {name: 'indonesian pop', count: 23},
-      {name: 'dance pop', count: 13},
-      {name: 'post-teen pop', count: 12},
-      {name: 'indonesian indie', count: 8},
+      { name: 'pop', count: 28 },
+      { name: 'indonesian pop', count: 23 },
+      { name: 'dance pop', count: 13 },
+      { name: 'post-teen pop', count: 12 },
+      { name: 'indonesian indie', count: 8 },
     ],
     artists: [
       {
@@ -5766,10 +5766,10 @@ module.exports = {
     name: 'Ireland',
     id: '37i9dQZEVXbKM896FDX8L1',
     genres: [
-      {name: 'pop', count: 29},
-      {name: 'dance pop', count: 14},
-      {name: 'post-teen pop', count: 9},
-      {name: 'tropical house', count: 8},
+      { name: 'pop', count: 29 },
+      { name: 'dance pop', count: 14 },
+      { name: 'post-teen pop', count: 9 },
+      { name: 'tropical house', count: 8 },
     ],
     artists: [
       {
@@ -5924,9 +5924,9 @@ module.exports = {
     name: 'Israel',
     id: '37i9dQZEVXbJ6IpvItkve3',
     genres: [
-      {name: 'pop', count: 16},
-      {name: 'israeli pop', count: 14},
-      {name: 'israeli mediterranean', count: 9},
+      { name: 'pop', count: 16 },
+      { name: 'israeli pop', count: 14 },
+      { name: 'israeli mediterranean', count: 9 },
     ],
     artists: [
       {
@@ -6059,10 +6059,10 @@ module.exports = {
     name: 'Italy',
     id: '37i9dQZEVXbIQnj7RRhdSX',
     genres: [
-      {name: 'italian hip hop', count: 43},
-      {name: 'italian arena pop', count: 19},
-      {name: 'italian pop', count: 15},
-      {name: 'trap italiana', count: 9},
+      { name: 'italian hip hop', count: 43 },
+      { name: 'italian arena pop', count: 19 },
+      { name: 'italian pop', count: 15 },
+      { name: 'trap italiana', count: 9 },
     ],
     artists: [
       {
@@ -6360,9 +6360,9 @@ module.exports = {
     name: 'Japan',
     id: '37i9dQZEVXbKXQ4mDTEBXq',
     genres: [
-      {name: 'j-pop', count: 23},
-      {name: 'anime', count: 9},
-      {name: 'j-rock', count: 9},
+      { name: 'j-pop', count: 23 },
+      { name: 'anime', count: 9 },
+      { name: 'j-rock', count: 9 },
     ],
     artists: [
       {
@@ -6484,12 +6484,12 @@ module.exports = {
     name: 'Latvia',
     id: '37i9dQZEVXbJWuzDrTxbKS',
     genres: [
-      {name: 'pop', count: 33},
-      {name: 'dance pop', count: 13},
-      {name: 'rap', count: 11},
-      {name: 'pop rap', count: 10},
-      {name: 'post-teen pop', count: 9},
-      {name: 'trap music', count: 8},
+      { name: 'pop', count: 33 },
+      { name: 'dance pop', count: 13 },
+      { name: 'rap', count: 11 },
+      { name: 'pop rap', count: 10 },
+      { name: 'post-teen pop', count: 9 },
+      { name: 'trap music', count: 8 },
     ],
     artists: [
       {
@@ -6633,14 +6633,14 @@ module.exports = {
     name: 'Lithuania',
     id: '37i9dQZEVXbMx56Rdq5lwc',
     genres: [
-      {name: 'pop', count: 38},
-      {name: 'dance pop', count: 17},
-      {name: 'post-teen pop', count: 11},
-      {name: 'rap', count: 11},
-      {name: 'pop rap', count: 10},
-      {name: 'tropical house', count: 9},
-      {name: 'edm', count: 8},
-      {name: 'trap music', count: 7},
+      { name: 'pop', count: 38 },
+      { name: 'dance pop', count: 17 },
+      { name: 'post-teen pop', count: 11 },
+      { name: 'rap', count: 11 },
+      { name: 'pop rap', count: 10 },
+      { name: 'tropical house', count: 9 },
+      { name: 'edm', count: 8 },
+      { name: 'trap music', count: 7 },
     ],
     artists: [
       {
@@ -6784,11 +6784,11 @@ module.exports = {
     name: 'Luxemburg',
     id: '37i9dQZEVXbKGcyg6TFGx6',
     genres: [
-      {name: 'pop', count: 21},
-      {name: 'rap', count: 9},
-      {name: 'trap music', count: 9},
-      {name: 'dance pop', count: 7},
-      {name: 'german hip hop', count: 7},
+      { name: 'pop', count: 21 },
+      { name: 'rap', count: 9 },
+      { name: 'trap music', count: 9 },
+      { name: 'dance pop', count: 7 },
+      { name: 'german hip hop', count: 7 },
     ],
     artists: [
       {
@@ -6888,11 +6888,11 @@ module.exports = {
     name: 'Malaysia',
     id: '37i9dQZEVXbJlfUljuZExa',
     genres: [
-      {name: 'pop', count: 30},
-      {name: 'dance pop', count: 15},
-      {name: 'post-teen pop', count: 13},
-      {name: 'electropop', count: 7},
-      {name: 'malaysian pop', count: 7},
+      { name: 'pop', count: 30 },
+      { name: 'dance pop', count: 15 },
+      { name: 'post-teen pop', count: 13 },
+      { name: 'electropop', count: 7 },
+      { name: 'malaysian pop', count: 7 },
     ],
     artists: [
       {
@@ -7058,13 +7058,13 @@ module.exports = {
     name: 'Malta',
     id: '37i9dQZEVXbMD2H5HJqmx9',
     genres: [
-      {name: 'pop', count: 26},
-      {name: 'dance pop', count: 16},
-      {name: 'reggaeton', count: 16},
-      {name: 'post-teen pop', count: 11},
-      {name: 'reggaeton flow', count: 9},
-      {name: 'latin', count: 8},
-      {name: 'trap latino', count: 8},
+      { name: 'pop', count: 26 },
+      { name: 'dance pop', count: 16 },
+      { name: 'reggaeton', count: 16 },
+      { name: 'post-teen pop', count: 11 },
+      { name: 'reggaeton flow', count: 9 },
+      { name: 'latin', count: 8 },
+      { name: 'trap latino', count: 8 },
     ],
     artists: [
       {
@@ -7252,13 +7252,13 @@ module.exports = {
     name: 'Mexico',
     id: '37i9dQZEVXbO3qyFxbkOE1',
     genres: [
-      {name: 'reggaeton', count: 23},
-      {name: 'latin', count: 15},
-      {name: 'pop', count: 15},
-      {name: 'reggaeton flow', count: 11},
-      {name: 'trap latino', count: 9},
-      {name: 'tropical', count: 9},
-      {name: 'dance pop', count: 7},
+      { name: 'reggaeton', count: 23 },
+      { name: 'latin', count: 15 },
+      { name: 'pop', count: 15 },
+      { name: 'reggaeton flow', count: 11 },
+      { name: 'trap latino', count: 9 },
+      { name: 'tropical', count: 9 },
+      { name: 'dance pop', count: 7 },
     ],
     artists: [
       {
@@ -7523,14 +7523,14 @@ module.exports = {
     name: 'Netherlands',
     id: '37i9dQZEVXbKCF6dqVpDkS',
     genres: [
-      {name: 'pop', count: 25},
-      {name: 'dutch hip hop', count: 20},
-      {name: 'dutch pop', count: 18},
-      {name: 'dance pop', count: 10},
-      {name: 'dutch urban', count: 9},
-      {name: 'edm', count: 8},
-      {name: 'tropical house', count: 8},
-      {name: 'dutch rock', count: 7},
+      { name: 'pop', count: 25 },
+      { name: 'dutch hip hop', count: 20 },
+      { name: 'dutch pop', count: 18 },
+      { name: 'dance pop', count: 10 },
+      { name: 'dutch urban', count: 9 },
+      { name: 'edm', count: 8 },
+      { name: 'tropical house', count: 8 },
+      { name: 'dutch rock', count: 7 },
     ],
     artists: [
       {
@@ -7718,11 +7718,11 @@ module.exports = {
     name: 'New Zealand',
     id: '37i9dQZEVXbM8SIrkERIYl',
     genres: [
-      {name: 'pop', count: 29},
-      {name: 'dance pop', count: 15},
-      {name: 'post-teen pop', count: 9},
-      {name: 'rap', count: 8},
-      {name: 'pop rap', count: 7},
+      { name: 'pop', count: 29 },
+      { name: 'dance pop', count: 15 },
+      { name: 'post-teen pop', count: 9 },
+      { name: 'rap', count: 8 },
+      { name: 'pop rap', count: 7 },
     ],
     artists: [
       {
@@ -7899,13 +7899,13 @@ module.exports = {
     name: 'Nicaragua',
     id: '37i9dQZEVXbISk8kxnzfCq',
     genres: [
-      {name: 'reggaeton', count: 30},
-      {name: 'reggaeton flow', count: 19},
-      {name: 'latin', count: 18},
-      {name: 'tropical', count: 15},
-      {name: 'trap latino', count: 14},
-      {name: 'pop', count: 11},
-      {name: 'latin hip hop', count: 7},
+      { name: 'reggaeton', count: 30 },
+      { name: 'reggaeton flow', count: 19 },
+      { name: 'latin', count: 18 },
+      { name: 'tropical', count: 15 },
+      { name: 'trap latino', count: 14 },
+      { name: 'pop', count: 11 },
+      { name: 'latin hip hop', count: 7 },
     ],
     artists: [
       {
@@ -8214,14 +8214,14 @@ module.exports = {
     name: 'Norway',
     id: '37i9dQZEVXbJvfa0Yxg7E7',
     genres: [
-      {name: 'pop', count: 30},
-      {name: 'tropical house', count: 15},
-      {name: 'dance pop', count: 13},
-      {name: 'norwegian pop', count: 10},
-      {name: 'post-teen pop', count: 9},
-      {name: 'norwegian pop rap', count: 8},
-      {name: 'electropop', count: 7},
-      {name: 'rap', count: 7},
+      { name: 'pop', count: 30 },
+      { name: 'tropical house', count: 15 },
+      { name: 'dance pop', count: 13 },
+      { name: 'norwegian pop', count: 10 },
+      { name: 'post-teen pop', count: 9 },
+      { name: 'norwegian pop rap', count: 8 },
+      { name: 'electropop', count: 7 },
+      { name: 'rap', count: 7 },
     ],
     artists: [
       {
@@ -8343,13 +8343,13 @@ module.exports = {
     name: 'Panama',
     id: '37i9dQZEVXbKypXHVwk1f0',
     genres: [
-      {name: 'reggaeton', count: 31},
-      {name: 'reggaeton flow', count: 21},
-      {name: 'latin', count: 18},
-      {name: 'trap latino', count: 16},
-      {name: 'tropical', count: 15},
-      {name: 'latin hip hop', count: 9},
-      {name: 'pop', count: 9},
+      { name: 'reggaeton', count: 31 },
+      { name: 'reggaeton flow', count: 21 },
+      { name: 'latin', count: 18 },
+      { name: 'trap latino', count: 16 },
+      { name: 'tropical', count: 15 },
+      { name: 'latin hip hop', count: 9 },
+      { name: 'pop', count: 9 },
     ],
     artists: [
       {
@@ -8691,12 +8691,12 @@ module.exports = {
     name: 'Paraguay',
     id: '37i9dQZEVXbNOUPGj7tW6T',
     genres: [
-      {name: 'reggaeton', count: 31},
-      {name: 'reggaeton flow', count: 22},
-      {name: 'latin', count: 17},
-      {name: 'trap latino', count: 15},
-      {name: 'tropical', count: 15},
-      {name: 'latin hip hop', count: 10},
+      { name: 'reggaeton', count: 31 },
+      { name: 'reggaeton flow', count: 22 },
+      { name: 'latin', count: 17 },
+      { name: 'trap latino', count: 15 },
+      { name: 'tropical', count: 15 },
+      { name: 'latin hip hop', count: 10 },
     ],
     artists: [
       {
@@ -9027,13 +9027,13 @@ module.exports = {
     name: 'Peru',
     id: '37i9dQZEVXbJfdy5b0KP7W',
     genres: [
-      {name: 'reggaeton', count: 28},
-      {name: 'latin', count: 19},
-      {name: 'tropical', count: 16},
-      {name: 'reggaeton flow', count: 13},
-      {name: 'trap latino', count: 12},
-      {name: 'pop', count: 8},
-      {name: 'latin pop', count: 7},
+      { name: 'reggaeton', count: 28 },
+      { name: 'latin', count: 19 },
+      { name: 'tropical', count: 16 },
+      { name: 'reggaeton flow', count: 13 },
+      { name: 'trap latino', count: 12 },
+      { name: 'pop', count: 8 },
+      { name: 'latin pop', count: 7 },
     ],
     artists: [
       {
@@ -9386,10 +9386,10 @@ module.exports = {
     name: 'Philippines',
     id: '37i9dQZEVXbNBz9cRCSFkY',
     genres: [
-      {name: 'pop', count: 22},
-      {name: 'opm', count: 11},
-      {name: 'dance pop', count: 9},
-      {name: 'post-teen pop', count: 7},
+      { name: 'pop', count: 22 },
+      { name: 'opm', count: 11 },
+      { name: 'dance pop', count: 9 },
+      { name: 'post-teen pop', count: 7 },
     ],
     artists: [
       {
@@ -9566,11 +9566,11 @@ module.exports = {
     name: 'Poland',
     id: '37i9dQZEVXbN6itCcaL3Tt',
     genres: [
-      {name: 'polish hip hop', count: 22},
-      {name: 'polish trap', count: 15},
-      {name: 'pop', count: 15},
-      {name: 'polish pop', count: 8},
-      {name: 'dance pop', count: 7},
+      { name: 'polish hip hop', count: 22 },
+      { name: 'polish trap', count: 15 },
+      { name: 'pop', count: 15 },
+      { name: 'polish pop', count: 8 },
+      { name: 'dance pop', count: 7 },
     ],
     artists: [
       {
@@ -9757,7 +9757,7 @@ module.exports = {
     idx: '47',
     name: 'Portugal',
     id: '37i9dQZEVXbKyJS56d1pgi',
-    genres: [{name: 'pop', count: 18}, {name: 'hip hop tuga', count: 10}],
+    genres: [{ name: 'pop', count: 18 }, { name: 'hip hop tuga', count: 10 }],
     artists: [
       {
         external_urls: {
@@ -9922,12 +9922,12 @@ module.exports = {
     name: 'Romania',
     id: '37i9dQZEVXbNZbJ6TZelCq',
     genres: [
-      {name: 'pop', count: 26},
-      {name: 'dance pop', count: 11},
-      {name: 'rap', count: 11},
-      {name: 'post-teen pop', count: 9},
-      {name: 'pop rap', count: 8},
-      {name: 'trap music', count: 8},
+      { name: 'pop', count: 26 },
+      { name: 'dance pop', count: 11 },
+      { name: 'rap', count: 11 },
+      { name: 'post-teen pop', count: 9 },
+      { name: 'pop rap', count: 8 },
+      { name: 'trap music', count: 8 },
     ],
     artists: [
       {
@@ -10093,10 +10093,10 @@ module.exports = {
     name: 'Singapore',
     id: '37i9dQZEVXbK4gjvS1FjPY',
     genres: [
-      {name: 'pop', count: 34},
-      {name: 'dance pop', count: 19},
-      {name: 'post-teen pop', count: 17},
-      {name: 'electropop', count: 7},
+      { name: 'pop', count: 34 },
+      { name: 'dance pop', count: 19 },
+      { name: 'post-teen pop', count: 17 },
+      { name: 'electropop', count: 7 },
     ],
     artists: [
       {
@@ -10273,11 +10273,11 @@ module.exports = {
     name: 'Slovakia',
     id: '37i9dQZEVXbKIVTPX9a2Sb',
     genres: [
-      {name: 'pop', count: 25},
-      {name: 'czsk hip hop', count: 17},
-      {name: 'dance pop', count: 9},
-      {name: 'post-teen pop', count: 7},
-      {name: 'rap', count: 7},
+      { name: 'pop', count: 25 },
+      { name: 'czsk hip hop', count: 17 },
+      { name: 'dance pop', count: 9 },
+      { name: 'post-teen pop', count: 7 },
+      { name: 'rap', count: 7 },
     ],
     artists: [
       {
@@ -10443,11 +10443,11 @@ module.exports = {
     name: 'South Africa',
     id: '37i9dQZEVXbMH2jvi6jvjk',
     genres: [
-      {name: 'pop', count: 33},
-      {name: 'dance pop', count: 16},
-      {name: 'post-teen pop', count: 11},
-      {name: 'rap', count: 10},
-      {name: 'pop rap', count: 8},
+      { name: 'pop', count: 33 },
+      { name: 'dance pop', count: 16 },
+      { name: 'post-teen pop', count: 11 },
+      { name: 'rap', count: 10 },
+      { name: 'pop rap', count: 8 },
     ],
     artists: [
       {
@@ -10679,13 +10679,13 @@ module.exports = {
     name: 'Spain',
     id: '37i9dQZEVXbNFJfN1Vw8d9',
     genres: [
-      {name: 'reggaeton', count: 27},
-      {name: 'reggaeton flow', count: 17},
-      {name: 'latin', count: 15},
-      {name: 'tropical', count: 15},
-      {name: 'trap latino', count: 13},
-      {name: 'pop', count: 10},
-      {name: 'trap espanol', count: 7},
+      { name: 'reggaeton', count: 27 },
+      { name: 'reggaeton flow', count: 17 },
+      { name: 'latin', count: 15 },
+      { name: 'tropical', count: 15 },
+      { name: 'trap latino', count: 13 },
+      { name: 'pop', count: 10 },
+      { name: 'trap espanol', count: 7 },
     ],
     artists: [
       {
@@ -10950,10 +10950,10 @@ module.exports = {
     name: 'Sweden',
     id: '37i9dQZEVXbLoATJ81JYXz',
     genres: [
-      {name: 'pop', count: 18},
-      {name: 'swedish pop', count: 11},
-      {name: 'swedish urban', count: 11},
-      {name: 'swedish gangsta rap', count: 7},
+      { name: 'pop', count: 18 },
+      { name: 'swedish pop', count: 11 },
+      { name: 'swedish urban', count: 11 },
+      { name: 'swedish gangsta rap', count: 7 },
     ],
     artists: [
       {
@@ -11108,11 +11108,11 @@ module.exports = {
     name: 'Switzerland',
     id: '37i9dQZEVXbJiyhoAPEfMK',
     genres: [
-      {name: 'pop', count: 25},
-      {name: 'german hip hop', count: 16},
-      {name: 'dance pop', count: 10},
-      {name: 'rap', count: 7},
-      {name: 'reggaeton', count: 7},
+      { name: 'pop', count: 25 },
+      { name: 'german hip hop', count: 16 },
+      { name: 'dance pop', count: 10 },
+      { name: 'rap', count: 7 },
+      { name: 'reggaeton', count: 7 },
     ],
     artists: [
       {
@@ -11267,10 +11267,10 @@ module.exports = {
     name: 'Taiwan',
     id: '37i9dQZEVXbMnZEatlMSiu',
     genres: [
-      {name: 'pop', count: 24},
-      {name: 'mandopop', count: 15},
-      {name: 'dance pop', count: 12},
-      {name: 'post-teen pop', count: 9},
+      { name: 'pop', count: 24 },
+      { name: 'mandopop', count: 15 },
+      { name: 'dance pop', count: 12 },
+      { name: 'post-teen pop', count: 9 },
     ],
     artists: [
       {
@@ -11425,9 +11425,9 @@ module.exports = {
     name: 'Thailand',
     id: '37i9dQZEVXbMnz8KIWsvf9',
     genres: [
-      {name: 'thai pop', count: 27},
-      {name: 'pop', count: 14},
-      {name: 'thai idol', count: 9},
+      { name: 'thai pop', count: 27 },
+      { name: 'pop', count: 14 },
+      { name: 'thai idol', count: 9 },
     ],
     artists: [
       {
@@ -11560,10 +11560,10 @@ module.exports = {
     name: 'Turkey',
     id: '37i9dQZEVXbIVYVBNw9D5K',
     genres: [
-      {name: 'turkish hip hop', count: 28},
-      {name: 'turkish pop', count: 13},
-      {name: 'turkish trap', count: 12},
-      {name: 'turkish rock', count: 11},
+      { name: 'turkish hip hop', count: 28 },
+      { name: 'turkish pop', count: 13 },
+      { name: 'turkish trap', count: 12 },
+      { name: 'turkish rock', count: 11 },
     ],
     artists: [
       {
@@ -11729,12 +11729,12 @@ module.exports = {
     name: 'United Kingdom',
     id: '37i9dQZEVXbLnolsZ8PSNw',
     genres: [
-      {name: 'pop', count: 28},
-      {name: 'dance pop', count: 14},
-      {name: 'uk hip hop', count: 11},
-      {name: 'post-teen pop', count: 9},
-      {name: 'rap', count: 7},
-      {name: 'tropical house', count: 7},
+      { name: 'pop', count: 28 },
+      { name: 'dance pop', count: 14 },
+      { name: 'uk hip hop', count: 11 },
+      { name: 'post-teen pop', count: 9 },
+      { name: 'rap', count: 7 },
+      { name: 'tropical house', count: 7 },
     ],
     artists: [
       {
@@ -11845,12 +11845,12 @@ module.exports = {
     name: 'United States',
     id: '37i9dQZEVXbLRQDuF5jeBp',
     genres: [
-      {name: 'pop', count: 27},
-      {name: 'rap', count: 19},
-      {name: 'trap music', count: 15},
-      {name: 'pop rap', count: 14},
-      {name: 'hip hop', count: 10},
-      {name: 'dance pop', count: 7},
+      { name: 'pop', count: 27 },
+      { name: 'rap', count: 19 },
+      { name: 'trap music', count: 15 },
+      { name: 'pop rap', count: 14 },
+      { name: 'hip hop', count: 10 },
+      { name: 'dance pop', count: 7 },
     ],
     artists: [
       {
@@ -12038,14 +12038,14 @@ module.exports = {
     name: 'Uruguay',
     id: '37i9dQZEVXbMJJi3wgRbAy',
     genres: [
-      {name: 'reggaeton', count: 28},
-      {name: 'reggaeton flow', count: 16},
-      {name: 'latin', count: 14},
-      {name: 'trap latino', count: 12},
-      {name: 'tropical', count: 11},
-      {name: 'pop', count: 8},
-      {name: 'trap argentino', count: 8},
-      {name: 'argentine hip hop', count: 7},
+      { name: 'reggaeton', count: 28 },
+      { name: 'reggaeton flow', count: 16 },
+      { name: 'latin', count: 14 },
+      { name: 'trap latino', count: 12 },
+      { name: 'tropical', count: 11 },
+      { name: 'pop', count: 8 },
+      { name: 'trap argentino', count: 8 },
+      { name: 'argentine hip hop', count: 7 },
     ],
     artists: [
       {
@@ -12420,10 +12420,10 @@ module.exports = {
     name: 'Vietnam',
     id: '37i9dQZEVXbLdGSmz6xilI',
     genres: [
-      {name: 'pop', count: 29},
-      {name: 'dance pop', count: 14},
-      {name: 'v-pop', count: 13},
-      {name: 'post-teen pop', count: 11},
+      { name: 'pop', count: 29 },
+      { name: 'dance pop', count: 14 },
+      { name: 'v-pop', count: 13 },
+      { name: 'post-teen pop', count: 11 },
     ],
     artists: [
       {
