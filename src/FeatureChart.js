@@ -28,7 +28,7 @@ class FeatureChart extends React.Component {
   configureChart = () => {
     const chartCanvas = ReactDOM.findDOMNode(this.chart)
 
-    const {data} = this.props
+    const { data } = this.props
 
     this.chartInstance = new Chart(chartCanvas, {
       type: 'bar',
@@ -98,17 +98,7 @@ class FeatureChart extends React.Component {
                 .filter(el => el !== null)
 
               newBody.forEach(function(body, i) {
-                const value = body[1]
-
-                var colors =
-                  value > 0
-                    ? tooltipModel.labelColors[0]
-                    : tooltipModel.labelColors[1]
-                var style = 'background:' + colors.backgroundColor
-                style += '; border-color:' + colors.borderColor
-                style += '; border-width: 1px'
-                var span = '<span style="' + style + '"></span>'
-                innerHtml += '<tr><td>' + span + body.join(' ') + '</td></tr>'
+                innerHtml += '<tr><td>' + body.join(' ') + '</td></tr>'
               })
               innerHtml += '</tbody>'
 
@@ -126,11 +116,6 @@ class FeatureChart extends React.Component {
               position.left + window.pageXOffset + tooltipModel.caretX + 'px'
             tooltipEl.style.top =
               position.top + window.pageYOffset + tooltipModel.caretY + 'px'
-            tooltipEl.style.fontFamily = tooltipModel._bodyFontFamily
-            tooltipEl.style.fontSize = tooltipModel.bodyFontSize + 'px'
-            tooltipEl.style.fontStyle = tooltipModel._bodyFontStyle
-            tooltipEl.style.padding =
-              tooltipModel.yPadding + 'px ' + tooltipModel.xPadding + 'px'
             tooltipEl.style.pointerEvents = 'none'
           },
         },

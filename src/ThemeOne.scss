@@ -93,6 +93,10 @@ body {
   }
 }
 
+#chartjs-tooltip {
+  background-color: salmon;
+}
+
 .search-input {
   height: 30px;
   font-size: 25px;
@@ -111,7 +115,22 @@ body {
   top: 3vw;
   left: 3vw;
 }
+.auto-compl {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: calc(5vh + 55px);
+  left: 3vw;
+}
 
+.auto-compl-item:first-of-type {
+  color: salmon;
+  transform: scaleY(1.2);
+}
+
+@mixin auto-compl-item {
+  padding: 10px;
+}
 .tooltip {
   @include hover-self-offset(20px, 30px);
   backdrop-filter: saturate(306%) blur(4px);

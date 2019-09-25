@@ -1,12 +1,13 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import _ from 'lodash'
 import Chart from './FeatureChart'
+import GenreChart from './GenreChart'
 
-const InfoBlock = ({data}) => {
+const InfoBlock = ({ data }) => {
   const [current, average] = data
 
-  const {genres, features, artists, name} = current
-  const {features: avgFeatures} = average
+  const { genres, features, artists, name } = current
+  const { features: avgFeatures } = average
   const toArray = obj =>
     Object.keys(obj).map(k => ({
       name: k,
@@ -49,14 +50,25 @@ const InfoBlock = ({data}) => {
 
   const ArtistBlock = () => (
     <div className='artist-block'>
-      {artists.map(el => (
-        <div key={el.name}>{el.name}</div>
+      {artists.map(({ name, external_urls: { spotify }, count }) => (
+        <div key={name}>
+          <a href={spotify}>
+            <div>{name}</div>
+            <div>{count}</div>
+          </a>
+        </div>
       ))}
     </div>
   )
 
   return (
     <div className='info-block'>
+      <GenreChart
+        data={genres.map(el => ({
+          label: el.name,
+          value: el.count,
+        }))}
+      />
       <Chart data={barChartData} />
       <div className='txt-block'>
         <GenreBlock />
