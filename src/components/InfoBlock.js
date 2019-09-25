@@ -17,7 +17,7 @@ const InfoBlock = ({ data }) => {
   const featuresArray = toArray(features).map(k => k.value)
   const avgFeaturesArray = toArray(avgFeatures).map(k => k.value)
   const percent = _.range(featuresArray.length).map(
-    i => featuresArray[i] / avgFeaturesArray[i] - 1,
+    i => featuresArray[i].value / avgFeaturesArray[i].value - 1,
   )
 
   const barChartData = {
