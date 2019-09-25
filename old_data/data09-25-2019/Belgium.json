@@ -1,0 +1,145 @@
+{
+    "idx": 3,
+    "name": "Belgium",
+    "id": "37i9dQZEVXbJNSeeHswcKB",
+    "genres": [
+        {
+            "name": "pop",
+            "count": 36
+        },
+        {
+            "name": "dance pop",
+            "count": 18
+        },
+        {
+            "name": "edm",
+            "count": 12
+        },
+        {
+            "name": "tropical house",
+            "count": 11
+        },
+        {
+            "name": "post-teen pop",
+            "count": 10
+        },
+        {
+            "name": "pop rap",
+            "count": 7
+        }
+    ],
+    "artists": [
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/246dkjvS1zLTtiykXe5h60"
+            },
+            "href": "https://api.spotify.com/v1/artists/246dkjvS1zLTtiykXe5h60",
+            "id": "246dkjvS1zLTtiykXe5h60",
+            "name": "Post Malone",
+            "type": "artist",
+            "uri": "spotify:artist:246dkjvS1zLTtiykXe5h60",
+            "count": 4
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/4VMYDCV2IEDYJArk749S6m"
+            },
+            "href": "https://api.spotify.com/v1/artists/4VMYDCV2IEDYJArk749S6m",
+            "id": "4VMYDCV2IEDYJArk749S6m",
+            "name": "Daddy Yankee",
+            "type": "artist",
+            "uri": "spotify:artist:4VMYDCV2IEDYJArk749S6m",
+            "count": 3
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/7CUFPNi1TU8RowpnFRSsZV"
+            },
+            "href": "https://api.spotify.com/v1/artists/7CUFPNi1TU8RowpnFRSsZV",
+            "id": "7CUFPNi1TU8RowpnFRSsZV",
+            "name": "Niska",
+            "type": "artist",
+            "uri": "spotify:artist:7CUFPNi1TU8RowpnFRSsZV",
+            "count": 3
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/66CXWjxzNUsdJxJ2JdwvnR"
+            },
+            "href": "https://api.spotify.com/v1/artists/66CXWjxzNUsdJxJ2JdwvnR",
+            "id": "66CXWjxzNUsdJxJ2JdwvnR",
+            "name": "Ariana Grande",
+            "type": "artist",
+            "uri": "spotify:artist:66CXWjxzNUsdJxJ2JdwvnR",
+            "count": 2
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/6qqNVTkY8uBg9cP3Jd7DAH"
+            },
+            "href": "https://api.spotify.com/v1/artists/6qqNVTkY8uBg9cP3Jd7DAH",
+            "id": "6qqNVTkY8uBg9cP3Jd7DAH",
+            "name": "Billie Eilish",
+            "type": "artist",
+            "uri": "spotify:artist:6qqNVTkY8uBg9cP3Jd7DAH",
+            "count": 2
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/4nDoRrQiYLoBzwC5BhVJzF"
+            },
+            "href": "https://api.spotify.com/v1/artists/4nDoRrQiYLoBzwC5BhVJzF",
+            "id": "4nDoRrQiYLoBzwC5BhVJzF",
+            "name": "Camila Cabello",
+            "type": "artist",
+            "uri": "spotify:artist:4nDoRrQiYLoBzwC5BhVJzF",
+            "count": 2
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/6eUKZXaKkcviH0Ku9w2n3V"
+            },
+            "href": "https://api.spotify.com/v1/artists/6eUKZXaKkcviH0Ku9w2n3V",
+            "id": "6eUKZXaKkcviH0Ku9w2n3V",
+            "name": "Ed Sheeran",
+            "type": "artist",
+            "uri": "spotify:artist:6eUKZXaKkcviH0Ku9w2n3V",
+            "count": 2
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/1vyhD5VmyZ7KMfW5gqLgo5"
+            },
+            "href": "https://api.spotify.com/v1/artists/1vyhD5VmyZ7KMfW5gqLgo5",
+            "id": "1vyhD5VmyZ7KMfW5gqLgo5",
+            "name": "J Balvin",
+            "type": "artist",
+            "uri": "spotify:artist:1vyhD5VmyZ7KMfW5gqLgo5",
+            "count": 2
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/7jVv8c5Fj3E9VhNjxT4snq"
+            },
+            "href": "https://api.spotify.com/v1/artists/7jVv8c5Fj3E9VhNjxT4snq",
+            "id": "7jVv8c5Fj3E9VhNjxT4snq",
+            "name": "Lil Nas X",
+            "type": "artist",
+            "uri": "spotify:artist:7jVv8c5Fj3E9VhNjxT4snq",
+            "count": 2
+        }
+    ],
+    "features": {
+        "danceability": 0.6482865402755862,
+        "energy": 0.6697653225304182,
+        "key": 6.267297423414901,
+        "loudness": -6.034230760463473,
+        "mode": 0.5556361870357129,
+        "speechiness": 0.1319648437743094,
+        "acousticness": 0.23544582924304713,
+        "instrumentalness": 0.0000035465361599445424,
+        "liveness": 0.10859895433323799,
+        "valence": 0.640043404097441,
+        "tempo": 103.60955720652402
+    }
+}

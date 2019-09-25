@@ -20,12 +20,11 @@ code {
 // delete above stuff  later
 
 // variables --------------------
-@import 'variables.scss';
+@import './scss/variables.scss';
 
 // pages ------------------
-@import './map.scss';
-@import './info-block.scss';
-@import './main.scss';
+@import './scss/map.scss';
+@import './scss/main.scss';
 
 // themes
-@import './ThemeOne.scss';
+@import './scss/ThemeOne.scss';

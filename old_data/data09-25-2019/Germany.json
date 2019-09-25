@@ -1,0 +1,155 @@
+{
+    "idx": 19,
+    "name": "Germany",
+    "id": "37i9dQZEVXbJiZcmkrIHGU",
+    "genres": [
+        {
+            "name": "german hip hop",
+            "count": 25
+        },
+        {
+            "name": "pop",
+            "count": 18
+        },
+        {
+            "name": "german pop",
+            "count": 7
+        }
+    ],
+    "artists": [
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/4WZGDpNwrC0vNQyl9QzF7d"
+            },
+            "href": "https://api.spotify.com/v1/artists/4WZGDpNwrC0vNQyl9QzF7d",
+            "id": "4WZGDpNwrC0vNQyl9QzF7d",
+            "name": "Capital Bra",
+            "type": "artist",
+            "uri": "spotify:artist:4WZGDpNwrC0vNQyl9QzF7d",
+            "count": 5
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/2Im8m4STDBosjfmb5hmP80"
+            },
+            "href": "https://api.spotify.com/v1/artists/2Im8m4STDBosjfmb5hmP80",
+            "id": "2Im8m4STDBosjfmb5hmP80",
+            "name": "Loredana",
+            "type": "artist",
+            "uri": "spotify:artist:2Im8m4STDBosjfmb5hmP80",
+            "count": 5
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/6h1s4i4XKIYv4ErDelLDN0"
+            },
+            "href": "https://api.spotify.com/v1/artists/6h1s4i4XKIYv4ErDelLDN0",
+            "id": "6h1s4i4XKIYv4ErDelLDN0",
+            "name": "Samra",
+            "type": "artist",
+            "uri": "spotify:artist:6h1s4i4XKIYv4ErDelLDN0",
+            "count": 4
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/5tHiL8SKSaZGMBUPIiSmX4"
+            },
+            "href": "https://api.spotify.com/v1/artists/5tHiL8SKSaZGMBUPIiSmX4",
+            "id": "5tHiL8SKSaZGMBUPIiSmX4",
+            "name": "KitschKrieg",
+            "type": "artist",
+            "uri": "spotify:artist:5tHiL8SKSaZGMBUPIiSmX4",
+            "count": 3
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/246dkjvS1zLTtiykXe5h60"
+            },
+            "href": "https://api.spotify.com/v1/artists/246dkjvS1zLTtiykXe5h60",
+            "id": "246dkjvS1zLTtiykXe5h60",
+            "name": "Post Malone",
+            "type": "artist",
+            "uri": "spotify:artist:246dkjvS1zLTtiykXe5h60",
+            "count": 3
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/6QzzeKV0VcnT2vJMYDPuL4"
+            },
+            "href": "https://api.spotify.com/v1/artists/6QzzeKV0VcnT2vJMYDPuL4",
+            "id": "6QzzeKV0VcnT2vJMYDPuL4",
+            "name": "Trettmann",
+            "type": "artist",
+            "uri": "spotify:artist:6QzzeKV0VcnT2vJMYDPuL4",
+            "count": 3
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/1qQLhymHXFPtP5U8KNKsm6"
+            },
+            "href": "https://api.spotify.com/v1/artists/1qQLhymHXFPtP5U8KNKsm6",
+            "id": "1qQLhymHXFPtP5U8KNKsm6",
+            "name": "Apache 207",
+            "type": "artist",
+            "uri": "spotify:artist:1qQLhymHXFPtP5U8KNKsm6",
+            "count": 2
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/6eUKZXaKkcviH0Ku9w2n3V"
+            },
+            "href": "https://api.spotify.com/v1/artists/6eUKZXaKkcviH0Ku9w2n3V",
+            "id": "6eUKZXaKkcviH0Ku9w2n3V",
+            "name": "Ed Sheeran",
+            "type": "artist",
+            "uri": "spotify:artist:6eUKZXaKkcviH0Ku9w2n3V",
+            "count": 2
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/3CJKkU0XuElRT1z8rEtIYg"
+            },
+            "href": "https://api.spotify.com/v1/artists/3CJKkU0XuElRT1z8rEtIYg",
+            "id": "3CJKkU0XuElRT1z8rEtIYg",
+            "name": "Luciano",
+            "type": "artist",
+            "uri": "spotify:artist:3CJKkU0XuElRT1z8rEtIYg",
+            "count": 2
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/0Dvx6p8JDyzeOPGmaCIH1L"
+            },
+            "href": "https://api.spotify.com/v1/artists/0Dvx6p8JDyzeOPGmaCIH1L",
+            "id": "0Dvx6p8JDyzeOPGmaCIH1L",
+            "name": "RAF Camora",
+            "type": "artist",
+            "uri": "spotify:artist:0Dvx6p8JDyzeOPGmaCIH1L",
+            "count": 2
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/3drqpTL4sQOckmAfF9i1wg"
+            },
+            "href": "https://api.spotify.com/v1/artists/3drqpTL4sQOckmAfF9i1wg",
+            "id": "3drqpTL4sQOckmAfF9i1wg",
+            "name": "Summer Cem",
+            "type": "artist",
+            "uri": "spotify:artist:3drqpTL4sQOckmAfF9i1wg",
+            "count": 2
+        }
+    ],
+    "features": {
+        "danceability": 0.7928633751590535,
+        "energy": 0.5399522688181089,
+        "key": 5.384556785468991,
+        "loudness": -6.75778373236362,
+        "mode": 0.2768613816088248,
+        "speechiness": 0.38406917940353724,
+        "acousticness": 0.20191362693874598,
+        "instrumentalness": 0.00001727085525431969,
+        "liveness": 0.12221924934166362,
+        "valence": 0.3637598705947236,
+        "tempo": 135.6857681065831
+    }
+}
