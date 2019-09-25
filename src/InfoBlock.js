@@ -50,14 +50,16 @@ const InfoBlock = ({ data }) => {
 
   const ArtistBlock = () => (
     <div className='artist-block'>
-      {artists.map(({ name, external_urls: { spotify }, count }) => (
-        <div key={name}>
-          <a href={spotify}>
-            <div>{name}</div>
-            <div>{count}</div>
-          </a>
-        </div>
-      ))}
+      {artists
+        .slice(0, 8)
+        .map(({ name, external_urls: { spotify }, count }) => (
+          <div key={name}>
+            <a href={spotify}>
+              <div>{name}</div>
+              <div>{count}</div>
+            </a>
+          </div>
+        ))}
     </div>
   )
 
