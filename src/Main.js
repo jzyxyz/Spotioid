@@ -71,6 +71,18 @@ const Main = () => {
             setInput(e.target.getAttribute('name'))
             setSelected([e.target.getAttribute('name')])
             setSuggestions([])
+            console.log('sssssss ', typeof e.target.getAttribute('available'))
+
+            if (e.target.getAttribute('available') === 'true') {
+              setTimeout(
+                () =>
+                  window.scrollTo({
+                    top: document.body.scrollHeight,
+                    behavior: 'smooth',
+                  }),
+                100,
+              )
+            }
           }}
         />
         <input
@@ -86,6 +98,12 @@ const Main = () => {
         ) : (
           <NoData />
         )}
+        <div
+          className='click-scroll'
+          onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
+          {/* 找个宽箭头放这 */}
+          Go Top
+        </div>
       </div>
     </>
   )

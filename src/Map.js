@@ -24,7 +24,6 @@ class Map extends PureComponent {
   onMouseOver = e => {
     this.setState({current: e.target.attributes.name.value})
   }
-
   onMouseMove = e =>
     this.setState({
       isTooltipVisible: true,
