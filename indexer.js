@@ -3,7 +3,7 @@ const _ = require('lodash')
 
 const dataIndex = {}
 const allFeatures = []
-fs.readdirSync('./data').forEach(fn => {
+fs.readdirSync('data').forEach(fn => {
   const json = JSON.parse(fs.readFileSync(`./data/${fn}`))
   allFeatures.push(json.features)
   dataIndex[json['name']] = json
@@ -28,4 +28,7 @@ dataIndex.average = {
   features: avg,
 }
 
-fs.writeFileSync('./src/dataIndex2.js', JSON.stringify(dataIndex))
+fs.writeFileSync(
+  './src/dataIndex/index.js',
+  `export default ${JSON.stringify(dataIndex)}`,
+)
