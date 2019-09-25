@@ -5,7 +5,7 @@ import InfoBlock from './InfoBlock'
 import dataIndex from '../dataIndex'
 import Map from './Map'
 import InputSuggest from './InputSugguest'
-import { trim } from 'lodash'
+import { trim, orderBy } from 'lodash'
 import COUNTRY_NAMES from '../metadata/CountryList'
 
 let features = Object.values(dataIndex)
