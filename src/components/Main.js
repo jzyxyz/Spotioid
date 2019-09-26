@@ -7,6 +7,7 @@ import Map from './Map'
 import InputSuggest from './InputSugguest'
 import { trim, orderBy } from 'lodash'
 import COUNTRY_NAMES from '../metadata/CountryList'
+// import UpArrow from './UpArrow'
 
 let features = Object.values(dataIndex)
   .filter(el => el.name)
@@ -123,8 +124,8 @@ const Main = () => {
           className='click-scroll'
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
-          {/* 找个宽箭头放这 */}
-          Go Top
+          Top
+          {/* < /> */}
         </div>
       </div>
     </>
