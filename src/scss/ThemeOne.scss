@@ -67,7 +67,7 @@ body {
 }
 .map-svg {
   background: none;
-  transform: translate(12vw, -14vw);
+  transform: translate(16vw, -18vw) scale(0.9);
   transition: cubic-bezier(0, 0, 0.33, 1.07) 0.8s;
   width: 90vw !important;
   height: auto !important;
@@ -381,8 +381,8 @@ body {
 }
 
 .chartjs-render-monitor {
-  left: 13.5vw !important;
-  // top: -8vw !important;
+  left: 15.5vw !important;
+  top: -13vh !important;
   position: relative;
   width: 60vw !important;
   max-height: 50vh !important;
