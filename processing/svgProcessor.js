@@ -35,7 +35,7 @@ const markSpotify = () => {
 }
 
 const markVisited = () => {
-  const set = new Set(require('../MyWorld'))
+  const set = new Set(require('./MyWorld'))
   world.layers.forEach(element => {
     if (set.has(element.name)) {
       element.visited = 'true'
@@ -46,4 +46,5 @@ const markVisited = () => {
   fs.writeFileSync('world_visited.json', JSON.stringify(world))
 }
 
-markSpotify()
+// markSpotify()
+markVisited()

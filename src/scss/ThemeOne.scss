@@ -177,13 +177,10 @@ body {
 
 .interactive-map {
   height: 100vh;
-  overflow: hidden;
-}
-.interactive-map,
-.info-page {
   align-items: center;
   width: 100vw;
   padding: 25px 0;
+  overflow: hidden;
 }
 
 .txt-block {
@@ -222,6 +219,7 @@ body {
   top: 15vh;
   flex-direction: column;
 }
+
 .artist-block {
   // transform: translate(9vw, -7vw);
   position: fixed;
@@ -404,6 +402,7 @@ $border-dist: 11vw;
   text-align: center;
   width: calc(#{$border-dist} / 2);
 }
+
 .click-scroll-down {
   text-align: center;
   width: calc(#{$border-dist} / 2);
@@ -415,4 +414,10 @@ $border-dist: 11vw;
   cursor: pointer;
   color: white;
   border-radius: 0 5px 0 0;
+}
+
+#chartjs-tooltip {
+  background-color: white !important;
+  font-size: 85%;
+  border-radius: 5px;
 }

@@ -1,8 +1,8 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import * as d3 from 'd3'
-import {capitalize} from 'lodash'
+import { capitalize } from 'lodash'
 
 export default class BubbleChart extends Component {
   constructor(props) {
@@ -18,14 +18,14 @@ export default class BubbleChart extends Component {
   }
 
   componentDidUpdate() {
-    const {width, height} = this.props
+    const { width, height } = this.props
     if (width !== 0 && height !== 0) {
       this.renderChart()
     }
   }
 
   render() {
-    const {width, height, className} = this.props
+    const { width, height, className } = this.props
     return <svg className={className} width={width} height={height} />
   }
 
@@ -46,7 +46,11 @@ export default class BubbleChart extends Component {
       ? width * (1 - legendPercentage / 100)
       : width
     const legendWidth = width - bubblesWidth
-    const color = d3.scaleOrdinal(d3.schemeCategory20c)
+    const color = d3
+      .scaleLinear()
+      .domain([1, 5])
+      .range(['#c074b2', '#8ab5e8'])
+    // const color = d3.scaleOrdinal(d3.schemeCategory20c)
 
     const pack = d3
       .pack()
@@ -55,7 +59,7 @@ export default class BubbleChart extends Component {
 
     // Process the data to have a hierarchy structure;
     const root = d3
-      .hierarchy({children: data})
+      .hierarchy({ children: data })
       .sum(function(d) {
         return d.value
       })
@@ -84,7 +88,7 @@ export default class BubbleChart extends Component {
   }
 
   renderBubbles(width, nodes, color) {
-    const {graph, bubbleClickFun, valueFont, labelFont} = this.props
+    const { graph, bubbleClickFun, valueFont, labelFont } = this.props
 
     const bubbleChart = d3
       .select(this.svg)
@@ -222,7 +226,7 @@ export default class BubbleChart extends Component {
   }
 
   renderLegend(width, height, offset, nodes, color) {
-    const {data, legendClickFun, legendFont} = this.props
+    const { legendClickFun, legendFont } = this.props
     const bubble = d3.select('.bubble-chart')
     const bubbleHeight = bubble.node().getBBox().height
 
@@ -349,7 +353,7 @@ BubbleChart.defaultProps = {
   },
   valueFont: {
     family: 'Arial',
-    size: 16,
+    size: 14,
     color: '#fff',
     weight: 'bold',
   },

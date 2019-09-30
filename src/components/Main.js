@@ -1,17 +1,16 @@
-import React, {useState, useEffect, useRef} from 'react'
-import {fromEvent} from 'rxjs'
-import {debounceTime} from 'rxjs/operators'
+import React, { useState, useEffect, useRef } from 'react'
+import { fromEvent } from 'rxjs'
+import { debounceTime } from 'rxjs/operators'
 import InfoBlock from './InfoBlock'
 import dataIndex from '../dataIndex'
 import Map from './Map'
 import InputSuggest from './InputSugguest'
-import {trim, orderBy} from 'lodash'
+import { trim, orderBy } from 'lodash'
 import COUNTRY_NAMES from '../metadata/CountryList'
-// import UpArrow from './UpArrow'
 
 let features = Object.values(dataIndex)
   .filter(el => el.name)
-  .map(({name, features}) => ({
+  .map(({ name, features }) => ({
     name,
     features,
   }))
@@ -20,7 +19,6 @@ const featureRankIndex = {}
 features = f_Keys.forEach(fk => {
   featureRankIndex[fk] = orderBy(features, [el => el.features[fk]], 'desc')
 })
-console.log(featureRankIndex)
 const chartData = Object.values(dataIndex)
 chartData.forEach(p => {
   f_Keys.forEach(k => {
@@ -30,7 +28,6 @@ chartData.forEach(p => {
     }
   })
 })
-console.log(chartData.map(({name, features}) => ({name, features})))
 
 const Main = () => {
   const inputRef = useRef(null)
@@ -62,7 +59,6 @@ const Main = () => {
       setSuggestions(choices)
       // setAllSuggestions(choices)
       if (event.keyCode === 13) {
-        console.log(555, choices)
         setSelected([choices[0]])
         setInput(choices[0])
         event.target.value = choices[0]
@@ -93,7 +89,6 @@ const Main = () => {
             setInput(e.target.getAttribute('name'))
             setSelected([e.target.getAttribute('name')])
             setSuggestions([])
-            console.log('sssssss ', typeof e.target.getAttribute('available'))
 
             if (e.target.getAttribute('available') === 'true') {
               setTimeout(
@@ -115,28 +110,27 @@ const Main = () => {
           ref={inputRef}
         />
       </div>
-      <div className='info-page'>
-        {selected && dataIndex[selected] ? (
-          <InfoBlock data={[dataIndex[selected], dataIndex.average]} />
-        ) : (
-          <NoData />
-        )}
-        <div
-          className='click-scroll'
-          onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
-          Top
-          {/* < /> */}
-        </div>
-        <div
-          className='click-scroll-down'
-          onClick={() =>
-            window.scrollBy({
-              top: document.body.scrollHeight / 2,
-              behavior: 'smooth',
-            })
-          }>
-          Next
-        </div>
+      {selected && dataIndex[selected] ? (
+        <InfoBlock data={[dataIndex[selected], dataIndex.average]} />
+      ) : (
+        <NoData />
+      )}
+      <div
+        className='click-scroll'
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+      >
+        Top
+      </div>
+      <div
+        className='click-scroll-down'
+        onClick={() =>
+          window.scrollBy({
+            top: document.body.scrollHeight / 2,
+            behavior: 'smooth',
+          })
+        }
+      >
+        Next
       </div>
     </>
   )
