@@ -229,8 +229,8 @@ body {
   }
   & > a {
     transition: ease 0.08s;
-    border-radius: 5px;
-    padding: 1px 5px 1px 80px;
+    // border-radius: 5px;
+    padding: 1px 5px 1px 15px;
     display: grid;
     grid-template-columns: 2fr 1fr 70px;
     text-decoration: none;
@@ -351,8 +351,8 @@ body {
 }
 .bubble-genre {
   position: absolute;
-  left: 50vw;
-  top: 150vw;
+  left: 55vw;
+  top: 100vw;
   transform: scale(1.5);
 }
 .no-data-tip {
@@ -367,20 +367,36 @@ body {
 }
 
 .chartjs-render-monitor {
-  left: 30vw !important;
+  left: 34.5vw !important;
   top: -8vw !important;
   position: relative;
   width: 60vw !important;
+  max-height: 50vh !important;
 }
 
 $arrow-width: 5vw;
+$border-dist: 11vw;
 .click-scroll {
   position: fixed;
-  left: 47.5vw;
-  background: #00000052;
+  left: calc(50vw - #{$border-dist});
+  background: linear-gradient(-180deg, #8b8b8b69, #5252525c);
+  padding: 20px 0px;
+  bottom: 0;
+  cursor: pointer;
+  color: white;
+  border-radius: 5px 0 0 0;
+  text-align: center;
+  width: calc(#{$border-dist} / 2);
+}
+.click-scroll-down {
+  text-align: center;
+  width: calc(#{$border-dist} / 2);
+  position: fixed;
+  left: calc(50vw - (#{$border-dist} / 2));
+  background: linear-gradient(-180deg, #1bb35a, #106b36fd);
   padding: 20px 30px;
   bottom: 0;
   cursor: pointer;
   color: white;
-  border-radius: 5px 5px 0 0;
+  border-radius: 0 5px 0 0;
 }

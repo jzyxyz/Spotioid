@@ -99,7 +99,7 @@ const Main = () => {
               setTimeout(
                 () =>
                   window.scrollTo({
-                    top: document.body.scrollHeight / 2,
+                    top: (document.body.scrollHeight * 7) / 16.0,
                     behavior: 'smooth',
                   }),
                 100,
@@ -125,6 +125,16 @@ const Main = () => {
           onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
           Top
           {/* < /> */}
+        </div>
+        <div
+          className='click-scroll-down'
+          onClick={() =>
+            window.scrollBy({
+              top: document.body.scrollHeight / 2,
+              behavior: 'smooth',
+            })
+          }>
+          Next
         </div>
       </div>
     </>

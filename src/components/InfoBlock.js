@@ -62,7 +62,7 @@ const InfoBlock = ({data}) => {
         <a href={spotify} key={name} target='_blank'>
           <div className='singer-name'>{name}</div>
           <div className='count-block'>
-            <div className='count-bar' style={{width: count * 5}}></div>
+            <div className='count-bar' style={{width: count * 7}}></div>
             <div className='song-count'>{count}</div>
           </div>
           <SpotifyLogo />
