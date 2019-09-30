@@ -1,0 +1,44 @@
+@mixin hover-show($selector) {
+  #{$selector} {
+    opacity: 0;
+  }
+  &:hover {
+    #{$selector} {
+      opacity: 1;
+    }
+  }
+}
+@mixin hover-show-other($self, $selector) {
+  #{$selector} {
+    opacity: 0;
+  }
+  #{$self}:hover {
+    #{$selector} {
+      opacity: 1;
+    }
+  }
+}
+@mixin hover-hide($selector) {
+  #{$selector} {
+    opacity: 1;
+  }
+  &:hover {
+    #{$selector} {
+      opacity: 0 !important;
+    }
+  }
+}
+
+@mixin hover-self-offset($x, $y) {
+  &:hover {
+    transform: translateX($x) translateY($y);
+  }
+}
+
+@mixin hover-offset($selector, $x, $y) {
+  &:hover {
+    #{$selector} {
+      transform: translateX($x) translateY($y);
+    }
+  }
+}
