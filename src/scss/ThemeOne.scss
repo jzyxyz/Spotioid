@@ -407,6 +407,7 @@ $border-dist: 11vw;
   text-align: center;
   width: calc(#{$border-dist} / 2);
   z-index: 100;
+  margin: 0 !important;
   // semi transparent mask
   &::before {
     content: '';
@@ -422,7 +423,7 @@ $border-dist: 11vw;
 
 .click-scroll-down {
   z-index: 100;
-
+  margin: 0 !important;
   text-align: center;
   width: calc(#{$border-dist} / 2);
   position: fixed;
