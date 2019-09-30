@@ -53,6 +53,7 @@ body {
     margin: 0 0 5vh 0;
     max-height: 100vh;
   }
+  // gradient layer to darken the atmosphere
   &::before {
     content: '';
     z-index: -99;
@@ -61,6 +62,7 @@ body {
     height: 100%;
     position: fixed;
   }
+  // left to right gradient base tone
   &::after {
     position: fixed;
     content: '';
