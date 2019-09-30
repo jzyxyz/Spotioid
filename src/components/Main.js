@@ -1,16 +1,16 @@
-import React, { useState, useEffect, useRef } from 'react'
-import { fromEvent } from 'rxjs'
-import { debounceTime } from 'rxjs/operators'
+import React, {useState, useEffect, useRef} from 'react'
+import {fromEvent} from 'rxjs'
+import {debounceTime} from 'rxjs/operators'
 import InfoBlock from './InfoBlock'
 import dataIndex from '../dataIndex'
 import Map from './Map'
 import InputSuggest from './InputSugguest'
-import { trim, orderBy } from 'lodash'
+import {trim, orderBy} from 'lodash'
 import COUNTRY_NAMES from '../metadata/CountryList'
 
 let features = Object.values(dataIndex)
   .filter(el => el.name)
-  .map(({ name, features }) => ({
+  .map(({name, features}) => ({
     name,
     features,
   }))
@@ -94,7 +94,7 @@ const Main = () => {
               setTimeout(
                 () =>
                   window.scrollTo({
-                    top: (document.body.scrollHeight * 7) / 16.0,
+                    top: window.outerHeight * 0.6,
                     behavior: 'smooth',
                   }),
                 100,
@@ -117,19 +117,17 @@ const Main = () => {
       )}
       <div
         className='click-scroll'
-        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-      >
+        onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
         Top
       </div>
       <div
         className='click-scroll-down'
-        onClick={() =>
+        onClick={() => {
           window.scrollBy({
-            top: document.body.scrollHeight / 2,
+            top: window.outerHeight * 0.65,
             behavior: 'smooth',
           })
-        }
-      >
+        }}>
         Next
       </div>
     </>

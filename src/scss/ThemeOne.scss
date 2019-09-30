@@ -43,6 +43,16 @@ body {
 }
 
 #root {
+  align-items: center;
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  // 所有可视化内容都在 root 下面, 作为一个 list item
+  & > * {
+    margin: 0 0 5vh 0;
+    max-height: 100vh;
+  }
   &::before {
     content: '';
     z-index: -99;
@@ -59,11 +69,6 @@ body {
     z-index: -100;
     background: linear-gradient(90deg, #c074b2, #8ab5e8);
   }
-  align-items: center;
-  align-content: center;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
 }
 .map-svg {
   background: none;
@@ -364,9 +369,9 @@ body {
   display: none; ////////////////////////////////////
 }
 .bubble-genre {
-  position: absolute;
-  left: 55vw;
-  top: 90vw;
+  position: relative;
+  left: 39vw;
+  top: 10vw;
   transform: scale(1.5);
 }
 .no-data-tip {
