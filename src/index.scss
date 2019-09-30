@@ -22,6 +22,11 @@ code {
 // variables --------------------
 @import './scss/variables.scss';
 
+//function
+@import './scss/function';
+
 // components
-@import './scss/footer'; // themes
+@import './scss/footer';
+
+// themes
 @import './scss/ThemeOne.scss';

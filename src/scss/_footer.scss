@@ -1,12 +1,16 @@
-$badge-width: 60px;
+$badge-width: 40px;
 .footer {
-  &::before {
-    content: 'created by';
-    color: black;
-    font-size: 13px;
-  }
+  /* justify-content: center; */
+  align-items: center;
+  /* align-content: center; */
+  display: flex;
+  /* flex-direction: row; */
+  /* text-align: center; */
+  /* width: 200px; */
+  white-space: nowrap;
+  padding: 0 15px 0 10px;
   position: fixed;
-  width: $badge-width;
+  width: calc(#{$badge-width}* 2);
   height: $badge-width;
   left: 0;
   border-radius: 0 calc(#{$badge-width} - 10px) 0 0;
@@ -14,4 +18,25 @@ $badge-width: 60px;
   background: white;
   margin: 0 !important;
   z-index: 200;
+  text-transform: capitalize;
+  transition: ease-out 0.35s;
+  transition-delay: 0.3s;
+  &:hover {
+    width: calc(#{$badge-width}* 7.9);
+    .footer-contact {
+      opacity: 1;
+      transition: ease 0.5s;
+      transition-delay: 0.5s;
+    }
+  }
+  .footer-contact {
+    opacity: 0;
+  }
+}
+
+.footer-contact {
+  // transition: ease 0.5s;
+  text-decoration: none;
+  color: rgb(30, 215, 96);
+  padding: 0 0 0 10px;
 }
