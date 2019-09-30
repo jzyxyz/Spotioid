@@ -111,6 +111,7 @@ const Main = () => {
           type='text'
           name='search'
           className='search-input'
+          autocomplete='off'
           ref={inputRef}
         />
       </div>
