@@ -1,6 +1,17 @@
+$badge-width: 60px;
 .footer {
+  &::before {
+    content: 'created by';
+    color: black;
+    font-size: 13px;
+  }
   position: fixed;
+  width: $badge-width;
+  height: $badge-width;
   left: 0;
+  border-radius: 0 calc(#{$badge-width} - 10px) 0 0;
   bottom: 0;
-  border-radius: 0 20px 0 0;
+  background: white;
+  margin: 0 !important;
+  z-index: 200;
 }

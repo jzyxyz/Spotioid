@@ -7,6 +7,7 @@ import Map from './Map'
 import InputSuggest from './InputSugguest'
 import {trim, orderBy} from 'lodash'
 import COUNTRY_NAMES from '../metadata/CountryList'
+import Footer from './Footer'
 
 let features = Object.values(dataIndex)
   .filter(el => el.name)
@@ -130,6 +131,7 @@ const Main = () => {
         }}>
         Next
       </div>
+      <Footer />
     </>
   )
 }
