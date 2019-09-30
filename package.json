@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@weknow/react-bubble-chart-d3": "^1.0.12",
     "chart.js": "^2.8.0",
     "lodash": "^4.17.15",
     "node-sass": "^4.12.0",

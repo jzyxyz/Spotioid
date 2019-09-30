@@ -1,7 +1,7 @@
 import React from 'react'
 import BubbleChart from './BubbleChart'
 
-const GenreChart = ({ data }) => {
+const GenreChart = ({data, className}) => {
   console.log(data)
   const bubbleClick = label => {
     console.log('Custom bubble click func')
@@ -9,6 +9,7 @@ const GenreChart = ({ data }) => {
 
   return (
     <BubbleChart
+      className={className}
       graph={{
         zoom: 0.7,
         offsetX: -0.05,
