@@ -226,7 +226,7 @@ export default class BubbleChart extends Component {
   }
 
   renderLegend(width, height, offset, nodes, color) {
-    const { data, legendClickFun, legendFont } = this.props
+    const { legendClickFun, legendFont } = this.props
     const bubble = d3.select('.bubble-chart')
     const bubbleHeight = bubble.node().getBBox().height
 

@@ -54,7 +54,12 @@ const InfoBlock = ({ data }) => {
       {artists
         .slice(0, 8)
         .map(({ name, external_urls: { spotify }, count }) => (
-          <a href={spotify} key={name} target='_blank'>
+          <a
+            href={spotify}
+            key={name}
+            target='_blank'
+            rel='noopener noreferrer'
+          >
             <div className='singer-name'>{name}</div>
             <div className='count-block'>
               <div className='count-bar' style={{ width: count * 7 }}></div>
