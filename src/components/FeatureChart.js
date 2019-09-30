@@ -86,12 +86,14 @@ class FeatureChart extends React.Component {
                   else if (parseFloat(value) > 0) {
                     return [
                       'higher than average by',
-                      parseFloat(value).toFixed(2),
+                      (parseFloat(value) * 100).toPrecision(2),
+                      ' %',
                     ]
                   } else {
                     return [
                       'lower than average by',
-                      -1 * parseFloat(value).toFixed(2),
+                      (-1 * parseFloat(value) * 100).toPrecision(2),
+                      '%',
                     ]
                   }
                 })
@@ -126,9 +128,9 @@ class FeatureChart extends React.Component {
           yAxes: [
             {
               display: true,
-              // stacked: true,
               ticks: {
                 beginAtZero: true,
+                fontColor: 'white',
               },
             },
           ],
@@ -136,9 +138,13 @@ class FeatureChart extends React.Component {
             {
               display: true,
               stacked: true,
-              barThickness: 25,
+              barPercentage: 0.95,
+              categoryPercentage: 1,
               ticks: {
                 beginAtZero: true,
+                fontColor: 'white',
+                maxRotation: '0',
+                fontSize: '8',
               },
             },
           ],

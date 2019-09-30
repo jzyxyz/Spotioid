@@ -13,4 +13,7 @@ module.exports = [
   'Bosnia and Herzegovina',
   'Slovakia',
   'Hungary',
+  'Netherlands',
+  'Belgium',
+  'Slovenia',
 ]

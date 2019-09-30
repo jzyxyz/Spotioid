@@ -42,11 +42,11 @@ class Map extends PureComponent {
       onClick: layerClickHandler,
     }
 
-    const tooltipStyle = {
-      display: isTooltipVisible ? 'block' : 'none',
-      top: tooltipY,
-      left: tooltipX,
-    }
+    // const tooltipStyle = {
+    //   display: isTooltipVisible ? 'block' : 'none',
+    //   top: tooltipY,
+    //   left: tooltipX,
+    // }
 
     return (
       <>

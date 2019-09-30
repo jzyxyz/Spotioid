@@ -25,8 +25,8 @@ export default class BubbleChart extends Component {
   }
 
   render() {
-    const { width, height } = this.props
-    return <svg width={width} height={height} />
+    const { width, height, className } = this.props
+    return <svg className={className} width={width} height={height} />
   }
 
   renderChart() {
@@ -46,7 +46,11 @@ export default class BubbleChart extends Component {
       ? width * (1 - legendPercentage / 100)
       : width
     const legendWidth = width - bubblesWidth
-    const color = d3.scaleOrdinal(d3.schemeCategory20c)
+    const color = d3
+      .scaleLinear()
+      .domain([1, 5])
+      .range(['#c074b2', '#8ab5e8'])
+    // const color = d3.scaleOrdinal(d3.schemeCategory20c)
 
     const pack = d3
       .pack()
@@ -222,7 +226,7 @@ export default class BubbleChart extends Component {
   }
 
   renderLegend(width, height, offset, nodes, color) {
-    const { data, legendClickFun, legendFont } = this.props
+    const { legendClickFun, legendFont } = this.props
     const bubble = d3.select('.bubble-chart')
     const bubbleHeight = bubble.node().getBBox().height
 
@@ -349,7 +353,7 @@ BubbleChart.defaultProps = {
   },
   valueFont: {
     family: 'Arial',
-    size: 16,
+    size: 14,
     color: '#fff',
     weight: 'bold',
   },

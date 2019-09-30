@@ -8,6 +8,16 @@
     }
   }
 }
+@mixin hover-hide($selector) {
+  #{$selector} {
+    opacity: 1;
+  }
+  &:hover {
+    #{$selector} {
+      opacity: 0 !important;
+    }
+  }
+}
 
 @mixin hover-self-offset($x, $y) {
   &:hover {
@@ -29,13 +39,24 @@
 
 body {
   overflow-x: hidden;
+  font-family: 'Maven Pro', sans-serif;
 }
 
 #root {
+  align-items: center;
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  // 所有可视化内容都在 root 下面, 作为一个 list item
+  & > * {
+    margin: 0 0 5vh 0;
+    max-height: 100vh;
+  }
   &::before {
     content: '';
     z-index: -99;
-    background: linear-gradient(transparent, #000);
+    background: linear-gradient(transparent, #000000c7);
     width: 100vw;
     height: 100%;
     position: fixed;
@@ -48,15 +69,10 @@ body {
     z-index: -100;
     background: linear-gradient(90deg, #c074b2, #8ab5e8);
   }
-  align-items: center;
-  align-content: center;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
 }
 .map-svg {
   background: none;
-  transform: translate(12vw, -14vw);
+  transform: translate(16vw, -18vw) scale(0.9);
   transition: cubic-bezier(0, 0, 0.33, 1.07) 0.8s;
   width: 90vw !important;
   height: auto !important;
@@ -114,13 +130,28 @@ body {
   position: fixed;
   top: 3vw;
   left: 3vw;
+  z-index: 101;
 }
 .auto-compl {
+  z-index: 100;
   display: flex;
   flex-direction: column;
   position: fixed;
-  top: calc(5vh + 55px);
+  top: calc(5vh + 45px);
   left: 3vw;
+  background: white;
+  padding: 11px 15px 10px !important;
+  text-align: end;
+  width: 20vw;
+  outline: none;
+  background: linear-gradient(0deg, #31313199, #252525e3);
+  color: white;
+  backdrop-filter: saturate(306%) blur(4px);
+  position: fixed;
+  border-radius: 0 0 15px 15px;
+  & > * {
+    padding: 5px;
+  }
 }
 
 .auto-compl-item:first-of-type {
@@ -151,29 +182,41 @@ body {
 
 .interactive-map {
   height: 100vh;
-  overflow: hidden;
-}
-.interactive-map,
-.info-page {
   align-items: center;
   width: 100vw;
   padding: 25px 0;
+  overflow: hidden;
 }
 
 .txt-block {
   &::before {
-    content: 'Taste';
-    position: relative;
-    left: 7vw;
+    content: 'Number of songs on board';
+    position: fixed;
+    left: calc(3vw - 10px);
     width: fit-content;
-    top: 6vw;
+    top: calc(18vw - 25px);
     color: #000000bf;
-    background: linear-gradient(15deg, #fef2f2db, #fffffabf);
-    padding: 10px 20px;
+    background: linear-gradient(15deg, #d8d8d8, #dcbfbf);
+    padding: 5px 20px;
     border-radius: 20px 5px 5px 5px;
     z-index: 100;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 500;
+  }
+  &::after {
+    content: 'Top Genre';
+    position: relative;
+    left: calc(10vw - 15px);
+    width: fit-content;
+    top: calc(17vw - 25px);
+    color: #000000bf;
+    background: linear-gradient(15deg, #dcbfbf, #d8d8d8);
+    padding: 5px 20px;
+    border-radius: 20px 5px 5px 5px;
+    z-index: 100;
+    font-size: 15px;
+    font-weight: 500;
+    display: none; ////////////////////////////
   }
   display: flex;
   position: fixed;
@@ -181,19 +224,132 @@ body {
   top: 15vh;
   flex-direction: column;
 }
+
 .artist-block {
   // transform: translate(9vw, -7vw);
   position: fixed;
-  left: 9vw;
-  top: 14vw;
+  // left: 9vw;
+  // top: 14vw;
+  top: 18vw;
+  left: 3vw;
   background: linear-gradient(-29deg, #00000033, #000000d6);
   color: white;
   box-shadow: 10px 10px 12px 1px #0000004a;
-  padding: 15px 20px;
+  // padding: 15px 20px;
   border-radius: 5px 30px 5px 5px;
-  width: 15vw;
+  // width: 15vw;
   min-width: 210px;
   text-align: end;
+  &:hover > a:first-child {
+    // padding: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    transition: ease 0.08s;
+  }
+  & > a {
+    transition: ease 0.08s;
+    // border-radius: 5px;
+    padding: 1px 5px 1px 15px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 70px;
+    text-decoration: none;
+    color: whitesmoke;
+    // align-items: center;
+    justify-items: end;
+
+    .count-block {
+      display: flex;
+      align-items: center;
+      right: -20px;
+      grid-column: 2 /3;
+      justify-self: start !important;
+      position: relative;
+      left: -10px;
+    }
+    // 进度条
+    .count-bar {
+      content: '';
+      border-radius: 3px;
+      height: 5px;
+      width: 33px;
+      background-color: #fffe;
+    }
+    .song-count {
+      position: relative;
+      left: 5px;
+    }
+    .spotify-logo {
+      // position: absolute;
+      // right: -20px;
+      // opacity: 1 !important;
+      width: 25px;
+      // transition-delay: 0.1s;
+      // margin-right: 10px;
+      fill: whitesmoke;
+      position: relative;
+      right: 24px;
+      grid-column: 3;
+      grid-row: 1 /2;
+    }
+    .singer-name {
+      margin-right: 30px;
+      grid-column: 1 / 2;
+    }
+    &:first-child {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      &::after {
+        content: 'No.1';
+      }
+    }
+    &:nth-child(2)::after {
+      content: 'No.2';
+    }
+    &:nth-child(3)::after {
+      content: 'No.3';
+    }
+    &:nth-child(1)::after,
+    &:nth-child(2)::after,
+    &:nth-child(3)::after {
+      grid-column: 3;
+      grid-row: 1 / 2;
+      transition: ease-in 0.18s;
+      position: relative;
+      right: 20px;
+      padding: 1px 3px 0px 3px;
+      height: 21px;
+      text-align: center;
+      text-justify: distribute;
+      color: #6b4712;
+      border-radius: 3px;
+      background: linear-gradient(45deg, #fcba5d, #fcdaa4);
+      font-size: 13px;
+    }
+    &:hover {
+      background-color: #1e3264;
+      padding-top: 10px !important;
+      padding-bottom: 10px !important;
+      z-index: 10000;
+      &:nth-child(1)::after,
+      &:nth-child(2)::after,
+      &:nth-child(3)::after {
+        opacity: 0;
+      }
+      &:first-child {
+        border-radius: 5px 30px 0 0;
+      }
+      .spotify-logo {
+        // position: absolute;
+        background: #1e3264;
+        // padding: 9px 12px 8px 9px;
+        // right: -32px;
+        // transform: translateY(-10px);
+        opacity: 1;
+        border-radius: 0px 5px 5px 0px;
+      }
+    }
+    @include hover-show('.spotify-logo');
+  }
 }
 .genre-block {
   backdrop-filter: blur(4px);
@@ -210,6 +366,13 @@ body {
   box-shadow: 10px 10px 9px 4px #0000004a;
   padding: 15px 20px;
   border-radius: 30px 5px 5px 5px;
+  display: none; ////////////////////////////////////
+}
+.bubble-genre {
+  position: relative;
+  left: 39vw;
+  top: 10vw;
+  transform: scale(1.5);
 }
 .no-data-tip {
   position: fixed;
@@ -223,20 +386,58 @@ body {
 }
 
 .chartjs-render-monitor {
-  left: 13vw !important;
-  top: -8vw !important;
+  left: 15.5vw !important;
+  top: -13vh !important;
   position: relative;
   width: 60vw !important;
+  max-height: 50vh !important;
 }
 
 $arrow-width: 5vw;
+$border-dist: 11vw;
 .click-scroll {
   position: fixed;
-  left: 47.5vw;
-  background: #00000052;
+  left: calc(50vw - #{$border-dist});
+  background: linear-gradient(-180deg, #8b8b8b69, #5252525c);
+  padding: 20px 0px;
+  bottom: 0;
+  cursor: pointer;
+  color: white;
+  border-radius: 5px 0 0 0;
+  text-align: center;
+  width: calc(#{$border-dist} / 2);
+  z-index: 100;
+  margin: 0 !important;
+  // semi transparent mask
+  &::before {
+    content: '';
+    pointer-events: none;
+    width: 100vw;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    height: 30vh;
+    background: linear-gradient(0deg, #000000ba, #00000045, transparent);
+  }
+}
+
+.click-scroll-down {
+  z-index: 100;
+  margin: 0 !important;
+  text-align: center;
+  width: calc(#{$border-dist} / 2);
+  position: fixed;
+  left: calc(50vw - (#{$border-dist} / 2));
+  background: linear-gradient(-180deg, #1bb35a, #106b36fd);
   padding: 20px 30px;
   bottom: 0;
   cursor: pointer;
   color: white;
-  border-radius: 5px 5px 0 0;
+  border-radius: 0 5px 0 0;
+}
+
+#chartjs-tooltip {
+  background-color: white !important;
+  font-size: 85%;
+  border-radius: 5px;
 }
