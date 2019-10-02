@@ -2,8 +2,6 @@ import React from 'react'
 import BubbleChart from './BubbleChart'
 
 const GenreChart = ({ data, className }) => {
-  // console.log(data)
-
   return (
     <BubbleChart
       className={className}

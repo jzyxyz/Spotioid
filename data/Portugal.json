@@ -1,1 +1,217 @@
-{"idx":"47","name":"Portugal","id":"37i9dQZEVXbKyJS56d1pgi","genres":[{"name":"pop","count":16},{"name":"hip hop tuga","count":11}],"artists":[{"external_urls":{"spotify":"https://open.spotify.com/artist/7crp1tZcefnjT5RuL6WZQ0"},"href":"https://api.spotify.com/v1/artists/7crp1tZcefnjT5RuL6WZQ0","id":"7crp1tZcefnjT5RuL6WZQ0","name":"Slow J","type":"artist","uri":"spotify:artist:7crp1tZcefnjT5RuL6WZQ0","count":9},{"external_urls":{"spotify":"https://open.spotify.com/artist/7BWNRZyZ9mhgp5t0m7Ny0n"},"href":"https://api.spotify.com/v1/artists/7BWNRZyZ9mhgp5t0m7Ny0n","id":"7BWNRZyZ9mhgp5t0m7Ny0n","name":"Deejay Telio","type":"artist","uri":"spotify:artist:7BWNRZyZ9mhgp5t0m7Ny0n","count":4},{"external_urls":{"spotify":"https://open.spotify.com/artist/39HJXjH5hKcCzaU0g6mv8G"},"href":"https://api.spotify.com/v1/artists/39HJXjH5hKcCzaU0g6mv8G","id":"39HJXjH5hKcCzaU0g6mv8G","name":"Plutónio","type":"artist","uri":"spotify:artist:39HJXjH5hKcCzaU0g6mv8G","count":4},{"external_urls":{"spotify":"https://open.spotify.com/artist/7kR1Yw4RqYhhDD3a8QRyG6"},"href":"https://api.spotify.com/v1/artists/7kR1Yw4RqYhhDD3a8QRyG6","id":"7kR1Yw4RqYhhDD3a8QRyG6","name":"Julinho Ksd","type":"artist","uri":"spotify:artist:7kR1Yw4RqYhhDD3a8QRyG6","count":3},{"external_urls":{"spotify":"https://open.spotify.com/artist/246dkjvS1zLTtiykXe5h60"},"href":"https://api.spotify.com/v1/artists/246dkjvS1zLTtiykXe5h60","id":"246dkjvS1zLTtiykXe5h60","name":"Post Malone","type":"artist","uri":"spotify:artist:246dkjvS1zLTtiykXe5h60","count":3},{"external_urls":{"spotify":"https://open.spotify.com/artist/5jfz7uWPwf03hdEewW8AI8"},"href":"https://api.spotify.com/v1/artists/5jfz7uWPwf03hdEewW8AI8","id":"5jfz7uWPwf03hdEewW8AI8","name":"Wet Bed Gang","type":"artist","uri":"spotify:artist:5jfz7uWPwf03hdEewW8AI8","count":3},{"external_urls":{"spotify":"https://open.spotify.com/artist/3uFX3kMxtOUFMDaJoFPJwo"},"href":"https://api.spotify.com/v1/artists/3uFX3kMxtOUFMDaJoFPJwo","id":"3uFX3kMxtOUFMDaJoFPJwo","name":"Deedz B","type":"artist","uri":"spotify:artist:3uFX3kMxtOUFMDaJoFPJwo","count":2},{"external_urls":{"spotify":"https://open.spotify.com/artist/6eUKZXaKkcviH0Ku9w2n3V"},"href":"https://api.spotify.com/v1/artists/6eUKZXaKkcviH0Ku9w2n3V","id":"6eUKZXaKkcviH0Ku9w2n3V","name":"Ed Sheeran","type":"artist","uri":"spotify:artist:6eUKZXaKkcviH0Ku9w2n3V","count":2},{"external_urls":{"spotify":"https://open.spotify.com/artist/1vyhD5VmyZ7KMfW5gqLgo5"},"href":"https://api.spotify.com/v1/artists/1vyhD5VmyZ7KMfW5gqLgo5","id":"1vyhD5VmyZ7KMfW5gqLgo5","name":"J Balvin","type":"artist","uri":"spotify:artist:1vyhD5VmyZ7KMfW5gqLgo5","count":2},{"external_urls":{"spotify":"https://open.spotify.com/artist/4Ga1P7PMIsmqEZqhYZQgDo"},"href":"https://api.spotify.com/v1/artists/4Ga1P7PMIsmqEZqhYZQgDo","id":"4Ga1P7PMIsmqEZqhYZQgDo","name":"Lil Tecca","type":"artist","uri":"spotify:artist:4Ga1P7PMIsmqEZqhYZQgDo","count":2},{"external_urls":{"spotify":"https://open.spotify.com/artist/2DEfqyWjAMIfKYMXb1V8L1"},"href":"https://api.spotify.com/v1/artists/2DEfqyWjAMIfKYMXb1V8L1","id":"2DEfqyWjAMIfKYMXb1V8L1","name":"Nenny","type":"artist","uri":"spotify:artist:2DEfqyWjAMIfKYMXb1V8L1","count":2},{"external_urls":{"spotify":"https://open.spotify.com/artist/1i8SpTcr7yvPOmcqrbnVXY"},"href":"https://api.spotify.com/v1/artists/1i8SpTcr7yvPOmcqrbnVXY","id":"1i8SpTcr7yvPOmcqrbnVXY","name":"Ozuna","type":"artist","uri":"spotify:artist:1i8SpTcr7yvPOmcqrbnVXY","count":2},{"external_urls":{"spotify":"https://open.spotify.com/artist/3DhsjXVgWmA6X26tUugAjP"},"href":"https://api.spotify.com/v1/artists/3DhsjXVgWmA6X26tUugAjP","id":"3DhsjXVgWmA6X26tUugAjP","name":"ProfJam","type":"artist","uri":"spotify:artist:3DhsjXVgWmA6X26tUugAjP","count":2}],"features":{"danceability":0.722818702756829,"energy":0.6853146326234927,"key":0.7989743738553834,"loudness":-4.248777703383169,"mode":0.6978046797667101,"speechiness":0.12058731214229595,"acousticness":0.18379268318623065,"instrumentalness":0.00010999469556691085,"liveness":0.13639294757777246,"valence":0.4791400565446198,"tempo":119.21339154852197}}
+{
+    "idx": "47",
+    "name": "Portugal",
+    "id": "37i9dQZEVXbKyJS56d1pgi",
+    "genres": [
+        {
+            "name": "pop",
+            "count": 16
+        },
+        {
+            "name": "hip hop tuga",
+            "count": 11
+        }
+    ],
+    "artists": [
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/7crp1tZcefnjT5RuL6WZQ0"
+            },
+            "href": "https://api.spotify.com/v1/artists/7crp1tZcefnjT5RuL6WZQ0",
+            "id": "7crp1tZcefnjT5RuL6WZQ0",
+            "name": "Slow J",
+            "type": "artist",
+            "uri": "spotify:artist:7crp1tZcefnjT5RuL6WZQ0",
+            "count": 6
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/7BWNRZyZ9mhgp5t0m7Ny0n"
+            },
+            "href": "https://api.spotify.com/v1/artists/7BWNRZyZ9mhgp5t0m7Ny0n",
+            "id": "7BWNRZyZ9mhgp5t0m7Ny0n",
+            "name": "Deejay Telio",
+            "type": "artist",
+            "uri": "spotify:artist:7BWNRZyZ9mhgp5t0m7Ny0n",
+            "count": 4
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/39HJXjH5hKcCzaU0g6mv8G"
+            },
+            "href": "https://api.spotify.com/v1/artists/39HJXjH5hKcCzaU0g6mv8G",
+            "id": "39HJXjH5hKcCzaU0g6mv8G",
+            "name": "Plutónio",
+            "type": "artist",
+            "uri": "spotify:artist:39HJXjH5hKcCzaU0g6mv8G",
+            "count": 4
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/7kR1Yw4RqYhhDD3a8QRyG6"
+            },
+            "href": "https://api.spotify.com/v1/artists/7kR1Yw4RqYhhDD3a8QRyG6",
+            "id": "7kR1Yw4RqYhhDD3a8QRyG6",
+            "name": "Julinho Ksd",
+            "type": "artist",
+            "uri": "spotify:artist:7kR1Yw4RqYhhDD3a8QRyG6",
+            "count": 3
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/5jfz7uWPwf03hdEewW8AI8"
+            },
+            "href": "https://api.spotify.com/v1/artists/5jfz7uWPwf03hdEewW8AI8",
+            "id": "5jfz7uWPwf03hdEewW8AI8",
+            "name": "Wet Bed Gang",
+            "type": "artist",
+            "uri": "spotify:artist:5jfz7uWPwf03hdEewW8AI8",
+            "count": 3
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/3LZCMaZWwvhYyQeEfWgVdY"
+            },
+            "href": "https://api.spotify.com/v1/artists/3LZCMaZWwvhYyQeEfWgVdY",
+            "id": "3LZCMaZWwvhYyQeEfWgVdY",
+            "name": "Bispo",
+            "type": "artist",
+            "uri": "spotify:artist:3LZCMaZWwvhYyQeEfWgVdY",
+            "count": 2
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/3uFX3kMxtOUFMDaJoFPJwo"
+            },
+            "href": "https://api.spotify.com/v1/artists/3uFX3kMxtOUFMDaJoFPJwo",
+            "id": "3uFX3kMxtOUFMDaJoFPJwo",
+            "name": "Deedz B",
+            "type": "artist",
+            "uri": "spotify:artist:3uFX3kMxtOUFMDaJoFPJwo",
+            "count": 2
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/6eUKZXaKkcviH0Ku9w2n3V"
+            },
+            "href": "https://api.spotify.com/v1/artists/6eUKZXaKkcviH0Ku9w2n3V",
+            "id": "6eUKZXaKkcviH0Ku9w2n3V",
+            "name": "Ed Sheeran",
+            "type": "artist",
+            "uri": "spotify:artist:6eUKZXaKkcviH0Ku9w2n3V",
+            "count": 2
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/1vyhD5VmyZ7KMfW5gqLgo5"
+            },
+            "href": "https://api.spotify.com/v1/artists/1vyhD5VmyZ7KMfW5gqLgo5",
+            "id": "1vyhD5VmyZ7KMfW5gqLgo5",
+            "name": "J Balvin",
+            "type": "artist",
+            "uri": "spotify:artist:1vyhD5VmyZ7KMfW5gqLgo5",
+            "count": 2
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/4Ga1P7PMIsmqEZqhYZQgDo"
+            },
+            "href": "https://api.spotify.com/v1/artists/4Ga1P7PMIsmqEZqhYZQgDo",
+            "id": "4Ga1P7PMIsmqEZqhYZQgDo",
+            "name": "Lil Tecca",
+            "type": "artist",
+            "uri": "spotify:artist:4Ga1P7PMIsmqEZqhYZQgDo",
+            "count": 2
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/1i8SpTcr7yvPOmcqrbnVXY"
+            },
+            "href": "https://api.spotify.com/v1/artists/1i8SpTcr7yvPOmcqrbnVXY",
+            "id": "1i8SpTcr7yvPOmcqrbnVXY",
+            "name": "Ozuna",
+            "type": "artist",
+            "uri": "spotify:artist:1i8SpTcr7yvPOmcqrbnVXY",
+            "count": 2
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/246dkjvS1zLTtiykXe5h60"
+            },
+            "href": "https://api.spotify.com/v1/artists/246dkjvS1zLTtiykXe5h60",
+            "id": "246dkjvS1zLTtiykXe5h60",
+            "name": "Post Malone",
+            "type": "artist",
+            "uri": "spotify:artist:246dkjvS1zLTtiykXe5h60",
+            "count": 2
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/3DhsjXVgWmA6X26tUugAjP"
+            },
+            "href": "https://api.spotify.com/v1/artists/3DhsjXVgWmA6X26tUugAjP",
+            "id": "3DhsjXVgWmA6X26tUugAjP",
+            "name": "ProfJam",
+            "type": "artist",
+            "uri": "spotify:artist:3DhsjXVgWmA6X26tUugAjP",
+            "count": 2
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/1ZJx1mKaG5qDGe1kvpbSMu"
+            },
+            "href": "https://api.spotify.com/v1/artists/1ZJx1mKaG5qDGe1kvpbSMu",
+            "id": "1ZJx1mKaG5qDGe1kvpbSMu",
+            "name": "TAY",
+            "type": "artist",
+            "uri": "spotify:artist:1ZJx1mKaG5qDGe1kvpbSMu",
+            "count": 2
+        }
+    ],
+    "features": [
+        {
+            "name": "danceability",
+            "value": 0.5841884332980047
+        },
+        {
+            "name": "energy",
+            "value": 0.6142034658680625
+        },
+        {
+            "name": "key",
+            "value": 7.342723273921836
+        },
+        {
+            "name": "loudness",
+            "value": -5.925191798183693
+        },
+        {
+            "name": "mode",
+            "value": 0.8408228896344117
+        },
+        {
+            "name": "speechiness",
+            "value": 0.17308768807660962
+        },
+        {
+            "name": "acousticness",
+            "value": 0.3060757866486553
+        },
+        {
+            "name": "instrumentalness",
+            "value": 0.00000846626980117281
+        },
+        {
+            "name": "liveness",
+            "value": 0.10996200501641396
+        },
+        {
+            "name": "valence",
+            "value": 0.5239784791071633
+        },
+        {
+            "name": "tempo",
+            "value": 99.57828025348076
+        }
+    ]
+}
