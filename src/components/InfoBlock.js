@@ -1,8 +1,9 @@
 import React from 'react'
 import { range } from 'lodash'
-import Chart from './FeatureChart'
+import FeatureChart from './FeatureChart'
 import GenreChart from './GenreChart'
 import SpotifyLogo from './SpotifyLogo'
+import { Link } from 'react-router-dom'
 
 const NoData = () => (
   <div className='no-data-tip'>No info for this country available</div>
@@ -70,7 +71,11 @@ const InfoBlock = ({ data }) => {
   return (
     <>
       {/* // 下面的内容在 一个 list里面, */}
-      <Chart data={barChartData} />
+      <FeatureChart data={barChartData} />
+      <Link to='/reverse-index'>
+        <div className='link'>See detailed ranking</div>
+      </Link>
+
       <GenreChart
         className='bubble-genre'
         data={genres.map(el => ({

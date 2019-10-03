@@ -74,7 +74,7 @@ class FeatureChart extends React.Component {
               var innerHtml = '<thead>'
 
               titleLines.forEach(function(title) {
-                console.log(title)
+                // console.log(title)
                 innerHtml += '<tr><th>' + title + '</th></tr>'
               })
               innerHtml += '</thead><tbody>'
@@ -86,13 +86,13 @@ class FeatureChart extends React.Component {
                   else if (parseFloat(value) > 0) {
                     return [
                       'higher than average by',
-                      (parseFloat(value) * 100).toPrecision(2),
+                      (parseFloat(value) * 100).toFixed(0),
                       ' %',
                     ]
                   } else {
                     return [
                       'lower than average by',
-                      (-1 * parseFloat(value) * 100).toPrecision(2),
+                      (-1 * parseFloat(value) * 100).toFixed(0),
                       '%',
                     ]
                   }

@@ -421,3 +421,8 @@ $border-dist: 11vw;
   margin-bottom: 0px !important;
   font-style: italic;
 }
+
+.link {
+  z-index: 99999;
+  position: absolute;
+}

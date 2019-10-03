@@ -33,9 +33,6 @@ export default ({ selectHandler, selected }) => {
         setSuggestions([])
       }
     })
-    return function cleanup() {
-      searchBox.removeEventListener('keyup')
-    }
   }, [])
 
   return (
@@ -55,7 +52,7 @@ export default ({ selectHandler, selected }) => {
           inputRef.current.value = e.target.getAttribute('name')
           setInput(e.target.getAttribute('name'))
           // setSelected([e.target.getAttribute('name')])
-          selectHandler(e.target.getAttribute('name'))
+          selectHandler([e.target.getAttribute('name')])
           setSuggestions([])
           if (e.target.getAttribute('available') === 'true') {
             setTimeout(
