@@ -352,16 +352,16 @@ BubbleChart.defaultProps = {
     weight: 'bold',
   },
   valueFont: {
-    family: 'Arial',
-    size: 14,
+    family: 'inherit',
+    size: 20,
     color: '#fff',
     weight: 'bold',
   },
   labelFont: {
-    family: 'Arial',
+    family: 'inherit',
     size: 11,
     color: '#fff',
-    weight: 'normal',
+    weight: 'bold',
   },
   bubbleClickFun: label => {
     console.log(`Bubble ${label} is clicked ...`)

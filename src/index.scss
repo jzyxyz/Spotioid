@@ -14,8 +14,6 @@ code {
 
 #root {
   display: flex;
-  width: -webkit-fill-available;
-  height: -webkit-fill-available;
 }
 // delete above stuff  later
 
@@ -26,7 +24,8 @@ code {
 @import './scss/function';
 
 // components
-@import './scss/footer';
+@import './scss/footer_t';
 
 // themes
 @import './scss/ThemeOne.scss';
+@import './scss/info-seg.scss';

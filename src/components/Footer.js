@@ -3,7 +3,7 @@ import React from 'react'
 const Footer = () => {
   return (
     <div className='footer'>
-      crafted by
+      <h3>crafted by</h3>
       <a className='footer-contact' href='https://jzyis.me/about'>
         @JinZhongyuan
       </a>

@@ -1,0 +1,29 @@
+$badge-width: 40px;
+.footer {
+  align-items: center;
+  display: flex;
+  white-space: nowrap;
+  width: calc(40px * 2);
+  margin: 0 !important;
+  text-transform: capitalize;
+  transition: ease-out 0.35s;
+  transition-delay: 0.3s;
+  &:hover {
+    width: calc(#{$badge-width}* 7.9);
+    .footer-contact {
+      opacity: 1;
+      transition: ease 0.5s;
+      transition-delay: 0.5s;
+    }
+  }
+  .footer-contact {
+    opacity: 0;
+  }
+}
+
+.footer-contact {
+  // transition: ease 0.5s;
+  text-decoration: none;
+  color: $spotify-green;
+  padding: 0 0 0 10px;
+}

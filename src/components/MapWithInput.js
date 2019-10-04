@@ -27,7 +27,7 @@ export default ({ selectHandler, selected }) => {
       const choices = COUNTRY_NAMES.filter(c => inRegex.test(c.toLowerCase()))
       setSuggestions(choices)
       if (event.keyCode === 13) {
-        selectHandler([choices[0]])
+        selectHandler(choices[0])
         setInput(choices[0])
         event.target.value = choices[0]
         setSuggestions([])
@@ -45,24 +45,14 @@ export default ({ selectHandler, selected }) => {
         )}
       <Map
         mapProps={{
-          checkedLayers: selected,
+          checkedLayers: [selected],
           candidateLayers: suggestions,
         }}
         layerClickHandler={e => {
           inputRef.current.value = e.target.getAttribute('name')
           setInput(e.target.getAttribute('name'))
-          selectHandler([e.target.getAttribute('name')])
+          selectHandler(e.target.getAttribute('name'))
           setSuggestions([])
-          if (e.target.getAttribute('available') === 'true') {
-            setTimeout(
-              () =>
-                window.scrollTo({
-                  top: window.outerHeight * 0.6,
-                  behavior: 'smooth',
-                }),
-              100,
-            )
-          }
         }}
       />
       <input
