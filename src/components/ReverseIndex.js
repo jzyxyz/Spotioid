@@ -10,11 +10,7 @@ const match = arr1 => arr2 => {
   return range(arr1.length).every(i => arr1[i] === arr2[i])
 }
 
-const Button = ({ onClick, text }) => (
-  <a>
-    <button onClick={onClick}>{text}</button>
-  </a>
-)
+const Button = ({ onClick, text }) => <button onClick={onClick}>{text}</button>
 
 function RankItem({ feature, data, legend }) {
   const [showAll, setShowAll] = useState(false)
@@ -41,7 +37,7 @@ function RankItem({ feature, data, legend }) {
           <a href={`https://open.spotify.com/playlist/${dataIndex[name].id}`}>
             {name}
           </a>
-          <div>{value.toFixed(0)}</div>
+          <div>{value.toFixed(3)}</div>
           <div>
             {value > avgValue
               ? `${((value / avgValue - 1) * 100).toFixed(

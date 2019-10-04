@@ -51,7 +51,6 @@ export default ({ selectHandler, selected }) => {
         layerClickHandler={e => {
           inputRef.current.value = e.target.getAttribute('name')
           setInput(e.target.getAttribute('name'))
-          // setSelected([e.target.getAttribute('name')])
           selectHandler([e.target.getAttribute('name')])
           setSuggestions([])
           if (e.target.getAttribute('available') === 'true') {

@@ -72,9 +72,9 @@ const InfoBlock = ({ data }) => {
     <>
       {/* // 下面的内容在 一个 list里面, */}
       <FeatureChart data={barChartData} />
-      <Link to='/reverse-index'>
+      {/* <Link to='/reverse-index'>
         <div className='link'>See detailed ranking</div>
-      </Link>
+      </Link> */}
 
       <GenreChart
         className='bubble-genre'

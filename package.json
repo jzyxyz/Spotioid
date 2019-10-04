@@ -11,7 +11,9 @@
     "react-dom": "^16.9.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.1.2",
-    "rxjs": "^6.5.3"
+    "rxjs": "^6.5.3",
+    "typography": "^0.16.19",
+    "typography-theme-noriega": "^0.16.19"
   },
   "scripts": {
     "start": "react-scripts start",

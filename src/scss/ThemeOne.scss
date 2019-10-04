@@ -1,7 +1,6 @@
 .hide {
   visibility: hidden;
 }
-
 body {
   overflow-x: hidden;
   font-family: 'Maven Pro', sans-serif;
@@ -196,6 +195,7 @@ body {
   // transform: translate(9vw, -7vw);
   position: fixed;
   // left: 9vw;
+  padding: 15px 0px;
   // top: 14vw;
   top: 18vw;
   left: 3vw;
