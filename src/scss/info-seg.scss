@@ -36,7 +36,8 @@ $segheight: 67vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 25px 0px;
+  height: 77vh;
+  // padding: 25px 0px;
   h2 {
     margin-bottom: 1.5rem;
     color: white;
@@ -75,10 +76,19 @@ $segheight: 67vh;
   }
 }
 
-.info-segment {
-  height: $segheight;
+#info-segment-container {
   position: absolute;
-  bottom: 0px;
+  top: 23vh;
+  // height: 77vh;
+  // overflow: hidden;
+}
+
+#info-segment {
+  // height: $segheight;
+  // position: absolute;
+  // bottom: 0px;
+  // top: 15vh;
+  flex-direction: column;
   // background: #31313199;
   background: black;
   opacity: 0.9;
@@ -104,6 +114,9 @@ $segheight: 67vh;
     transform: scale(0.7);
   }
 }
+.de-focus {
+  filter: blur(3px);
+}
 
 .to-home-btn {
   @include round-div();
@@ -113,7 +126,7 @@ $segheight: 67vh;
 }
 
 .close-info {
-  position: absolute;
+  position: fixed;
   bottom: calc(67vh - 25px);
   @include round-div();
 }

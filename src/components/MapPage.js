@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import dataIndex from '../dataIndex/index'
 import avgIndex from '../dataIndex/average'
 import MapWithInput from './MapWithInput'
 import InfoSegment from './InfoSegment'
-import { scrollToTop } from '../utils/index'
 import TimeStamp from './TimeStamp'
 
 const NoData = () => (
@@ -11,23 +10,36 @@ const NoData = () => (
 )
 
 export default () => {
+  const infoSegRef = useRef(null)
   const [selected, setSelected] = useState(undefined)
   const [forceInfo, setForceInfo] = useState(true)
 
-  useEffect(scrollToTop, [])
+  // useEffect(scrollToTop, [])
 
   const data = [dataIndex[selected], avgIndex]
   const CloseBtn = () => (
-    <div className='close-info' onClick={() => setForceInfo(false)}></div>
+    <div
+      className='close-info'
+      onClick={() => {
+        infoSegRef.current.classList.remove('de-focus')
+        setForceInfo(false)
+      }}
+      onMouseEnter={() => {
+        infoSegRef.current.classList.add('de-focus')
+      }}
+      onMouseLeave={() => {
+        infoSegRef.current.classList.remove('de-focus')
+      }}
+    ></div>
   )
   const Info = () =>
     data.some(el => !el) ? (
       <NoData />
     ) : (
       forceInfo && (
-        <div>
+        <div id='info-segment-container'>
           <CloseBtn />
-          <InfoSegment data={data} />
+          <InfoSegment data={data} ref={infoSegRef} />
           <TimeStamp date={dataIndex.timeStamp} />
         </div>
       )

@@ -33,7 +33,7 @@ export default ({ selectHandler, selected }) => {
         setSuggestions([])
       }
     })
-  }, [])
+  })
 
   return (
     <div className='interactive-map'>

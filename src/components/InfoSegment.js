@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { range } from 'lodash'
 import FeatureChart from './FeatureChart'
 import SpotifyLogo from './SpotifyLogo'
 import BubbleChart from './BubbleChart'
+
+import { debounceTime } from 'rxjs/operators'
+import { fromEvent } from 'rxjs'
 
 const toArray = obj =>
   Object.keys(obj).map(k => ({
@@ -19,7 +22,16 @@ const ChartContainer = ({ children, title }) => (
   </div>
 )
 
-export default ({ data }) => {
+const WheelWrapper = ({ wheelHandler, children }) => {
+  useEffect(() => {
+    const scroll$ = fromEvent(window, 'wheel')
+    scroll$.pipe(debounceTime(200)).subscribe(wheelHandler)
+    return window.removeEventListener('wheel', wheelHandler)
+  })
+  return children
+}
+
+export default React.forwardRef(({ data }, ref) => {
   const [current, avgFeatures] = data
   const { genres, features, artists, name } = current
   const featuresArray = features.map(k => k.value)
@@ -71,37 +83,42 @@ export default ({ data }) => {
   )
 
   return (
-    <div className='info-segment'>
-      <ChartContainer title='Top Genres'>
-        <BubbleChart
-          className='bubble'
-          data={genres.map(el => ({
-            label: el.name,
-            value: el.count,
-          }))}
-          graph={{
-            zoom: 1,
-          }}
-          height={400}
-          width={400}
-          padding={5} // optional value, number that set the padding between bubbles
-          showLegend={false} // optional value, pass false to disable the legend.
-        />
-      </ChartContainer>
-
-      <ChartContainer title='Top Artists'>
-        <ArtistBlock />
-      </ChartContainer>
-
-      <ChartContainer title='Audio Features'>
-        <FeatureChart
-          data={barChartData}
-          canvasStyle={{
-            height: 400,
-            width: 700,
-          }}
-        />
-      </ChartContainer>
-    </div>
+    <WheelWrapper
+      wheelHandler={() => {
+        if (ref.current) {
+        }
+      }}
+    >
+      <div ref={ref} id='info-segment'>
+        <ChartContainer title='Top Genres'>
+          <BubbleChart
+            className='bubble'
+            data={genres.map(el => ({
+              label: el.name,
+              value: el.count,
+            }))}
+            graph={{
+              zoom: 1,
+            }}
+            height={400}
+            width={400}
+            padding={5} // optional value, number that set the padding between bubbles
+            showLegend={false} // optional value, pass false to disable the legend.
+          />
+        </ChartContainer>
+        <ChartContainer title='Top Artists'>
+          <ArtistBlock />
+        </ChartContainer>
+        <ChartContainer title='Audio Features'>
+          <FeatureChart
+            data={barChartData}
+            canvasStyle={{
+              height: 400,
+              width: 700,
+            }}
+          />
+        </ChartContainer>
+      </div>
+    </WheelWrapper>
   )
-}
+})
