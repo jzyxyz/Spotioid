@@ -2,7 +2,6 @@ import React from 'react'
 import { range } from 'lodash'
 import FeatureChart from './FeatureChart'
 import SpotifyLogo from './SpotifyLogo'
-import { Link } from 'react-router-dom'
 import BubbleChart from './BubbleChart'
 
 const toArray = obj =>

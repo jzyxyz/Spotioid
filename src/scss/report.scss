@@ -9,5 +9,29 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 50px;
+}
+.artists-section {
+  a {
+    @include clean-anchor();
+  }
+}
+
+.artist-name {
+  font-weight: bolder;
+  background: black;
+  opacity: 0.8;
+  color: white;
+  padding: 10px 5px 0px 5px;
+  margin-right: 5px;
+}
+
+.artist-region-count {
+  font-size: 130%;
+  font-weight: bold;
+}
+
+.artist-total-count {
+  font-size: 130%;
+  color: $green;
+  font-weight: bold;
 }

@@ -12,17 +12,15 @@ $segheight: 67vh;
   }
 }
 
-.rank-key {
-}
-
-#runners-up {
-  &::before {
-    content: '  ';
-  }
-}
-
 .map-segment {
   height: 100vh;
+  .timestamp {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    font-size: 75%;
+    opacity: 0.8;
+  }
 }
 
 .bubble {
@@ -65,6 +63,7 @@ $segheight: 67vh;
   background: whitesmoke;
   padding: 50px 25px;
   opacity: 0.85;
+  min-height: 33vh;
 }
 
 .foot-info {
@@ -92,9 +91,7 @@ $segheight: 67vh;
   border-top-left-radius: 25px;
 }
 
-.close-info {
-  position: absolute;
-  bottom: calc(67vh - 25px);
+@mixin round-div {
   z-index: 999999;
   width: 50px;
   height: 50px;
@@ -107,6 +104,20 @@ $segheight: 67vh;
     transform: scale(0.7);
   }
 }
+
+.to-home-btn {
+  @include round-div();
+  position: fixed;
+  top: 10vh;
+  left: 10vw;
+}
+
+.close-info {
+  position: absolute;
+  bottom: calc(67vh - 25px);
+  @include round-div();
+}
+
 .node {
   &:hover {
     & > circle {
@@ -119,11 +130,6 @@ $segheight: 67vh;
 }
 
 .chartjs-render-monitor {
-  /* left: 15.5vw !important; */
-  /* top: -13vh !important; */
-  /* position: relative; */
-  /* width: 60vw !important; */
-  /* max-height: 50vh !important; */
   height: 400 !important ;
   width: 600 !important;
 }
@@ -139,9 +145,7 @@ $segheight: 67vh;
     transition: ease 0.08s;
   }
   & > a {
-    text-shadow: none;
-    text-decoration: none;
-    background-image: none;
+    @include clean-anchor();
     transition: ease 0.08s;
     padding: 5px 10px 5px 15px;
     display: grid;

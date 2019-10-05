@@ -87,6 +87,7 @@ body {
   position: fixed;
   top: 3vw;
   left: 3vw;
+  z-index: 20;
 }
 
 .auto-compl {
@@ -200,49 +201,6 @@ body {
   border-radius: 5px 5px 5px 30px;
   color: #ffffffb8;
   font-size: 20px;
-}
-
-$arrow-width: 5vw;
-$border-dist: 11vw;
-.click-scroll {
-  position: fixed;
-  left: calc(50vw - #{$border-dist});
-  background: linear-gradient(-180deg, #8b8b8b69, #5252525c);
-  padding: 20px 0px;
-  bottom: 0;
-  cursor: pointer;
-  color: white;
-  border-radius: 5px 0 0 0;
-  text-align: center;
-  width: calc(#{$border-dist} / 2);
-  z-index: 100;
-  margin: 0 !important;
-  // semi transparent mask
-  &::before {
-    content: '';
-    pointer-events: none;
-    width: 100vw;
-    position: fixed;
-    bottom: 0px;
-    left: 0px;
-    height: 30vh;
-    background: linear-gradient(0deg, #000000ba, #00000045, transparent);
-  }
-}
-
-.click-scroll-down {
-  z-index: 100;
-  margin: 0 !important;
-  text-align: center;
-  width: calc(#{$border-dist} / 2);
-  position: fixed;
-  left: calc(50vw - (#{$border-dist} / 2));
-  background: linear-gradient(-180deg, #1bb35a, #106b36fd);
-  padding: 20px 30px;
-  bottom: 0;
-  cursor: pointer;
-  color: white;
-  border-radius: 0 5px 0 0;
 }
 
 .link {
