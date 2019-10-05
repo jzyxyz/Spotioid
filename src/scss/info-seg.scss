@@ -1,5 +1,26 @@
 $segheight: 67vh;
 
+#chartjs-tooltip {
+  background-color: white !important;
+  font-size: 85%;
+  border-radius: 8px;
+  padding: 2px 3px;
+  & > table {
+    margin-bottom: 0rem;
+    line-height: 0rem;
+    font-size: 75%;
+  }
+}
+
+.rank-key {
+}
+
+#runners-up {
+  &::before {
+    content: '  ';
+  }
+}
+
 .map-segment {
   height: 100vh;
 }
@@ -39,10 +60,9 @@ $segheight: 67vh;
 }
 
 .foot {
-  height: 21vh;
   width: 100%;
-  color: white;
-  background: black;
+  color: black;
+  background: whitesmoke;
   padding: 50px 25px;
   opacity: 0.85;
 }
@@ -60,7 +80,9 @@ $segheight: 67vh;
   height: $segheight;
   position: absolute;
   bottom: 0px;
-  background: #31313199;
+  // background: #31313199;
+  background: black;
+  opacity: 0.9;
   width: 100vw;
   overflow: scroll;
   display: flex;
@@ -117,6 +139,9 @@ $segheight: 67vh;
     transition: ease 0.08s;
   }
   & > a {
+    text-shadow: none;
+    text-decoration: none;
+    background-image: none;
     transition: ease 0.08s;
     padding: 5px 10px 5px 15px;
     display: grid;

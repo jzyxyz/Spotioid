@@ -5,8 +5,8 @@ import Footer from './Footer'
 import TimeStamp from './TimeStamp'
 import MapWithInput from './MapWithInput'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
-import ReverseIndex from './ReverseIndex'
 import InfoSegment from './InfoSegment'
+import Report from './Report'
 
 const NoData = () => (
   <div className='no-data-tip'>No data for this country available</div>
@@ -33,42 +33,41 @@ const MapPage = () => {
     )
 
   return (
-    <div className='map-segment'>
-      <MapWithInput
-        selectHandler={country => {
-          setSelected(country)
-          setForceInfo(true)
-        }}
-        selected={selected}
-      />
-
-      <Info />
+    <div id='map-page-root'>
+      <div className='map-segment'>
+        <MapWithInput
+          selectHandler={country => {
+            setSelected(country)
+            setForceInfo(true)
+          }}
+          selected={selected}
+        />
+        <Info />
+      </div>
     </div>
   )
 }
 
 const Main = () => {
   return (
-    <>
-      <Router>
-        <Switch>
-          <Route path='/reverse-index'>
-            <ReverseIndex />
-          </Route>
-          <Route path='/' component={MapPage} />
-        </Switch>
-      </Router>
+    <Router>
+      <Switch>
+        <Route path='/report' component={Report} />
+        <Route path='/' component={MapPage} />
+      </Switch>
 
       <div className='foot'>
         <div className='foot-info'>
           <h3>About </h3>
+          <Link to='/report'>
+            <h3>Report </h3>
+          </Link>
+
           <Footer />
           <TimeStamp date={dataIndex.timeStamp} />
         </div>
       </div>
-      {/*
-       */}
-    </>
+    </Router>
   )
 }
 

@@ -3,12 +3,10 @@
 }
 body {
   overflow-x: hidden;
-  font-family: 'Maven Pro', sans-serif;
 }
 
-#root {
+#map-page-root {
   height: 100%;
-  // overflow: hidden;
 
   align-items: center;
   align-content: center;
@@ -65,11 +63,6 @@ body {
     &[candidate='true'] {
       fill: #4dff8b;
     }
-    // // When a layer is 'selected' (via 'aria-current').
-    // &[aria-current='true'] {
-    //   fill: #a275e3;
-    // }
-    // // When a layer is 'checked' (via 'aria-checked').
     &[aria-checked='true'] {
       fill: #4dff8b !important;
     }
@@ -80,11 +73,9 @@ body {
 }
 
 .search-input {
-  height: 30px;
   font-size: 25px;
   user-select: none;
   border: none !important;
-  caret-color: #54c945;
   background: #31313199;
   color: white;
   padding: 11px 15px 10px !important;
@@ -126,7 +117,6 @@ body {
   border-radius: 15px;
   font-size: 25px;
   padding: 8px 15px 13px;
-  height: 30px;
   position: fixed;
   left: 3vw;
   width: 20vw;
@@ -212,14 +202,6 @@ body {
   font-size: 20px;
 }
 
-// .chartjs-render-monitor {
-//   left: 15.5vw !important;
-//   top: -13vh !important;
-//   position: relative;
-//   width: 60vw !important;
-//   max-height: 50vh !important;
-// }
-
 $arrow-width: 5vw;
 $border-dist: 11vw;
 .click-scroll {
@@ -261,13 +243,6 @@ $border-dist: 11vw;
   cursor: pointer;
   color: white;
   border-radius: 0 5px 0 0;
-}
-
-#chartjs-tooltip {
-  background-color: white !important;
-  font-size: 85%;
-  border-radius: 8px;
-  padding: 2px 3px;
 }
 
 .link {
