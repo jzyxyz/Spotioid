@@ -6,12 +6,12 @@ import ArtistChart from './ArtistChart'
 
 const genreChartDimension = {
   width: 700,
-  height: 600,
+  height: 500,
 }
 const featureChartDimension = {
   canvasStyle: {
-    width: 900,
-    height: 600,
+    width: 850,
+    height: 500,
   },
 }
 
