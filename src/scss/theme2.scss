@@ -59,7 +59,7 @@ $footerheight: 75px;
   }
 }
 
-.map-segment {
+.map-page {
   height: 100vh;
   .timestamp {
     position: absolute;
@@ -70,11 +70,6 @@ $footerheight: 75px;
     font-family: inherit;
     font-style: italic;
   }
-}
-
-.bubble {
-  width: 100%;
-  height: 100%;
 }
 
 .timestamp {
@@ -102,9 +97,14 @@ $footerheight: 75px;
 }
 
 .chart {
+  & canvas,
+  & svg {
+    width: 100%;
+    height: 100%;
+  }
   height: 100%;
   display: flex;
-  // padding-top: 50px;
+  margin: 25px;
 }
 
 .foot {
@@ -112,8 +112,9 @@ $footerheight: 75px;
   width: 100vw;
   background: black;
   // padding: 50px 25px;
-  opacity: 1;
+  opacity: 0.95;
   height: $footerheight;
+  backdrop-filter: blur(3px);
   bottom: 0;
   a {
     @include clean-anchor;
@@ -126,17 +127,18 @@ $footerheight: 75px;
   margin-left: auto;
   width: 88%;
 }
+$footer-btn-size: 20px;
 .svg-container {
   &:hover {
     & svg {
-      width: 28px;
-      height: 28px;
       color: $blue;
       transition: ease 0.2s;
     }
   }
+  opacity: 1;
+  z-index: 2;
   cursor: pointer;
-  margin-right: 25px;
+  margin-right: $footer-btn-size * 1.2;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -144,8 +146,8 @@ $footerheight: 75px;
   width: 50px;
   & svg {
     color: white;
-    width: 26px;
-    height: 26px;
+    width: $footer-btn-size !important;
+    height: $footer-btn-size !important;
   }
 }
 
@@ -199,20 +201,6 @@ $footerheight: 75px;
 .de-focus {
   // filter: blur(3px);
   filter: brightness(20%);
-}
-
-@mixin round-div {
-  z-index: 999999;
-  background: #1e3264;
-  color: white;
-  border-radius: 25px;
-}
-
-.to-home-btn {
-  @include round-div();
-  position: fixed;
-  top: 10vh;
-  left: 10vw;
 }
 
 .close-info {

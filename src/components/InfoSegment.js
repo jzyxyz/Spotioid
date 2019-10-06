@@ -63,7 +63,6 @@ export default React.forwardRef(({ data }, ref) => {
     <div ref={ref} id='info-segment'>
       <ChartContainer title='Top Genres'>
         <BubbleChart
-          className='bubble'
           data={genres.map(el => ({
             label: el.name,
             value: el.count,

@@ -11,7 +11,7 @@ const scrollToTop = () => {
 
 const writeToClipboard = async data => {
   const result = await navigator.permissions.query({ name: 'clipboard-write' })
-  if (result.state == 'granted' || result.state == 'prompt') {
+  if (result.state === 'granted' || result.state === 'prompt') {
     return navigator.clipboard.writeText(data)
   }
 }

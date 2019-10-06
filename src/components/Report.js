@@ -5,7 +5,6 @@ import artistRank from '../dataIndex/artistRank.json'
 import { flag } from 'country-emoji'
 import { capitalize } from 'lodash'
 import { scrollToTop } from '../utils/index.js'
-import { Link } from 'react-router-dom'
 import SpotifyLink from './SpotifyLink'
 
 const attachFlag = name => (flag(name) ? `${name} ${flag(name)}` : name)
@@ -29,11 +28,11 @@ const FeatureRank = () => (
             followed by
             <span id='runners-up'>
               {featureRank[f].slice(1, 5).map(({ name }) => (
-                <div key={name}>
+                <span key={name}>
                   <SpotifyLink id={dataIndex[name].id} prefix='playlist'>
                     <span>{attachFlag(name)}</span>
                   </SpotifyLink>
-                </div>
+                </span>
               ))}
             </span>
           </p>
@@ -88,9 +87,6 @@ export default () => {
 
   return (
     <div id='report-page-root'>
-      <Link to='/'>
-        <div className='to-home-btn'></div>
-      </Link>
       <div id='report-container'>
         <article>
           <h1>DataBot for Spotify's Weekly Report</h1>

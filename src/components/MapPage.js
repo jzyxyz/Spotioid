@@ -96,7 +96,7 @@ export default () => {
 
   return (
     <div id='map-page-root'>
-      <div className='map-segment'>
+      <div className='map-page'>
         <MapWithInput
           selectHandler={country => {
             setSelected(country)

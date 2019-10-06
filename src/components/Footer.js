@@ -6,6 +6,7 @@ import {
   faBookOpen,
   faCopyright,
   faShare,
+  faMapMarkedAlt,
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -14,6 +15,11 @@ export default () => {
   const copyrightRef = useRef(null)
 
   const icons = [
+    {
+      to: '/',
+      icon: faMapMarkedAlt,
+      props: {},
+    },
     {
       to: '/about',
       icon: faInfo,
@@ -74,7 +80,7 @@ export default () => {
     <div className='foot'>
       <Icons />
       <div id='share-tip' className='hidden' ref={shareTipRef}>
-        Copied website link to clipboard! 😄
+        Copied website link to clipboard! <span role='img'> {'  😄 '} </span>
       </div>
       <div
         id='copyright-tip'
