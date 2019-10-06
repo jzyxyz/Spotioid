@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { range } from 'lodash'
 import FeatureChart from './FeatureChart'
 import SpotifyLogo from './SpotifyLogo'
@@ -13,22 +13,21 @@ const toArray = obj =>
     value: obj[k],
   }))
 
-const ChartContainer = ({ children, title }) => (
-  <div className='chart-container'>
+const ChartContainer = React.forwardRef(({ children, title }, ref) => (
+  <div className='chart-container' ref={ref}>
     <div className='chart-title'>
       <h2>{title}</h2>
     </div>
     <div className='chart'>{children}</div>
   </div>
-)
+))
 
-const WheelWrapper = ({ wheelHandler, children }) => {
+const useWheel = wheelHandler => {
   useEffect(() => {
     const scroll$ = fromEvent(window, 'wheel')
-    scroll$.pipe(debounceTime(200)).subscribe(wheelHandler)
+    scroll$.pipe(debounceTime(100)).subscribe(wheelHandler)
     return window.removeEventListener('wheel', wheelHandler)
   })
-  return children
 }
 
 export default React.forwardRef(({ data }, ref) => {
@@ -82,43 +81,56 @@ export default React.forwardRef(({ data }, ref) => {
     </div>
   )
 
+  let page = 0
+  useWheel(() => {
+    console.log('current page', page)
+    const charts = document.querySelectorAll('.chart-container')
+    charts[page].classList.add('hidden')
+    page = (page + 1) % 3
+    if (charts[page].classList.contains('hidden')) {
+      charts[page].classList.remove('hidden')
+      charts[page].classList.add('animated', 'fadeIn')
+      charts[page].addEventListener('animationend', () => {
+        charts[page].classList.remove('animated', 'fadeIn')
+      })
+    } else {
+      charts[page].classList.add('animated', 'fadeIn')
+      charts[page].addEventListener('animationend', () => {
+        charts[page].classList.remove('animated', 'fadeIn')
+      })
+    }
+  })
+
   return (
-    <WheelWrapper
-      wheelHandler={() => {
-        if (ref.current) {
-        }
-      }}
-    >
-      <div ref={ref} id='info-segment'>
-        <ChartContainer title='Top Genres'>
-          <BubbleChart
-            className='bubble'
-            data={genres.map(el => ({
-              label: el.name,
-              value: el.count,
-            }))}
-            graph={{
-              zoom: 1,
-            }}
-            height={400}
-            width={400}
-            padding={5} // optional value, number that set the padding between bubbles
-            showLegend={false} // optional value, pass false to disable the legend.
-          />
-        </ChartContainer>
-        <ChartContainer title='Top Artists'>
-          <ArtistBlock />
-        </ChartContainer>
-        <ChartContainer title='Audio Features'>
-          <FeatureChart
-            data={barChartData}
-            canvasStyle={{
-              height: 400,
-              width: 700,
-            }}
-          />
-        </ChartContainer>
-      </div>
-    </WheelWrapper>
+    <div ref={ref} id='info-segment'>
+      <ChartContainer title='Top Genres'>
+        <BubbleChart
+          className='bubble'
+          data={genres.map(el => ({
+            label: el.name,
+            value: el.count,
+          }))}
+          graph={{
+            zoom: 1,
+          }}
+          height={400}
+          width={400}
+          padding={5} // optional value, number that set the padding between bubbles
+          showLegend={false} // optional value, pass false to disable the legend.
+        />
+      </ChartContainer>
+      <ChartContainer title='Top Artists'>
+        <ArtistBlock />
+      </ChartContainer>
+      <ChartContainer title='Audio Features'>
+        <FeatureChart
+          data={barChartData}
+          canvasStyle={{
+            height: 400,
+            width: 700,
+          }}
+        />
+      </ChartContainer>
+    </div>
   )
 })

@@ -79,8 +79,13 @@ $segheight: 67vh;
 #info-segment-container {
   position: absolute;
   top: 23vh;
-  // height: 77vh;
-  // overflow: hidden;
+  height: 77vh;
+  overflow: hidden;
+}
+
+.hidden {
+  display: none;
+  // visibility: hidden;
 }
 
 #info-segment {

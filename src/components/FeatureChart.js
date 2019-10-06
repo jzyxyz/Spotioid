@@ -149,6 +149,9 @@ class FeatureChart extends React.Component {
             },
           ],
         },
+        animation: {
+          duration: 0,
+        },
       },
     })
   }
