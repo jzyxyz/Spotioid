@@ -59,7 +59,7 @@ $footerheight: 75px;
   }
 }
 
-.map-segment {
+.map-page {
   height: 100vh;
   .timestamp {
     position: absolute;
@@ -70,11 +70,6 @@ $footerheight: 75px;
     font-family: inherit;
     font-style: italic;
   }
-}
-
-.bubble {
-  width: 100%;
-  height: 100%;
 }
 
 .timestamp {
@@ -102,9 +97,14 @@ $footerheight: 75px;
 }
 
 .chart {
+  & canvas,
+  & svg {
+    width: 100%;
+    height: 100%;
+  }
   height: 100%;
   display: flex;
-  // padding-top: 50px;
+  margin: 25px;
 }
 
 .foot {
@@ -112,8 +112,9 @@ $footerheight: 75px;
   width: 100vw;
   background: black;
   // padding: 50px 25px;
-  opacity: 1;
+  opacity: 0.95;
   height: $footerheight;
+  backdrop-filter: blur(3px);
   bottom: 0;
   a {
     @include clean-anchor;
@@ -126,17 +127,18 @@ $footerheight: 75px;
   margin-left: auto;
   width: 88%;
 }
+$footer-btn-size: 20px;
 .svg-container {
   &:hover {
     & svg {
-      width: 28px;
-      height: 28px;
       color: $blue;
       transition: ease 0.2s;
     }
   }
+  opacity: 1;
+  z-index: 2;
   cursor: pointer;
-  margin-right: 25px;
+  margin-right: $footer-btn-size * 1.2;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -144,8 +146,8 @@ $footerheight: 75px;
   width: 50px;
   & svg {
     color: white;
-    width: 26px;
-    height: 26px;
+    width: $footer-btn-size !important;
+    height: $footer-btn-size !important;
   }
 }
 
@@ -196,40 +198,33 @@ $footerheight: 75px;
   // padding: 15vh 5vw;
 }
 
-@mixin round-div {
-  z-index: 999999;
-  width: 50px;
-  height: 50px;
-  background: #1e3264;
-  color: white;
-  border-radius: 25px;
-  cursor: pointer;
-  &:hover {
-    transition: ease 0.58s;
-    // color: salmon;
-    background: white;
-    // transform: scale(0.7);
-  }
-}
-
 .de-focus {
   // filter: blur(3px);
   filter: brightness(20%);
 }
 
-.to-home-btn {
-  @include round-div();
-  position: fixed;
-  top: 10vh;
-  left: 10vw;
-}
-
 .close-info {
   position: fixed;
-  // bottom: calc(67vh - 25px);
-  top: calc(3vh + 17px);
   right: 3vw;
-  @include round-div();
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999;
+  // width: 60px;
+  position: fixed;
+  top: 3vw;
+  padding: 0 15px;
+  height: 60px;
+  & > svg {
+    height: 30px !important;
+    width: 30px !important;
+    color: $blue;
+    cursor: pointer;
+    &:hover {
+      color: white;
+      transition: ease 0.28s;
+    }
+  }
 }
 
 .node {
@@ -244,8 +239,6 @@ $footerheight: 75px;
 }
 
 .chartjs-render-monitor {
-  // height: 400 !important ;
-  // width: 600 !important;
   margin: 50px 0;
 }
 

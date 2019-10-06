@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import Map from './Map'
 import InputSuggest from './InputSugguest'
-import { trim } from 'lodash'
 import COUNTRY_NAMES from '../metadata/CountryList'
 
 export default ({ selectHandler, selected }) => {
@@ -33,7 +32,7 @@ export default ({ selectHandler, selected }) => {
         className='search-input'
         autoComplete='off'
         value={input}
-        onChange={e => setInput(trim(e.target.value))}
+        onChange={e => setInput(e.target.value)}
         onKeyUp={event => {
           const searchInput = event.target.value
           if (searchInput.length === 0) {
