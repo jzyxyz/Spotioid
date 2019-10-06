@@ -42,3 +42,9 @@
     }
   }
 }
+
+@mixin clean-anchor {
+  text-shadow: none;
+  text-decoration: none;
+  background-image: none;
+}

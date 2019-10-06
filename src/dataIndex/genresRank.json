@@ -1,0 +1,102 @@
+[
+    {
+        "name": "pop",
+        "count": 66,
+        "regionCount": 58
+    },
+    {
+        "name": "reggaeton",
+        "count": 43,
+        "regionCount": 18
+    },
+    {
+        "name": "dance pop",
+        "count": 42,
+        "regionCount": 27
+    },
+    {
+        "name": "italian hip hop",
+        "count": 36,
+        "regionCount": 1
+    },
+    {
+        "name": "desi pop",
+        "count": 33,
+        "regionCount": 1
+    },
+    {
+        "name": "modern bollywood",
+        "count": 32,
+        "regionCount": 1
+    },
+    {
+        "name": "reggaeton flow",
+        "count": 32,
+        "regionCount": 18
+    },
+    {
+        "name": "post-teen pop",
+        "count": 31,
+        "regionCount": 21
+    },
+    {
+        "name": "latin",
+        "count": 29,
+        "regionCount": 18
+    },
+    {
+        "name": "trap latino",
+        "count": 28,
+        "regionCount": 18
+    },
+    {
+        "name": "thai pop",
+        "count": 26,
+        "regionCount": 1
+    },
+    {
+        "name": "tropical",
+        "count": 26,
+        "regionCount": 17
+    },
+    {
+        "name": "german hip hop",
+        "count": 25,
+        "regionCount": 3
+    },
+    {
+        "name": "turkish hip hop",
+        "count": 25,
+        "regionCount": 1
+    },
+    {
+        "name": "finnish dance pop",
+        "count": 24,
+        "regionCount": 1
+    },
+    {
+        "name": "french hip hop",
+        "count": 24,
+        "regionCount": 1
+    },
+    {
+        "name": "polish hip hop",
+        "count": 24,
+        "regionCount": 1
+    },
+    {
+        "name": "trap francais",
+        "count": 24,
+        "regionCount": 1
+    },
+    {
+        "name": "funk carioca",
+        "count": 23,
+        "regionCount": 1
+    },
+    {
+        "name": "indonesian pop",
+        "count": 23,
+        "regionCount": 1
+    }
+]

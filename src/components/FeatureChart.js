@@ -144,10 +144,13 @@ class FeatureChart extends React.Component {
                 beginAtZero: true,
                 fontColor: 'white',
                 maxRotation: '0',
-                fontSize: '8',
+                fontSize: '11',
               },
             },
           ],
+        },
+        animation: {
+          duration: 0,
         },
       },
     })
@@ -161,6 +164,8 @@ class FeatureChart extends React.Component {
     return (
       <div>
         <canvas
+          style={this.props.canvasStyle}
+          className='feature-chart'
           ref={chart => {
             this.chart = chart
           }}

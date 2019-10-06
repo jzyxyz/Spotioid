@@ -6,10 +6,8 @@ const GenreChart = ({ data, className }) => {
     <BubbleChart
       className={className}
       graph={{
-        zoom: 0.5,
+        zoom: 1,
       }}
-      heigth={800}
-      width={800}
       padding={5} // optional value, number that set the padding between bubbles
       showLegend={false} // optional value, pass false to disable the legend.
       data={data}

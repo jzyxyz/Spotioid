@@ -1,0 +1,358 @@
+$segheight: calc(100vh - 100px);
+$footerheight: 75px;
+
+.map-svg {
+  background: none;
+  width: 80vw;
+  height: auto;
+  max-width: 1200 !important;
+  max-height: 900 !important;
+  transition: cubic-bezier(0, 0, 0.33, 1.07) 0.8s;
+  & > path {
+    stroke: rgba(22, 22, 22, 0.473);
+    outline: none;
+    fill: rgba(36, 36, 36, 0.1);
+
+    &[available='true'] {
+      fill: #1ed75f59;
+      &:hover {
+        cursor: pointer;
+        fill: #1ed760;
+      }
+    }
+    &[available='false'] {
+      fill: rgba(36, 36, 36, 0.1);
+      cursor: default !important;
+    }
+
+    &[candidate='true'] {
+      fill: #4dff8b;
+    }
+    &[aria-checked='true'] {
+      fill: #4dff8b !important;
+    }
+    &[aria-checked='true'][available='false'] {
+      fill: rgba(245, 245, 245, 0.308) !important;
+    }
+  }
+}
+
+.interactive-map {
+  height: 100vh;
+  align-items: center;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  // padding-bottom: 15vh;
+}
+
+#chartjs-tooltip {
+  background-color: white !important;
+  font-size: 85%;
+  border-radius: 8px;
+  padding: 2px 3px;
+  & > table {
+    margin-bottom: 0rem;
+    line-height: 0rem;
+    font-size: 75%;
+  }
+}
+
+.map-segment {
+  height: 100vh;
+  .timestamp {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    font-size: 75%;
+    opacity: 0.3;
+    font-family: inherit;
+    font-style: italic;
+  }
+}
+
+.bubble {
+  width: 100%;
+  height: 100%;
+}
+
+.timestamp {
+  color: $gray;
+}
+
+.chart-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: $segheight;
+  // padding: 25px 0px;
+  h2 {
+    margin-bottom: 1.5rem;
+    color: white;
+  }
+}
+
+.chart-title {
+  width: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px dashed #919496;
+}
+
+.chart {
+  height: 100%;
+  display: flex;
+  // padding-top: 50px;
+}
+
+.foot {
+  position: fixed;
+  width: 100vw;
+  background: black;
+  // padding: 50px 25px;
+  opacity: 1;
+  height: $footerheight;
+  bottom: 0;
+  a {
+    @include clean-anchor;
+  }
+}
+
+.foot-icon-group {
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  width: 88%;
+}
+.svg-container {
+  &:hover {
+    & svg {
+      width: 28px;
+      height: 28px;
+      color: $blue;
+      transition: ease 0.2s;
+    }
+  }
+  cursor: pointer;
+  margin-right: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  & svg {
+    color: white;
+    width: 26px;
+    height: 26px;
+  }
+}
+
+@mixin footer-tip {
+  color: white;
+  position: fixed;
+  bottom: 100px;
+  width: 300px;
+  left: calc(50vw - 150px);
+  font-size: medium;
+  background: black;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+#share-tip {
+  @include footer-tip();
+}
+#copyright-tip {
+  @include footer-tip();
+  justify-content: space-around;
+}
+
+#info-segment-container {
+  position: absolute;
+  // top: 23vh;
+  bottom: $footerheight;
+  height: $segheight;
+  overflow: hidden;
+}
+
+.hidden {
+  display: none !important;
+}
+
+#info-segment {
+  flex-direction: column;
+  background: black;
+  opacity: 0.94;
+  width: 100vw;
+  overflow: scroll;
+  display: flex;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+  transition: ease 0.28s;
+  // padding: 15vh 5vw;
+}
+
+@mixin round-div {
+  z-index: 999999;
+  width: 50px;
+  height: 50px;
+  background: #1e3264;
+  color: white;
+  border-radius: 25px;
+  cursor: pointer;
+  &:hover {
+    transition: ease 0.58s;
+    // color: salmon;
+    background: white;
+    // transform: scale(0.7);
+  }
+}
+
+.de-focus {
+  // filter: blur(3px);
+  filter: brightness(20%);
+}
+
+.to-home-btn {
+  @include round-div();
+  position: fixed;
+  top: 10vh;
+  left: 10vw;
+}
+
+.close-info {
+  position: fixed;
+  // bottom: calc(67vh - 25px);
+  top: calc(3vh + 17px);
+  right: 3vw;
+  @include round-div();
+}
+
+.node {
+  &:hover {
+    & > circle {
+      fill: #1e3264 !important;
+      transition: ease 0.28s;
+      opacity: 0.7;
+      transform: scale(1.1);
+    }
+  }
+}
+
+.chartjs-render-monitor {
+  // height: 400 !important ;
+  // width: 600 !important;
+  margin: 50px 0;
+}
+
+.artists {
+  color: white;
+  min-width: 500px;
+  text-align: end;
+  margin: 50px 0;
+  &:hover > a:first-child {
+    // padding: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    transition: ease 0.08s;
+  }
+  & > a {
+    @include clean-anchor();
+    transition: ease 0.08s;
+    padding: 5px 10px 5px 15px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 70px;
+    text-decoration: none;
+    color: whitesmoke;
+    justify-items: end;
+
+    .count-block {
+      display: flex;
+      align-items: center;
+      right: -20px;
+      grid-column: 2 /3;
+      justify-self: start !important;
+      position: relative;
+      left: -10px;
+    }
+    // 进度条
+    .count-bar {
+      content: '';
+      border-radius: 3px;
+      height: 5px;
+      width: 33px;
+      background-color: #fffe;
+    }
+    .song-count {
+      position: relative;
+      left: 5px;
+    }
+    .spotify-logo {
+      width: 25px;
+      fill: whitesmoke;
+      position: relative;
+      right: 24px;
+      grid-column: 3;
+      grid-row: 1 /2;
+    }
+    .singer-name {
+      margin-right: 30px;
+      grid-column: 1 / 2;
+    }
+    &:first-child {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      &::after {
+        content: 'No.1';
+      }
+    }
+    &:nth-child(2)::after {
+      content: 'No.2';
+    }
+    &:nth-child(3)::after {
+      content: 'No.3';
+    }
+    &:nth-child(1)::after,
+    &:nth-child(2)::after,
+    &:nth-child(3)::after {
+      grid-column: 3;
+      grid-row: 1 / 2;
+      transition: ease-in 0.18s;
+      position: relative;
+      right: 20px;
+      padding: 1px 3px 0px 3px;
+      height: 21px;
+      text-align: center;
+      text-justify: distribute;
+      color: #6b4712;
+      border-radius: 3px;
+      background: linear-gradient(45deg, #fcba5d, #fcdaa4);
+      font-size: 13px;
+    }
+    &:hover {
+      background-color: #1e3264;
+      padding-top: 10px !important;
+      padding-bottom: 10px !important;
+      z-index: 10000;
+      &:nth-child(1)::after,
+      &:nth-child(2)::after,
+      &:nth-child(3)::after {
+        opacity: 0;
+      }
+      .spotify-logo {
+        // position: absolute;
+        background: #1e3264;
+        // padding: 9px 12px 8px 9px;
+        // right: -32px;
+        // transform: translateY(-10px);
+        opacity: 1;
+        border-radius: 0px 5px 5px 0px;
+      }
+    }
+    @include hover-show('.spotify-logo');
+  }
+}
