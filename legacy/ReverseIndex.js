@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import dataIndex from '../dataIndex/index'
-import AvgIndex from '../dataIndex/average'
-import featureRank from '../dataIndex/featureRank'
-import featureLegend from '../dataIndex/featureLegend'
+import dataIndex from '../src/dataIndex/index'
+import AvgIndex from '../src/dataIndex/average'
+import featureRank from '../src/dataIndex/featureRank'
+import featureLegend from '../src/dataIndex/featureLegend'
 import { range, capitalize } from 'lodash'
 import { Link } from 'react-router-dom'
 
