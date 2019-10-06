@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { writeToClipboard } from '../utils'
+import { writeToClipboard, animateInThenOut } from '../utils'
 import {
   faInfo,
   faBookOpen,
@@ -8,21 +8,10 @@ import {
   faShare,
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { isNumber } from 'lodash'
 
 export default () => {
   const shareTipRef = useRef(null)
   const copyrightRef = useRef(null)
-
-  const animateInThenOut = (reference, method = 'fadeIn', timeout = 3000) => {
-    reference.current.classList.add('animated', method)
-    reference.current.classList.remove('hidden')
-    if (isNumber(timeout)) {
-      setTimeout(() => {
-        reference.current.classList.add('hidden')
-      }, timeout)
-    }
-  }
 
   const icons = [
     {

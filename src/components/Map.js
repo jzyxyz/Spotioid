@@ -2,10 +2,12 @@ import React, { PureComponent } from 'react'
 import VectorMap from './VectorMap'
 import world from '../metadata/spotify_world.json'
 
-const Tooltip = ({ style, text, cName }) => (
-  <div className={'tooltip ' + cName || ''} style={style}>
-    {text}
-  </div>
+const Tooltip = ({ text, cName }) => (
+  <input
+    value={text || ''}
+    readOnly
+    className={'tooltip ' + cName || ''}
+  ></input>
 )
 
 class Map extends PureComponent {

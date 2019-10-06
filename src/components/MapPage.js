@@ -5,6 +5,9 @@ import MapWithInput from './MapWithInput'
 import InfoSegment from './InfoSegment'
 import TimeStamp from './TimeStamp'
 import NoData from './NoData'
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 import { useKeyDown, useWheel } from '../hooks/index'
 
 export default () => {
@@ -14,19 +17,31 @@ export default () => {
 
   const data = [dataIndex[selected], avgIndex]
   const CloseBtn = () => (
-    <div
-      className='close-info'
-      onClick={() => {
-        infoSegRef.current.classList.remove('de-focus')
-        setForceInfo(false)
-      }}
-      onMouseEnter={() => {
-        infoSegRef.current.classList.add('de-focus')
-      }}
-      onMouseLeave={() => {
-        infoSegRef.current.classList.remove('de-focus')
-      }}
-    ></div>
+    <div className='close-info'>
+      <FontAwesomeIcon
+        icon={faTimes}
+        onClick={e => {
+          // console.log(e.target)
+          const container = e.target.closest('.close-info')
+          container.classList.add('hidden')
+          infoSegRef.current.classList.remove('de-focus')
+          infoSegRef.current.classList.add('animated', 'slideOutDown', 'fast')
+          const id = setTimeout(() => {
+            infoSegRef.current.classList.remove('animated', 'fadeOut')
+            // console.log(container, 222)
+            container.classList.remove('hidden')
+            setForceInfo(false)
+            clearTimeout(id)
+          }, 800)
+        }}
+        onMouseEnter={() => {
+          infoSegRef.current.classList.add('de-focus')
+        }}
+        onMouseLeave={() => {
+          infoSegRef.current.classList.remove('de-focus')
+        }}
+      />
+    </div>
   )
 
   const Info = () =>

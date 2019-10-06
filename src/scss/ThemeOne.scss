@@ -12,14 +12,7 @@ body {
   align-content: center;
   display: flex;
   flex-direction: column;
-  // height: 100%;
 
-  // 所有可视化内容都在 root 下面, 作为一个 list item
-  // & > * {
-  //   margin: 0 0 5vh 0;
-  //   max-height: 100vh;
-  // }
-  // gradient layer to darken the atmosphere
   &::before {
     content: '';
     z-index: -99;
@@ -39,24 +32,6 @@ body {
   }
 }
 
-.search-input {
-  font-size: 25px;
-  user-select: none;
-  border: none !important;
-  background: #31313199;
-  color: white;
-  padding: 11px 15px 10px !important;
-  text-align: end;
-  width: 20vw;
-  outline: none;
-  border-radius: 15px;
-  backdrop-filter: saturate(306%) blur(4px);
-  position: fixed;
-  top: 3vw;
-  left: 3vw;
-  z-index: 20;
-}
-
 .auto-compl {
   z-index: 2;
   display: flex;
@@ -66,8 +41,10 @@ body {
   left: 3vw;
   background: white;
   padding: 11px 15px 10px !important;
+  // height: 60px;
   text-align: end;
-  width: 20vw;
+  width: 25vw;
+  font-size: 20px;
   outline: none;
   background: linear-gradient(0deg, #31313199, #252525e3);
   color: white;
@@ -79,58 +56,36 @@ body {
   }
 }
 
-.tooltip {
-  @include hover-self-offset(20px, 30px);
-  backdrop-filter: saturate(306%) blur(4px);
-  border-radius: 15px;
+@mixin input-style {
   font-size: 25px;
-  padding: 8px 15px 13px;
-  position: fixed;
-  left: 3vw;
-  width: 20vw;
-  top: 3vw;
-  background: #ffffffc9;
+  user-select: none;
+  border: none !important;
   text-align: end;
+  width: 25vw;
+  outline: none;
+  backdrop-filter: saturate(306%) blur(4px);
+  position: fixed;
+  top: 3vw;
+  left: 3vw;
+  padding: 0 15px;
+  height: 60px;
+  border-radius: 15px;
+}
+
+.search-input {
+  @include input-style();
+  background: #31313199;
+  color: white;
+  z-index: 20;
+}
+
+.tooltip {
+  // @include hover-self-offset(20px, 30px);
+  @include input-style();
+  background: #ffffffc9;
   &.show + .search-input {
     visibility: hidden;
   }
-}
-
-.txt-block {
-  &::before {
-    content: 'Number of songs on board';
-    position: fixed;
-    left: calc(3vw - 10px);
-    width: fit-content;
-    top: calc(18vw - 25px);
-    color: #000000bf;
-    background: linear-gradient(15deg, #d8d8d8, #dcbfbf);
-    padding: 5px 20px;
-    border-radius: 20px 5px 5px 5px;
-    z-index: 100;
-    font-size: 15px;
-    font-weight: 500;
-  }
-  &::after {
-    content: 'Top Genre';
-    position: relative;
-    left: calc(10vw - 15px);
-    width: fit-content;
-    top: calc(17vw - 25px);
-    color: #000000bf;
-    background: linear-gradient(15deg, #dcbfbf, #d8d8d8);
-    padding: 5px 20px;
-    border-radius: 20px 5px 5px 5px;
-    z-index: 100;
-    font-size: 15px;
-    font-weight: 500;
-    display: none; ////////////////////////////
-  }
-  display: flex;
-  position: fixed;
-  left: 0;
-  top: 15vh;
-  flex-direction: column;
 }
 
 .genre-block {
@@ -160,9 +115,4 @@ body {
   border-radius: 5px 5px 5px 30px;
   color: #ffffffb8;
   font-size: 20px;
-}
-
-.link {
-  z-index: 99999;
-  position: absolute;
 }

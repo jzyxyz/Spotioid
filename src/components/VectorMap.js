@@ -1,32 +1,37 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const VectorMap = ({
-  layers,
-  tabIndex,
-  layerProps,
-  checkedLayers,
-  currentLayers,
-  candidateLayers,
-  ...rest
-}) => (
-  <svg xmlns='http://www.w3.org/2000/svg' key={rest.id} {...rest}>
-    {layers.map(layer => (
-      <path
-        key={layer.id}
-        tabIndex={tabIndex}
-        aria-label={layer.name}
-        aria-checked={checkedLayers && checkedLayers.includes(layer.name)}
-        aria-current={currentLayers && currentLayers.includes(layer.name)}
-        candidate={(
-          candidateLayers && candidateLayers.includes(layer.name)
-        ).toString()}
-        {...layer}
-        {...layerProps}
-      />
-    ))}
-  </svg>
-)
+export default class VectorMap extends React.PureComponent {
+  render() {
+    const {
+      layers,
+      tabIndex,
+      layerProps,
+      checkedLayers,
+      currentLayers,
+      candidateLayers,
+      ...rest
+    } = this.props
+    return (
+      <svg xmlns='http://www.w3.org/2000/svg' key={rest.id} {...rest}>
+        {layers.map(layer => (
+          <path
+            key={layer.id}
+            tabIndex={tabIndex}
+            aria-label={layer.name}
+            aria-checked={checkedLayers && checkedLayers.includes(layer.name)}
+            aria-current={currentLayers && currentLayers.includes(layer.name)}
+            candidate={(
+              candidateLayers && candidateLayers.includes(layer.name)
+            ).toString()}
+            {...layer}
+            {...layerProps}
+          />
+        ))}
+      </svg>
+    )
+  }
+}
 
 VectorMap.propTypes = {
   /** Used to key the svg element. */
@@ -63,5 +68,3 @@ VectorMap.defaultProps = {
   checkedLayers: null,
   currentLayers: null,
 }
-
-export default VectorMap
