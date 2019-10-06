@@ -26,7 +26,14 @@ export default class BubbleChart extends Component {
 
   render() {
     const { width, height, className } = this.props
-    return <svg className={className} width={width} height={height} />
+    return (
+      <svg
+        className={className}
+        width={width}
+        height={height}
+        viewBox={`0 0 ${width} ${height}`}
+      />
+    )
   }
 
   renderChart() {
@@ -41,6 +48,8 @@ export default class BubbleChart extends Component {
     } = this.props
     // Reset the svg element to a empty state.
     this.svg.innerHTML = ''
+
+    // this.svg.attr('viewBox', `0 0 ${width} ${height}`)
 
     const bubblesWidth = showLegend
       ? width * (1 - legendPercentage / 100)
@@ -334,11 +343,12 @@ BubbleChart.propTypes = {
     weight: PropTypes.string,
   }),
 }
+
 BubbleChart.defaultProps = {
   graph: {
-    zoom: 1.1,
-    offsetX: -0.05,
-    offsetY: -0.01,
+    zoom: 0.5,
+    offsetX: 0,
+    offsetY: 0,
   },
   width: 1000,
   height: 800,

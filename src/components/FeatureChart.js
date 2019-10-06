@@ -143,8 +143,8 @@ class FeatureChart extends React.Component {
               ticks: {
                 beginAtZero: true,
                 fontColor: 'white',
-                maxRotation: '0',
-                fontSize: '11',
+                maxRotation: '30',
+                fontSize: '12',
               },
             },
           ],
