@@ -1,17 +1,68 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import { writeToClipboard } from '../utils'
+import {
+  faInfo,
+  faBookOpen,
+  faCopyright,
+  faShare,
+} from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const Footer = () => {
+const icons = [
+  {
+    to: '/about',
+    icon: faInfo,
+    props: {},
+  },
+  {
+    to: '/report',
+    icon: faBookOpen,
+    props: {},
+  },
+  {
+    to: undefined,
+    icon: faCopyright,
+    props: {},
+  },
+  {
+    to: undefined,
+    icon: faShare,
+    props: {
+      onClick: async () => {
+        try {
+          await writeToClipboard(
+            `An interesting website that visualizes Spotify data ${window.location}`,
+          )
+        } catch (e) {
+          alert(e)
+        }
+      },
+    },
+  },
+]
+
+export default () => {
+  const Icons = () => (
+    <div className='foot-icon-group'>
+      {icons.map(({ to, icon, props }) =>
+        to ? (
+          <Link to={to}>
+            <div className='svg-container'>
+              <FontAwesomeIcon icon={icon} {...props} />
+            </div>
+          </Link>
+        ) : (
+          <div className='svg-container'>
+            <FontAwesomeIcon icon={icon} {...props} />
+          </div>
+        ),
+      )}
+    </div>
+  )
   return (
-    <div className='footer'>
-      <h3>crafted by</h3>
-      <a className='footer-contact' href='https://jzyis.me/about'>
-        @JinZhongyuan
-      </a>
-      <a className='footer-contact' href='mailto:yyaomingm@gmail.com'>
-        @GnimOay
-      </a>
+    <div className='foot'>
+      <Icons />
     </div>
   )
 }
-
-export default Footer
