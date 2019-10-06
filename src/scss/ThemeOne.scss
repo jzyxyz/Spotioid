@@ -38,39 +38,6 @@ body {
     background: linear-gradient(90deg, #c074b2, #8ab5e8);
   }
 }
-.map-svg {
-  background: none;
-  transform: translate(16vw, -18vw) scale(0.9);
-  transition: cubic-bezier(0, 0, 0.33, 1.07) 0.8s;
-  width: 90vw !important;
-  height: auto !important;
-  & > path {
-    stroke: rgba(22, 22, 22, 0.473);
-    outline: none;
-    fill: rgba(36, 36, 36, 0.1);
-    &[available='true'] {
-      fill: #1ed75f59;
-      &:hover {
-        cursor: pointer;
-        fill: #1ed760;
-      }
-    }
-    &[available='false'] {
-      fill: rgba(36, 36, 36, 0.1);
-      cursor: default !important;
-    }
-
-    &[candidate='true'] {
-      fill: #4dff8b;
-    }
-    &[aria-checked='true'] {
-      fill: #4dff8b !important;
-    }
-    &[aria-checked='true'][available='false'] {
-      fill: rgba(245, 245, 245, 0.308) !important;
-    }
-  }
-}
 
 .search-input {
   font-size: 25px;
@@ -127,14 +94,6 @@ body {
   &.show + .search-input {
     visibility: hidden;
   }
-}
-
-.interactive-map {
-  height: 100vh;
-  align-items: center;
-  width: 100vw;
-  padding: 25px 0;
-  overflow: hidden;
 }
 
 .txt-block {
