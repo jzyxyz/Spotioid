@@ -3,6 +3,7 @@ import { range } from 'lodash'
 import FeatureChart from './FeatureChart'
 import SpotifyLogo from './SpotifyLogo'
 import BubbleChart from './BubbleChart'
+import { useWheel } from '../hooks/index'
 
 const toArray = obj =>
   Object.keys(obj).map(k => ({
@@ -69,6 +70,29 @@ export default React.forwardRef(({ data }, ref) => {
         ))}
     </div>
   )
+
+  let page = 0
+
+  const wheelHandler = e => {
+    console.log('scroll direction:', e.wheelDeltaY)
+    if (e.wheelDeltaY < 0) {
+      const charts = document.querySelectorAll('.chart-container')
+      charts[page].classList.add('hidden')
+      page = (page + 1) % 3
+      console.log('current page', page)
+      if (charts[page].classList.contains('hidden')) {
+        charts[page].classList.remove('hidden')
+      }
+      charts[page].classList.add('animated', 'fadeIn')
+      charts[page].addEventListener('animationend', () => {
+        charts[page].classList.remove('animated', 'fadeIn')
+      })
+    } else {
+      // scroll back here....
+    }
+  }
+
+  useWheel(wheelHandler)
 
   return (
     <div ref={ref} id='info-segment'>

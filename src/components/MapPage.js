@@ -4,7 +4,6 @@ import avgIndex from '../dataIndex/average'
 import MapWithInput from './MapWithInput'
 import InfoSegment from './InfoSegment'
 import TimeStamp from './TimeStamp'
-import { useWheel } from '../hooks/index'
 
 const NoData = () => (
   <div className='no-data-tip'>No data for this country available</div>
@@ -14,24 +13,6 @@ export default () => {
   const infoSegRef = useRef(null)
   const [selected, setSelected] = useState(undefined)
   const [forceInfo, setForceInfo] = useState(true)
-
-  let page = 0
-
-  const wheelHandler = () => {
-    const charts = document.querySelectorAll('.chart-container')
-    charts[page].classList.add('hidden')
-    page = (page + 1) % 3
-    console.log('current page', page)
-    if (charts[page].classList.contains('hidden')) {
-      charts[page].classList.remove('hidden')
-    }
-    charts[page].classList.add('animated', 'fadeIn')
-    charts[page].addEventListener('animationend', () => {
-      charts[page].classList.remove('animated', 'fadeIn')
-    })
-  }
-
-  useWheel(wheelHandler)
 
   const data = [dataIndex[selected], avgIndex]
   const CloseBtn = () => (
