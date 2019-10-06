@@ -1,9 +1,20 @@
 import React from 'react'
 import { range } from 'lodash'
 import FeatureChart from './FeatureChart'
-import SpotifyLogo from './SpotifyLogo'
 import BubbleChart from './BubbleChart'
+import ArtistChart from './ArtistChart'
 import { useWheel, useKeyDown } from '../hooks/index'
+
+const genreChartDimension = {
+  width: 600,
+  height: 600,
+}
+const featureChartDimension = {
+  canvasStyle: {
+    width: 800,
+    height: 600,
+  },
+}
 
 const toArray = obj =>
   Object.keys(obj).map(k => ({
@@ -29,7 +40,7 @@ export default React.forwardRef(({ data }, ref) => {
     i => featuresArray[i] / avgFeaturesArray[i] - 1,
   )
 
-  const barChartData = {
+  const featureChartData = {
     labels: features.map(el => el.name),
     datasets: [
       {
@@ -48,28 +59,6 @@ export default React.forwardRef(({ data }, ref) => {
       },
     ],
   }
-
-  const ArtistBlock = () => (
-    <div className='artists'>
-      {artists
-        .slice(0, 8)
-        .map(({ name, external_urls: { spotify }, count }) => (
-          <a
-            href={spotify}
-            key={name}
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <div className='singer-name'>{name}</div>
-            <div className='count-block'>
-              <div className='count-bar' style={{ width: count * 7 }}></div>
-              <div className='song-count'>{count}</div>
-            </div>
-            <SpotifyLogo />
-          </a>
-        ))}
-    </div>
-  )
 
   let page = 0
 
@@ -120,23 +109,16 @@ export default React.forwardRef(({ data }, ref) => {
           graph={{
             zoom: 1,
           }}
-          height={400}
-          width={400}
+          {...genreChartDimension}
           padding={5} // optional value, number that set the padding between bubbles
           showLegend={false} // optional value, pass false to disable the legend.
         />
       </ChartContainer>
       <ChartContainer title='Top Artists'>
-        <ArtistBlock />
+        <ArtistChart artistsData={artists} />
       </ChartContainer>
       <ChartContainer title='Audio Features'>
-        <FeatureChart
-          data={barChartData}
-          canvasStyle={{
-            height: 400,
-            width: 700,
-          }}
-        />
+        <FeatureChart data={featureChartData} {...featureChartDimension} />
       </ChartContainer>
     </div>
   )

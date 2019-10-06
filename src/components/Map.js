@@ -15,8 +15,6 @@ class Map extends PureComponent {
     this.state = {
       current: null,
       isTooltipVisible: false,
-      tooltipY: 0,
-      tooltipX: 0,
     }
   }
 
@@ -26,14 +24,12 @@ class Map extends PureComponent {
   onMouseMove = e =>
     this.setState({
       isTooltipVisible: true,
-      tooltipY: e.clientY + 10,
-      tooltipX: e.clientX + 10,
     })
 
   onMouseOut = () => this.setState({ current: null, isTooltipVisible: false })
 
   render() {
-    const { current, isTooltipVisible, tooltipX, tooltipY } = this.state
+    const { current, isTooltipVisible } = this.state
     const { mapProps, layerClickHandler } = this.props
     const layerProps = {
       onMouseOver: this.onMouseOver,
@@ -41,12 +37,6 @@ class Map extends PureComponent {
       onMouseOut: this.onMouseOut,
       onClick: layerClickHandler,
     }
-
-    // const tooltipStyle = {
-    //   display: isTooltipVisible ? 'block' : 'none',
-    //   top: tooltipY,
-    //   left: tooltipX,
-    // }
 
     return (
       <>
