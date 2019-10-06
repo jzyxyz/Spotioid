@@ -3,12 +3,16 @@ $footerheight: 75px;
 
 .map-svg {
   background: none;
-  width: 90vw !important;
-  height: auto !important;
+  width: 80vw;
+  height: auto;
+  max-width: 1200 !important;
+  max-height: 900 !important;
+  transition: cubic-bezier(0, 0, 0.33, 1.07) 0.8s;
   & > path {
     stroke: rgba(22, 22, 22, 0.473);
     outline: none;
     fill: rgba(36, 36, 36, 0.1);
+
     &[available='true'] {
       fill: #1ed75f59;
       &:hover {
@@ -40,7 +44,7 @@ $footerheight: 75px;
   overflow: hidden;
   display: flex;
   justify-content: center;
-  padding-bottom: 15vh;
+  // padding-bottom: 15vh;
 }
 
 #chartjs-tooltip {
@@ -98,9 +102,9 @@ $footerheight: 75px;
 }
 
 .chart {
-  padding: 50px 0px;
   height: 100%;
   display: flex;
+  // padding-top: 50px;
 }
 
 .foot {
@@ -124,11 +128,11 @@ $footerheight: 75px;
 }
 .svg-container {
   &:hover {
-    transition: ease 0.6s;
     & svg {
       width: 28px;
       height: 28px;
       color: $blue;
+      transition: ease 0.2s;
     }
   }
   cursor: pointer;
@@ -145,6 +149,28 @@ $footerheight: 75px;
   }
 }
 
+@mixin footer-tip {
+  color: white;
+  position: fixed;
+  bottom: 100px;
+  width: 300px;
+  left: calc(50vw - 150px);
+  font-size: medium;
+  background: black;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+#share-tip {
+  @include footer-tip();
+}
+#copyright-tip {
+  @include footer-tip();
+  justify-content: space-around;
+}
+
 #info-segment-container {
   position: absolute;
   // top: 23vh;
@@ -154,8 +180,7 @@ $footerheight: 75px;
 }
 
 .hidden {
-  display: none;
-  // visibility: hidden;
+  display: none !important;
 }
 
 #info-segment {
@@ -165,10 +190,10 @@ $footerheight: 75px;
   width: 100vw;
   overflow: scroll;
   display: flex;
-  backdrop-filter: saturate(306%) blur(4px);
   border-top-right-radius: 25px;
   border-top-left-radius: 25px;
-  padding: 15vh 5vw;
+  transition: ease 0.28s;
+  // padding: 15vh 5vw;
 }
 
 @mixin round-div {
@@ -202,7 +227,7 @@ $footerheight: 75px;
 .close-info {
   position: fixed;
   // bottom: calc(67vh - 25px);
-  top: 4vh;
+  top: calc(3vh + 17px);
   right: 3vw;
   @include round-div();
 }
@@ -219,14 +244,16 @@ $footerheight: 75px;
 }
 
 .chartjs-render-monitor {
-  height: 400 !important ;
-  width: 600 !important;
+  // height: 400 !important ;
+  // width: 600 !important;
+  margin: 50px 0;
 }
 
 .artists {
   color: white;
-  min-width: 300px;
+  min-width: 500px;
   text-align: end;
+  margin: 50px 0;
   &:hover > a:first-child {
     // padding: 0px;
     padding-top: 0px;

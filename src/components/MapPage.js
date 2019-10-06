@@ -1,13 +1,11 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef } from 'react'
 import dataIndex from '../dataIndex/index'
 import avgIndex from '../dataIndex/average'
 import MapWithInput from './MapWithInput'
 import InfoSegment from './InfoSegment'
 import TimeStamp from './TimeStamp'
-
-const NoData = () => (
-  <div className='no-data-tip'>No data for this country available</div>
-)
+import NoData from './NoData'
+import { useKeyDown, useWheel } from '../hooks/index'
 
 export default () => {
   const infoSegRef = useRef(null)
@@ -30,6 +28,7 @@ export default () => {
       }}
     ></div>
   )
+
   const Info = () =>
     data.some(el => !el) ? (
       <NoData />
@@ -42,6 +41,43 @@ export default () => {
         </div>
       )
     )
+
+  let page = 0
+
+  const pageDown = () => {
+    const charts = document.querySelectorAll('.chart-container')
+    if (!charts.length) return
+    charts[page].classList.add('hidden')
+    page = (page + 1) % 3
+    console.log('current page', page)
+    if (charts[page].classList.contains('hidden')) {
+      charts[page].classList.remove('hidden')
+    }
+    charts[page].classList.add('animated', 'fadeIn')
+    charts[page].addEventListener('animationend', () => {
+      charts[page].classList.remove('animated', 'fadeIn')
+    })
+  }
+
+  const wheelHandler = e => {
+    console.log('scroll direction:', e.wheelDeltaY)
+    if (e.wheelDeltaY < 0) {
+      pageDown()
+    } else {
+      // scroll back here....
+    }
+  }
+
+  const keyDownHandler = e => {
+    if (e.keyCode === 40) {
+      // arrow down
+      pageDown()
+    } else {
+    }
+  }
+
+  useWheel(wheelHandler)
+  useKeyDown(keyDownHandler)
 
   return (
     <div id='map-page-root'>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { writeToClipboard } from '../utils'
 import {
@@ -8,61 +8,100 @@ import {
   faShare,
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
-const icons = [
-  {
-    to: '/about',
-    icon: faInfo,
-    props: {},
-  },
-  {
-    to: '/report',
-    icon: faBookOpen,
-    props: {},
-  },
-  {
-    to: undefined,
-    icon: faCopyright,
-    props: {},
-  },
-  {
-    to: undefined,
-    icon: faShare,
-    props: {
-      onClick: async () => {
-        try {
-          await writeToClipboard(
-            `An interesting website that visualizes Spotify data ${window.location}`,
-          )
-        } catch (e) {
-          alert(e)
-        }
-      },
-    },
-  },
-]
+import { isNumber } from 'lodash'
 
 export default () => {
+  const shareTipRef = useRef(null)
+  const copyrightRef = useRef(null)
+
+  const animateInThenOut = (reference, method = 'fadeIn', timeout = 3000) => {
+    reference.current.classList.add('animated', method)
+    reference.current.classList.remove('hidden')
+    if (isNumber(timeout)) {
+      setTimeout(() => {
+        reference.current.classList.add('hidden')
+      }, timeout)
+    }
+  }
+
+  const icons = [
+    {
+      to: '/about',
+      icon: faInfo,
+      props: {},
+    },
+    {
+      to: '/report',
+      icon: faBookOpen,
+      props: {},
+    },
+    {
+      to: undefined,
+      icon: faShare,
+      props: {
+        onClick: async () => {
+          try {
+            await writeToClipboard(
+              `Checkout this interesting website that visualizes Spotify data ${window.location}`,
+            )
+            animateInThenOut(shareTipRef)
+          } catch (e) {
+            alert(e)
+          }
+        },
+      },
+    },
+    {
+      to: undefined,
+      icon: faCopyright,
+      id: '#copyright',
+      props: {
+        onMouseEnter: () => {
+          animateInThenOut(copyrightRef, 'zoomIn', false)
+        },
+      },
+    },
+  ]
+
   const Icons = () => (
     <div className='foot-icon-group'>
-      {icons.map(({ to, icon, props }) =>
+      {icons.map(({ to, icon, props }, idx) =>
         to ? (
-          <Link to={to}>
+          <Link to={to} key={idx}>
             <div className='svg-container'>
               <FontAwesomeIcon icon={icon} {...props} />
             </div>
           </Link>
         ) : (
-          <div className='svg-container'>
+          <div className='svg-container' key={idx}>
             <FontAwesomeIcon icon={icon} {...props} />
           </div>
         ),
       )}
     </div>
   )
+
   return (
     <div className='foot'>
       <Icons />
+      <div id='share-tip' className='hidden' ref={shareTipRef}>
+        Copied website link to clipboard! 😄
+      </div>
+      <div
+        id='copyright-tip'
+        className='hidden'
+        ref={copyrightRef}
+        onMouseLeave={() => {
+          copyrightRef.current.classList.add('hidden')
+        }}
+      >
+        <a href='https://jzyis.me/about'>
+          <div>@JinZhongyuan</div>
+        </a>
+        <a href='mailto:yyaomingm@gmail.com'>
+          <div>@GnimOay</div>
+        </a>
+      </div>
     </div>
   )
 }

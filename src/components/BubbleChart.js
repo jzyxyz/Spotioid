@@ -353,13 +353,13 @@ BubbleChart.defaultProps = {
   },
   valueFont: {
     family: 'inherit',
-    size: 20,
+    size: 25,
     color: '#fff',
     weight: 'bold',
   },
   labelFont: {
     family: 'inherit',
-    size: 11,
+    size: 20,
     color: '#fff',
     weight: 'bold',
   },
