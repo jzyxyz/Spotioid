@@ -1,11 +1,8 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React from 'react'
 import { range } from 'lodash'
 import FeatureChart from './FeatureChart'
 import SpotifyLogo from './SpotifyLogo'
 import BubbleChart from './BubbleChart'
-
-import { debounceTime } from 'rxjs/operators'
-import { fromEvent } from 'rxjs'
 
 const toArray = obj =>
   Object.keys(obj).map(k => ({
@@ -21,14 +18,6 @@ const ChartContainer = React.forwardRef(({ children, title }, ref) => (
     <div className='chart'>{children}</div>
   </div>
 ))
-
-const useWheel = wheelHandler => {
-  useEffect(() => {
-    const scroll$ = fromEvent(window, 'wheel')
-    scroll$.pipe(debounceTime(100)).subscribe(wheelHandler)
-    return window.removeEventListener('wheel', wheelHandler)
-  })
-}
 
 export default React.forwardRef(({ data }, ref) => {
   const [current, avgFeatures] = data
@@ -80,26 +69,6 @@ export default React.forwardRef(({ data }, ref) => {
         ))}
     </div>
   )
-
-  let page = 0
-  useWheel(() => {
-    console.log('current page', page)
-    const charts = document.querySelectorAll('.chart-container')
-    charts[page].classList.add('hidden')
-    page = (page + 1) % 3
-    if (charts[page].classList.contains('hidden')) {
-      charts[page].classList.remove('hidden')
-      charts[page].classList.add('animated', 'fadeIn')
-      charts[page].addEventListener('animationend', () => {
-        charts[page].classList.remove('animated', 'fadeIn')
-      })
-    } else {
-      charts[page].classList.add('animated', 'fadeIn')
-      charts[page].addEventListener('animationend', () => {
-        charts[page].classList.remove('animated', 'fadeIn')
-      })
-    }
-  })
 
   return (
     <div ref={ref} id='info-segment'>
