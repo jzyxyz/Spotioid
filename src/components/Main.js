@@ -10,8 +10,8 @@ const Main = () => {
         <Route path='/report' component={Report} />
         <Route path='/' component={MapPage} />
       </Switch>
-
-      {/* <div className='foot'>
+      {/* 
+      <div className='foot'>
         <div className='foot-info'>
           <div>About the Project </div>
           <Link to='/report'>

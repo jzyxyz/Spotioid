@@ -1,11 +1,20 @@
 import { useEffect } from 'react'
-import { debounce } from 'lodash'
+import { debounce, throttle } from 'lodash'
 
-const useWheel = (wheelHandler, debounceTime = 100) => {
+const useWheel = (wheelHandler, debounceTime = 50) => {
   useEffect(() => {
-    window.onwheel = debounce(wheelHandler, debounceTime)
-    return window.removeEventListener('wheel', wheelHandler)
+    const handler = debounce(wheelHandler, debounceTime)
+    window.onwheel = handler
+    return window.removeEventListener('wheel', handler)
   })
 }
 
-export { useWheel }
+const useKeyDown = (keyDownHandler, throttleTime = 0) => {
+  useEffect(() => {
+    const handler = throttle(keyDownHandler, throttleTime)
+    window.onkeydown = handler
+    return window.removeEventListener('keydown', handler)
+  })
+}
+
+export { useWheel, useKeyDown }
