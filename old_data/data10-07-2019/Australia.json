@@ -1,0 +1,225 @@
+{
+    "idx": 1,
+    "name": "Australia",
+    "id": "37i9dQZEVXbJPcfkRz0wJ0",
+    "genres": [
+        {
+            "name": "pop",
+            "count": 36
+        },
+        {
+            "name": "dance pop",
+            "count": 16
+        },
+        {
+            "name": "post-teen pop",
+            "count": 11
+        },
+        {
+            "name": "rap",
+            "count": 7
+        }
+    ],
+    "artists": [
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/246dkjvS1zLTtiykXe5h60"
+            },
+            "href": "https://api.spotify.com/v1/artists/246dkjvS1zLTtiykXe5h60",
+            "id": "246dkjvS1zLTtiykXe5h60",
+            "name": "Post Malone",
+            "type": "artist",
+            "uri": "spotify:artist:246dkjvS1zLTtiykXe5h60",
+            "count": 5
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/4nDoRrQiYLoBzwC5BhVJzF"
+            },
+            "href": "https://api.spotify.com/v1/artists/4nDoRrQiYLoBzwC5BhVJzF",
+            "id": "4nDoRrQiYLoBzwC5BhVJzF",
+            "name": "Camila Cabello",
+            "type": "artist",
+            "uri": "spotify:artist:4nDoRrQiYLoBzwC5BhVJzF",
+            "count": 3
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/6eUKZXaKkcviH0Ku9w2n3V"
+            },
+            "href": "https://api.spotify.com/v1/artists/6eUKZXaKkcviH0Ku9w2n3V",
+            "id": "6eUKZXaKkcviH0Ku9w2n3V",
+            "name": "Ed Sheeran",
+            "type": "artist",
+            "uri": "spotify:artist:6eUKZXaKkcviH0Ku9w2n3V",
+            "count": 3
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/2NjfBq1NflQcKSeiDooVjY"
+            },
+            "href": "https://api.spotify.com/v1/artists/2NjfBq1NflQcKSeiDooVjY",
+            "id": "2NjfBq1NflQcKSeiDooVjY",
+            "name": "Tones and I",
+            "type": "artist",
+            "uri": "spotify:artist:2NjfBq1NflQcKSeiDooVjY",
+            "count": 3
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/5Rl15oVamLq7FbSb0NNBNy"
+            },
+            "href": "https://api.spotify.com/v1/artists/5Rl15oVamLq7FbSb0NNBNy",
+            "id": "5Rl15oVamLq7FbSb0NNBNy",
+            "name": "5 Seconds of Summer",
+            "type": "artist",
+            "uri": "spotify:artist:5Rl15oVamLq7FbSb0NNBNy",
+            "count": 2
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/66CXWjxzNUsdJxJ2JdwvnR"
+            },
+            "href": "https://api.spotify.com/v1/artists/66CXWjxzNUsdJxJ2JdwvnR",
+            "id": "66CXWjxzNUsdJxJ2JdwvnR",
+            "name": "Ariana Grande",
+            "type": "artist",
+            "uri": "spotify:artist:66CXWjxzNUsdJxJ2JdwvnR",
+            "count": 2
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/3TVXtAsR1Inumwj472S9r4"
+            },
+            "href": "https://api.spotify.com/v1/artists/3TVXtAsR1Inumwj472S9r4",
+            "id": "3TVXtAsR1Inumwj472S9r4",
+            "name": "Drake",
+            "type": "artist",
+            "uri": "spotify:artist:3TVXtAsR1Inumwj472S9r4",
+            "count": 2
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/26VFTg2z8YR0cCuwLzESi2"
+            },
+            "href": "https://api.spotify.com/v1/artists/26VFTg2z8YR0cCuwLzESi2",
+            "id": "26VFTg2z8YR0cCuwLzESi2",
+            "name": "Halsey",
+            "type": "artist",
+            "uri": "spotify:artist:26VFTg2z8YR0cCuwLzESi2",
+            "count": 2
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/6LuN9FCkKOj5PcnpouEgny"
+            },
+            "href": "https://api.spotify.com/v1/artists/6LuN9FCkKOj5PcnpouEgny",
+            "id": "6LuN9FCkKOj5PcnpouEgny",
+            "name": "Khalid",
+            "type": "artist",
+            "uri": "spotify:artist:6LuN9FCkKOj5PcnpouEgny",
+            "count": 2
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/5JZ7CnR6gTvEMKX4g70Amv"
+            },
+            "href": "https://api.spotify.com/v1/artists/5JZ7CnR6gTvEMKX4g70Amv",
+            "id": "5JZ7CnR6gTvEMKX4g70Amv",
+            "name": "Lauv",
+            "type": "artist",
+            "uri": "spotify:artist:5JZ7CnR6gTvEMKX4g70Amv",
+            "count": 2
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/7jVv8c5Fj3E9VhNjxT4snq"
+            },
+            "href": "https://api.spotify.com/v1/artists/7jVv8c5Fj3E9VhNjxT4snq",
+            "id": "7jVv8c5Fj3E9VhNjxT4snq",
+            "name": "Lil Nas X",
+            "type": "artist",
+            "uri": "spotify:artist:7jVv8c5Fj3E9VhNjxT4snq",
+            "count": 2
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/56oDRnqbIiwx4mymNEv7dS"
+            },
+            "href": "https://api.spotify.com/v1/artists/56oDRnqbIiwx4mymNEv7dS",
+            "id": "56oDRnqbIiwx4mymNEv7dS",
+            "name": "Lizzo",
+            "type": "artist",
+            "uri": "spotify:artist:56oDRnqbIiwx4mymNEv7dS",
+            "count": 2
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/5YGY8feqx7naU7z4HrwZM6"
+            },
+            "href": "https://api.spotify.com/v1/artists/5YGY8feqx7naU7z4HrwZM6",
+            "id": "5YGY8feqx7naU7z4HrwZM6",
+            "name": "Miley Cyrus",
+            "type": "artist",
+            "uri": "spotify:artist:5YGY8feqx7naU7z4HrwZM6",
+            "count": 2
+        },
+        {
+            "external_urls": {
+                "spotify": "https://open.spotify.com/artist/7n2wHs1TKAczGzO7Dd2rGr"
+            },
+            "href": "https://api.spotify.com/v1/artists/7n2wHs1TKAczGzO7Dd2rGr",
+            "id": "7n2wHs1TKAczGzO7Dd2rGr",
+            "name": "Shawn Mendes",
+            "type": "artist",
+            "uri": "spotify:artist:7n2wHs1TKAczGzO7Dd2rGr",
+            "count": 2
+        }
+    ],
+    "features": [
+        {
+            "name": "danceability",
+            "value": 0.5968375161263894
+        },
+        {
+            "name": "energy",
+            "value": 0.704598056204148
+        },
+        {
+            "name": "key",
+            "value": 3.6058520014835054
+        },
+        {
+            "name": "loudness",
+            "value": -4.259591247520467
+        },
+        {
+            "name": "mode",
+            "value": 0.41355727355044003
+        },
+        {
+            "name": "speechiness",
+            "value": 0.07921249892497666
+        },
+        {
+            "name": "acousticness",
+            "value": 0.1465158690917887
+        },
+        {
+            "name": "instrumentalness",
+            "value": 0.000017127007622745832
+        },
+        {
+            "name": "liveness",
+            "value": 0.1297873901599381
+        },
+        {
+            "name": "valence",
+            "value": 0.3482660870785691
+        },
+        {
+            "name": "tempo",
+            "value": 124.95439704189769
+        }
+    ]
+}
