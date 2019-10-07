@@ -14,9 +14,9 @@ fs.readdirSync('data').forEach(fn => {
   allArtists.push(json.artists)
   dataIndex[json['name']] = json
 })
+const avgIdx = {}
 
 const calAvgIndex = () => {
-  const avgIdx = {}
   allFeatures
     .reduce((acc, cur) => {
       _.range(Object.keys(cur).length).map(i => {
@@ -30,8 +30,8 @@ const calAvgIndex = () => {
     })
 
   fs.writeFileSync(
-    './src/dataIndex/featureRank.js',
-    `export default ${JSON.stringify(featureRankIndex)}`,
+    './src/dataIndex/average.js',
+    `export default ${JSON.stringify(avgIdx)}`,
   )
 }
 
@@ -56,8 +56,8 @@ const calFeatureIndex = () => {
     }))
   })
   fs.writeFileSync(
-    './src/dataIndex/average.js',
-    `export default ${JSON.stringify(avgIdx)}`,
+    './src/dataIndex/featureRank.js',
+    `export default ${JSON.stringify(featureRankIndex)}`,
   )
 }
 
@@ -107,5 +107,8 @@ const writeIndex = () => {
   )
 }
 
+calAvgIndex()
+calFeatureIndex()
 calArtistIndex()
 calGenreIndex()
+writeIndex()
