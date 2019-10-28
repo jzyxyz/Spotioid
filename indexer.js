@@ -101,10 +101,7 @@ const calGenreIndex = () => {
 
 const writeIndex = () => {
   dataIndex.timeStamp = new Date().toDateString()
-  fs.writeFileSync(
-    './src/dataIndex/index.js',
-    `export default ${JSON.stringify(dataIndex)}`,
-  )
+  fs.writeFileSync('./src/dataIndex/index.json', JSON.stringify(dataIndex))
 }
 
 calAvgIndex()
