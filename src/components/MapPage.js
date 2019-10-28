@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react'
-import dataIndex from '../dataIndex/index'
-import avgIndex from '../dataIndex/average'
+import dataIndex from '../dataIndex/index.json'
+import avgIndex from '../dataIndex/average.json'
 import MapWithInput from './MapWithInput'
 import InfoSegment from './InfoSegment'
 import TimeStamp from './TimeStamp'

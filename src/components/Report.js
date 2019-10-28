@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
-import dataIndex from '../dataIndex/index'
-import featureRank from '../dataIndex/featureRank'
+import dataIndex from '../dataIndex/index.json'
+import featureRank from '../dataIndex/featureRank.json'
 import artistRank from '../dataIndex/artistRank.json'
 import { flag } from 'country-emoji'
 import { capitalize } from 'lodash'
