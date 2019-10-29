@@ -8,11 +8,18 @@ let allGenres = []
 
 fs.readdirSync('data').forEach(fn => {
   const json = JSON.parse(fs.readFileSync(`./data/${fn}`))
-  json.idx = parseInt(json.idx)
   allFeatures.push(json.features)
   allGenres.push(json.genres)
   allArtists.push(json.artists)
-  dataIndex[json['name']] = json
+
+  const keys = ['genres', 'artists']
+  keys.forEach(k => {
+    {
+      json[k] = json[k].filter(el => el.count > 3)
+    }
+  })
+
+  dataIndex[json.name] = json
 })
 const avgIdx = {}
 
@@ -29,10 +36,7 @@ const calAvgIndex = () => {
       avgIdx[el.name] = el.value
     })
 
-  fs.writeFileSync(
-    './src/dataIndex/average.js',
-    `export default ${JSON.stringify(avgIdx)}`,
-  )
+  fs.writeFileSync('./src/dataIndex/average.json', JSON.stringify(avgIdx))
 }
 
 const calFeatureIndex = () => {
@@ -56,12 +60,13 @@ const calFeatureIndex = () => {
     }))
   })
   fs.writeFileSync(
-    './src/dataIndex/featureRank.js',
-    `export default ${JSON.stringify(featureRankIndex)}`,
+    './src/dataIndex/featureRank.json',
+    JSON.stringify(featureRankIndex),
   )
 }
 
 // calculate artists
+const sliceLimit = 20
 const calArtGnrIndex = array => {
   const flattened = _.flatten(array)
 
@@ -77,7 +82,7 @@ const calArtGnrIndex = array => {
     Object.values(sortIndex),
     [el => el.count, el => el.name],
     ['desc', 'asc'],
-  ).slice(0, 20)
+  ).slice(0, sliceLimit)
 
   sorted.forEach(top => {
     const { name } = top
@@ -101,10 +106,7 @@ const calGenreIndex = () => {
 
 const writeIndex = () => {
   dataIndex.timeStamp = new Date().toDateString()
-  fs.writeFileSync(
-    './src/dataIndex/index.js',
-    `export default ${JSON.stringify(dataIndex)}`,
-  )
+  fs.writeFileSync('./src/dataIndex/index.json', JSON.stringify(dataIndex))
 }
 
 calAvgIndex()
